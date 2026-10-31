@@ -145,20 +145,26 @@ namespace AvUtil
 
             // If there is no full render, or it is out of date, create one.
             if (fullRender == null || fullRender.drawingVersion != drawingVersion) {
-                // The size of the full render has a longer side of "FullRenderSize"
-                SKRect fullBounds = underlyingDrawing.Bounds;
-                PixelSize fullPixelSize;
-                if (fullBounds.Width > fullBounds.Height) {
-                    fullPixelSize = new PixelSize(FullRenderSize, (int)(FullRenderSize * fullBounds.Height / fullBounds.Width));
-                }
-                else {
-                    fullPixelSize = new PixelSize((int)(FullRenderSize * fullBounds.Width / fullBounds.Height), FullRenderSize);
-                }
-
-                BeginRender(Conv.ToAvRect(fullBounds), fullPixelSize, fullRenders, "full");
+                BeginFullRender();
             }
 
             DebugPrint($"End Draw: Rect:{rectToDraw} PixelSize:{pixelSize}");
+        }
+
+        private void BeginFullRender()
+        {
+            // The size of the full render has a longer side of "FullRenderSize"
+            SKRect fullBounds = underlyingDrawing.Bounds;
+            PixelSize fullPixelSize;
+            if (fullBounds.Width > fullBounds.Height) {
+                fullPixelSize = new PixelSize(FullRenderSize, (int)(FullRenderSize * fullBounds.Height / fullBounds.Width));
+            }
+            else {
+                fullPixelSize = new PixelSize((int)(FullRenderSize * fullBounds.Width / fullBounds.Height), FullRenderSize);
+            }
+
+            BeginRender(Conv.ToAvRect(fullBounds), fullPixelSize, fullRenders, "full");
+
         }
 
         private InProgressRender? FindCompletedRender(List<InProgressRender> currentRenders)
@@ -239,6 +245,26 @@ namespace AvUtil
         {
             ++drawingVersion;
             NotifyNewDrawingAvailable();
+
+            // Prune any completed renders that are no longer needed.
+            PruneCompletedRenders(detailedRenders);
+            PruneCompletedRenders(enclosingRenders);
+            PruneCompletedRenders(fullRenders);
+
+            // Begin redrawing renders now, so they are ready as soon as possible.
+            // Use the existing sizes/locations of the detailed and enclosing, and start a new full.
+
+            InProgressRender? detailedRender = FindCompletedRender(detailedRenders);
+            if (detailedRender != null) {
+                BeginRender(detailedRender.rect, detailedRender.pixelSize, detailedRenders, "detailed");
+            }
+
+            InProgressRender? enclosingRender = FindCompletedRender(enclosingRenders);
+            if (enclosingRender != null) {
+                BeginRender(enclosingRender.rect, enclosingRender.pixelSize, enclosingRenders, "enclosing");
+            }
+
+            BeginFullRender();
         }
 
         // Release all the cached bitmaps, and cancel any renders in progress (their bitmaps are
