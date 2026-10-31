@@ -10,7 +10,11 @@ namespace AvUtil
     // Bounds is the union of all sub-drawings' bounds.
     // Draw calls each sub-drawing in order (index 0 drawn first).
     // DrawingChanged fires whenever any sub-drawing fires its DrawingChanged event.
-    public class AvaloniaDrawingMerge : IAvaloniaDrawing
+    //
+    // The merge subscribes to the sub-drawings' DrawingChanged events, so a sub-drawing that lives longer than
+    // the merge keeps it (and the other sub-drawings) alive. Dispose the merge when it is no longer used to
+    // unsubscribe. Disposing does not dispose the sub-drawings, which are owned by the caller.
+    public class AvaloniaDrawingMerge : IAvaloniaDrawing, IDisposable
     {
         private readonly IAvaloniaDrawing[] drawings;
 
@@ -52,6 +56,15 @@ namespace AvUtil
         private void OnSubDrawingChanged(object? sender, EventArgs e)
         {
             DrawingChanged?.Invoke(this, EventArgs.Empty);
+        }
+
+        // Unsubscribe from the sub-drawings' DrawingChanged events. The sub-drawings are not disposed.
+        // Safe to call more than once.
+        public void Dispose()
+        {
+            foreach (IAvaloniaDrawing drawing in drawings) {
+                drawing.DrawingChanged -= OnSubDrawingChanged;
+            }
         }
     }
 }

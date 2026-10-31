@@ -118,8 +118,13 @@ public partial class MapViewer : UserControl
 
     private HighlightDrawing highlightDrawing = new HighlightDrawing();
 
-    // The cached drawing of the current map, or null if none. Disposed when the map changes, to release its bitmaps.
+    // The drawings of the current map, or null if none: the adapter for the IMapDisplay, the cached drawing of it,
+    // and the merge of that with the highlights (which is shown in panAndZoom). All are disposed when the map changes,
+    // to release the bitmaps, and to unsubscribe from the IMapDisplay and highlightDrawing, which would otherwise
+    // keep the old drawings (and the old map) alive.
+    private CacheableMapDisplay? cacheableMapDisplay;
     private CachedDrawing? mapDrawing;
+    private AvaloniaDrawingMerge? mergedDrawing;
 
     // Used to show a tooltip when the mouse hovers over a feature. The tooltip is shown after a delay, and fades in/out.
     private FadingPopup tooltipPopup = new FadingPopup() {
@@ -243,22 +248,29 @@ public partial class MapViewer : UserControl
         // The map to display has changed. Create a new CacheableMapDisplay
         // for the new map and set it as the drawing for the pan and zoom control.
 
+        CacheableMapDisplay? oldCacheableMapDisplay = cacheableMapDisplay;
         CachedDrawing? oldMapDrawing = mapDrawing;
+        AvaloniaDrawingMerge? oldMergedDrawing = mergedDrawing;
 
         if (newMapDisplay != null) {
             // The PanAndZoom control should display the merging of the map and the highlights.
-            IThreadsafeSkiaDrawing skiaDrawing = new CacheableMapDisplay(newMapDisplay, SwopColorConverter.Instance);
-            mapDrawing = new CachedDrawing(skiaDrawing);
-            IAvaloniaDrawing mergedDrawing = new AvaloniaDrawingMerge(mapDrawing, highlightDrawing);
+            cacheableMapDisplay = new CacheableMapDisplay(newMapDisplay, SwopColorConverter.Instance);
+            mapDrawing = new CachedDrawing(cacheableMapDisplay);
+            mergedDrawing = new AvaloniaDrawingMerge(mapDrawing, highlightDrawing);
 
             panAndZoom.Drawing = mergedDrawing;
         }
         else {
+            cacheableMapDisplay = null;
             mapDrawing = null;
+            mergedDrawing = null;
             panAndZoom.Drawing = null;
         }
 
+        // Dispose the old drawings, from the top down, now that panAndZoom no longer uses them.
+        oldMergedDrawing?.Dispose();
         oldMapDrawing?.Dispose();
+        oldCacheableMapDisplay?.Dispose();
     }
 
     private void HighlightsChanged(IMapViewerHighlight[]? newMapHighlights)
