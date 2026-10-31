@@ -89,6 +89,11 @@ namespace AvUtil
             if (disposed)
                 return;
 
+            // Nothing is visible in an empty rectangle or pixel size, and rendering one would divide by zero
+            // when creating the transform.
+            if (IsEmptyRequest(rectToDraw, pixelSize))
+                return;
+
             // Prune any completed renders that are no longer needed.
             PruneCompletedRenders(detailedRenders);
             PruneCompletedRenders(enclosingRenders);
@@ -153,20 +158,36 @@ namespace AvUtil
             DebugPrint($"End Draw: Rect:{rectToDraw} PixelSize:{pixelSize}");
         }
 
+        // Request a render of the whole drawing, with its longer side FullRenderSize pixels (unless a matching
+        // render is already pending, in progress, or completed). Does nothing if the drawing's bounds are empty
+        // or not finite, since there is nothing to render.
         private void BeginFullRender()
         {
-            // The size of the full render has a longer side of "FullRenderSize"
             SKRect fullBounds = underlyingDrawing.Bounds;
+            if (!float.IsFinite(fullBounds.Width) || !float.IsFinite(fullBounds.Height) || fullBounds.Width <= 0 || fullBounds.Height <= 0)
+                return;
+
+            // The size of the full render has a longer side of "FullRenderSize". Each side is at least 1 pixel, so
+            // that a very long, thin drawing still gets rendered.
             PixelSize fullPixelSize;
             if (fullBounds.Width > fullBounds.Height) {
-                fullPixelSize = new PixelSize(FullRenderSize, (int)(FullRenderSize * fullBounds.Height / fullBounds.Width));
+                fullPixelSize = new PixelSize(FullRenderSize, Math.Max(1, (int)(FullRenderSize * fullBounds.Height / fullBounds.Width)));
             }
             else {
-                fullPixelSize = new PixelSize((int)(FullRenderSize * fullBounds.Width / fullBounds.Height), FullRenderSize);
+                fullPixelSize = new PixelSize(Math.Max(1, (int)(FullRenderSize * fullBounds.Width / fullBounds.Height)), FullRenderSize);
             }
 
             BeginRender(Conv.ToAvRect(fullBounds), fullPixelSize, fullRenders, "full");
+        }
 
+        // True if a request to draw or render the given rectangle at the given pixel size would have nothing in it:
+        // the rectangle or pixel size is empty, or the rectangle is not finite.
+        //   rect: the rectangle requested.
+        //   pixelSize: the pixel size requested.
+        private static bool IsEmptyRequest(Rect rect, PixelSize pixelSize)
+        {
+            return !double.IsFinite(rect.Width) || !double.IsFinite(rect.Height) || rect.Width <= 0 || rect.Height <= 0 ||
+                   pixelSize.Width <= 0 || pixelSize.Height <= 0;
         }
 
         private InProgressRender? FindCompletedRender(List<InProgressRender> currentRenders)
@@ -224,7 +245,7 @@ namespace AvUtil
             // Create a new render for the exact bounds and resolution requested. Start it now if nothing else in
             // the list is running; otherwise it stays pending until the running render finishes.
             InProgressRender? newRender = null;
-            if (pixelSize.Width > 0 && pixelSize.Height > 0) {
+            if (!IsEmptyRequest(rectToDraw, pixelSize)) {
                 newRender = new InProgressRender(type, underlyingDrawing, drawingVersion, renderVersion, rectToDraw, pixelSize,
                                                  NotifyNewDrawingAvailable, () => OnRenderFinished(currentRenders));
                 currentRenders.Add(newRender);
@@ -412,8 +433,10 @@ namespace AvUtil
                 builder.AppendLine("  " + render.ToString());
             }
 
+#if SHOWDEBUGOUTPUT
             builder.AppendLine("Render counts (all CachedDrawings):");
             builder.Append(InProgressRender.StatsString());
+#endif
 
             return builder.ToString();
         }
@@ -551,7 +574,8 @@ namespace AvUtil
             // True if cancellation of this render has been requested (it may still be running until it notices).
             public bool CancelRequested => cancelSource.IsCancellationRequested;
 
-            // Counts of renders of one type, for debugging.
+            // Counts of renders of one type, for debugging. RecordStat and RecordReused are [Conditional], so the calls
+            // to them (including creating their lambda arguments) are compiled only when SHOWDEBUGOUTPUT is defined.
             private class RenderCounts
             {
                 public int requested, started, completed, cancelled, faulted, dropped, notRestarted;
@@ -563,6 +587,7 @@ namespace AvUtil
             // Update the render counts for the given render type.
             //   type: the type of render.
             //   update: updates the counts.
+            [Conditional("SHOWDEBUGOUTPUT")]
             private static void RecordStat(string type, Action<RenderCounts> update)
             {
                 lock (renderStats) {
@@ -577,6 +602,7 @@ namespace AvUtil
             // Record that a render of the given type was requested but not started, because a matching render
             // was already in progress or completed.
             //   type: the type of render.
+            [Conditional("SHOWDEBUGOUTPUT")]
             public static void RecordReused(string type)
             {
                 RecordStat(type, counts => ++counts.notRestarted);
