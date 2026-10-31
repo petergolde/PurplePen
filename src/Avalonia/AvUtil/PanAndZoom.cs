@@ -38,6 +38,9 @@ namespace AvUtil
         private bool verticalScrollBarShown = false;
         private bool horizontalScrollBarShown = false;
 
+        // The top level on which WheelInputSource tracking was installed (null when not attached).
+        private TopLevel? wheelSourceTopLevel;
+
         // The size of the drawing area (control minus any visible scroll bars), as of the last arrange.
         // Set from the arranged size (Bounds isn't updated until after ArrangeOverride returns), and used
         // everywhere the available drawing space is needed (transform, render, hit testing).
@@ -536,9 +539,37 @@ namespace AvUtil
             }
         }
 
+        // When attached to a top level, start tracking which device (mouse or touchpad) produced wheel messages.
+        protected override void OnAttachedToVisualTree(VisualTreeAttachmentEventArgs e)
+        {
+            base.OnAttachedToVisualTree(e);
+
+            wheelSourceTopLevel = TopLevel.GetTopLevel(this);
+            if (wheelSourceTopLevel != null)
+                WheelInputSource.Install(wheelSourceTopLevel);
+        }
+
+        // When detached, stop tracking wheel sources on the top level we were attached to.
+        protected override void OnDetachedFromVisualTree(VisualTreeAttachmentEventArgs e)
+        {
+            base.OnDetachedFromVisualTree(e);
+
+            if (wheelSourceTopLevel != null) {
+                WheelInputSource.Uninstall(wheelSourceTopLevel);
+                wheelSourceTopLevel = null;
+            }
+        }
+
         protected override void OnPointerWheelChanged(PointerWheelEventArgs e)
         {
             base.OnPointerWheelChanged(e);
+
+            //We may want to handle trackpad two-finger pan on Windows by checking the WheelInputSource. For now we have that 
+            //information but we aren't acting on it. We would need to calibrate the amount of scrolling, for one, and on Mac we
+            //need to do it in a different way. Also we need to double-check whether the system settings of scrolling direction 
+            //should be respected, or are already handled (for both X and Y).
+
+            //Debug.WriteLine($"PointerWheel: X:{e.Delta.X} Y:{e.Delta.Y} Modifiers:{e.KeyModifiers} Source:{WheelInputSource.Current}");
 
             // If the mouse wheel is configured to do nothing, ignore it.
             if (MouseWheelAction == WheelAction.None)
