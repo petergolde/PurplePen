@@ -48,6 +48,9 @@
     <PackageVersion Include="Avalonia.Controls.WebView" Version="12.1.0" />
     <PackageVersion Include="Avalonia.HtmlRenderer" Version="12.0.0" />
     <PackageVersion Include="AvaloniaUI.DiagnosticsSupport" Version="2.2.3" />
+    <!-- The D-Bus library Avalonia itself uses (through Avalonia.FreeDesktop). Keep at the version that
+         Avalonia.FreeDesktop depends on (see obj/project.assets.json) to avoid a version conflict. -->
+    <PackageVersion Include="Tmds.DBus.Protocol" Version="0.94.1" />
     <PackageVersion Include="CommunityToolkit.Mvvm" Version="8.4.2" />
     <PackageVersion Include="Semi.Avalonia" Version="12.1.0.1" />
     <PackageVersion Include="Semi.Avalonia.DataGrid" Version="12.1.0.1" />

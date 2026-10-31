@@ -3958,6 +3958,46 @@ namespace AvPurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to The PDF file could not be opened, because no default application for viewing PDF files is set up..
+        /// </summary>
+        public static string LinuxPrinting_NoDefaultViewer {
+            get {
+                return ResourceManager.GetString("LinuxPrinting_NoDefaultViewer", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Purple Pen cannot print directly on this system, because the desktop printing service (the Print interface of the XDG desktop portal) is not available.
+        ///
+        ///Would you like to open the document as a PDF file in your default PDF viewer, so that you can print it from there?
+        ///
+        ///IMPORTANT: When printing from the PDF viewer, turn off any page scaling (such as "Fit to page" or "Shrink to printable area"), so that the document prints at the correct size..
+        /// </summary>
+        public static string LinuxPrinting_PortalUnavailable {
+            get {
+                return ResourceManager.GetString("LinuxPrinting_PortalUnavailable", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The PDF file could not be opened in the default PDF viewer: {0}.
+        /// </summary>
+        public static string LinuxPrinting_ViewerFailed {
+            get {
+                return ResourceManager.GetString("LinuxPrinting_ViewerFailed", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to The PDF file could not be opened, because xdg-utils (which opens files in their default applications) is not installed..
+        /// </summary>
+        public static string LinuxPrinting_XdgUtilsMissing {
+            get {
+                return ResourceManager.GetString("LinuxPrinting_XdgUtilsMissing", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to _About Purple Pen.
         /// </summary>
         public static string MainFrame_aboutMenu_Text {

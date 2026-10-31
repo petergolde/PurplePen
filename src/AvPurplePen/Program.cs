@@ -83,6 +83,9 @@ namespace AvPurplePen
             services.AddSingleton<IDocumentPrinting, AvPurplePen.Platform.Windows.WindowsDocumentPrinting>();
 #elif MACOS
             services.AddSingleton<IDocumentPrinting, AvPurplePen.Platform.Mac.MacDocumentPrinting>();
+#else
+            if (OperatingSystem.IsLinux())
+                services.AddSingleton<IDocumentPrinting, AvPurplePen.Platform.Linux.LinuxDocumentPrinting>();
 #endif
 
             // Transient (not singleton): PdfLoadingUI holds per-conversion state

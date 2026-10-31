@@ -159,6 +159,17 @@
   <ItemGroup Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' != 'macos'">
     <Compile Remove="Platform\Mac\**" />
   </ItemGroup>
+  <!-- Platform\Linux holds the Linux implementations of platform services (e.g. printing through
+       the XDG desktop portal). Compile it only for the plain cross-platform target framework (the
+       Linux build); the code checks OperatingSystem.IsLinux() at run time before it is used. -->
+  <ItemGroup Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' != ''">
+    <Compile Remove="Platform\Linux\**" />
+  </ItemGroup>
+  <ItemGroup Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' == ''">
+    <!-- Already a transitive dependency of Avalonia.Desktop; referenced explicitly because
+         Platform\Linux uses it directly. -->
+    <PackageReference Include="Tmds.DBus.Protocol" />
+  </ItemGroup>
   <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
     <DefineConstants>$(DefineConstants);PORTING</DefineConstants>
   </PropertyGroup>
