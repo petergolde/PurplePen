@@ -27,9 +27,9 @@ namespace AvUtil
         // The fraction of the viewport that a "large" scroll (page/track click) moves. 
         private const double LargeScrollFraction = 0.8;
 
-        // How far (in logical pixels) a touchpad two-finger pan moves the drawing per wheel notch of delta,
-        // horizontally and vertically. Touchpad pans report wheel deltas that are not tied to physical finger
-        // distance, so these are tuned by feel.
+        // How far (in logical pixels) a Windows touchpad two-finger pan moves the drawing per wheel notch of delta,
+        // horizontally and vertically. Windows touchpad pans report wheel deltas that are not tied to physical finger
+        // distance, so these are tuned by feel. (On macOS, the precise pixel deltas of the scroll event are used.)
         private const double TouchpadPanPixelsPerNotch = 40;
 
         // The scroll bars shown on the right (vertical) and bottom (horizontal) edges.
@@ -590,18 +590,23 @@ namespace AvUtil
             if (!rect.Contains(pt))
                 return;
 
-            // On Windows, touchpad gestures arrive as wheel events: a two-finger pan as plain wheel deltas, and a pinch
-            // as Ctrl+wheel. WheelInputSource tells them apart from a real mouse wheel, which keeps its usual behavior.
-            // (On other platforms the source is Unknown, so this is skipped.)
-            if (WheelInputSource.Current.Device == WheelSourceDevice.Touchpad) {
-                if ((e.KeyModifiers & KeyModifiers.Control) != 0) {
-                    // Pinch. Like the macOS pinch gesture, this only zooms when the wheel is configured to zoom.
+            // Touchpad two-finger pans arrive as wheel events. On Windows, so does a pinch, as Ctrl+wheel; on macOS
+            // a pinch is a separate magnify gesture (OnTouchPadMagnify), and Cmd (or Ctrl) with a two-finger scroll
+            // zooms instead, which also lets Magic Mouse users zoom. WheelInputSource tells touchpad input apart from
+            // a real mouse wheel, which keeps its usual behavior. (On other platforms the source is Unknown, so this
+            // is skipped.)
+            WheelSourceInfo source = WheelInputSource.Current;
+            if (source.Device == WheelSourceDevice.Touchpad) {
+                KeyModifiers zoomModifiers = OperatingSystem.IsMacOS() ? (KeyModifiers.Meta | KeyModifiers.Control) : KeyModifiers.Control;
+                if ((e.KeyModifiers & zoomModifiers) != 0) {
+                    // Like the pinch gesture, this only zooms when the wheel is configured to zoom.
                     if (MouseWheelAction != WheelAction.Zoom)
                         return;
                     ZoomWithWheel(pt, e.Delta.Y);
                 }
                 else {
-                    PanWithTouchpad(e.Delta);
+                    // Use the exact pixel distance when it is known (macOS); otherwise scale the wheel notches.
+                    PanWithTouchpad(source.PreciseDelta ?? e.Delta * TouchpadPanPixelsPerNotch);
                 }
 
                 e.Handled = true;
@@ -624,23 +629,24 @@ namespace AvUtil
         // direction moves the drawing toward the right/bottom (i.e., brings the left/top part into view), the
         // same direction as a mouse wheel rotated up. The system's touchpad scrolling direction setting is
         // already applied to the deltas.
-        //   delta: the wheel delta, in wheel notches (1 is a single notch).
-        private void PanWithTouchpad(Vector delta)
+        //   pixelDelta: the distance to move the drawing, in logical pixels.
+        private void PanWithTouchpad(Vector pixelDelta)
         {
-            if (drawing == null || (delta.X == 0 && delta.Y == 0))
+            if (drawing == null || (pixelDelta.X == 0 && pixelDelta.Y == 0))
                 return;
 
-            // Convert the deltas to logical pixels, then to world units. World Y increases upward, so moving the
-            // drawing down increases the center's world Y, while moving it right decreases the center's world X.
+            // Convert the deltas to world units. World Y increases upward, so moving the drawing down increases
+            // the center's world Y, while moving it right decreases the center's world X.
             double scale = ScaleFactor;
-            double newCenterX = centerPoint.X - delta.X * TouchpadPanPixelsPerNotch / scale;
-            double newCenterY = centerPoint.Y + delta.Y * TouchpadPanPixelsPerNotch / scale;
+            double newCenterX = centerPoint.X - pixelDelta.X / scale;
+            double newCenterY = centerPoint.Y + pixelDelta.Y / scale;
             CenterPoint = new Point(newCenterX, newCenterY);
         }
 
         // Handle a trackpad pinch (magnify) gesture, zooming around the location of the gesture. On macOS
         // this is a separate event from the mouse wheel; two-finger scrolling and real mouse wheels come
-        // through OnPointerWheelChanged instead. Other platforms do not currently raise this event.
+        // through OnPointerWheelChanged instead (which tells them apart with WheelInputSource). Other platforms
+        // do not currently raise this event.
         //   sender: the sender of the event (this control).
         //   e: the gesture arguments; Delta holds the incremental relative magnification.
         private void OnTouchPadMagnify(object? sender, PointerDeltaEventArgs e)

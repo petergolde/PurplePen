@@ -1,9 +1,21 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
   <PropertyGroup>
-    <TargetFramework>net10.0</TargetFramework>
+    <!-- On macOS, also build for net10.0-macos so code inside #if MACOS can call AppKit
+         through the Microsoft.macOS bindings (AvPurplePen uses that build). The plain net10.0
+         build stays, for the projects that reference AvUtil from net10.0. Pass
+         -p:TargetMacFramework=false to build only net10.0. Needs the .NET "macos" workload
+         and the matching Xcode; see Installer/MacInstaller/README.md. -->
+    <TargetMacFramework Condition="'$(TargetMacFramework)' == ''">$([MSBuild]::IsOSPlatform('OSX'))</TargetMacFramework>
+    <TargetFrameworks Condition="'$(TargetMacFramework)' == 'true'">net10.0;net10.0-macos</TargetFrameworks>
+    <TargetFramework Condition="'$(TargetMacFramework)' != 'true'">net10.0</TargetFramework>
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$([MSBuild]::GetTargetPlatformIdentifier($(TargetFramework)))' == 'macos'">
+    <!-- Same minimum as AvPurplePen. -->
+    <SupportedOSPlatformVersion>13.0</SupportedOSPlatformVersion>
   </PropertyGroup>
 
   <ItemGroup>

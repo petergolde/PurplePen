@@ -1,29 +1,38 @@
+using Avalonia;
 using Avalonia.Controls;
 using System;
 using System.Collections.Generic;
 using System.Runtime.InteropServices;
 using System.Runtime.CompilerServices;
+#if MACOS
+using AppKit;
+#endif
 
 namespace AvUtil
 {
     // The device that a mouse wheel message most likely came from.
     public enum WheelSourceDevice
     {
-        Unknown,        // No information is available (non-Windows platforms, or no raw input was received).
+        Unknown,        // No information is available (unsupported platform, or no raw input / current event was found).
         Mouse,          // A physical mouse wheel.
-        Touchpad,       // A touchpad gesture (two-finger pan, or pinch reported as Ctrl+wheel), or other synthesized wheel input.
+        Touchpad,       // A touchpad gesture: on Windows a two-finger pan, or pinch reported as Ctrl+wheel, or other synthesized
+                        // wheel input; on macOS a two-finger scroll (trackpad or Magic Mouse), including its momentum.
     }
 
     // Information about the source of the wheel message that is currently being processed.
-    //   Device: the source device, determined from the raw-input wheel event.
-    //   HasRawWheel: true if a raw-input wheel event arrived just before this wheel message.
-    //   RawDevice: the hDevice of that raw-input wheel event (IntPtr.Zero for synthesized input).
-    public readonly record struct WheelSourceInfo(WheelSourceDevice Device, bool HasRawWheel, IntPtr RawDevice)
+    //   Device: the source device, determined from the raw-input wheel event (Windows) or the current AppKit event (macOS).
+    //   HasRawWheel: (Windows) true if a raw-input wheel event arrived just before this wheel message.
+    //   RawDevice: (Windows) the hDevice of that raw-input wheel event (IntPtr.Zero for synthesized input).
+    //   PreciseDelta: (macOS touchpad only) the scroll distance in logical pixels, with the system's scrolling direction
+    //                 setting applied; positive values move the content toward the right/bottom, like a wheel rotated
+    //                 up. Null if not available.
+    public readonly record struct WheelSourceInfo(WheelSourceDevice Device, bool HasRawWheel, IntPtr RawDevice, Vector? PreciseDelta = null)
     {
         // A compact description for diagnostic logging.
         public override string ToString()
         {
-            return $"{Device} (rawWheel={(HasRawWheel ? $"0x{RawDevice:X}" : "none")})";
+            string precise = PreciseDelta.HasValue ? $" preciseDelta={PreciseDelta.Value}" : "";
+            return $"{Device} (rawWheel={(HasRawWheel ? $"0x{RawDevice:X}" : "none")}{precise})";
         }
     }
 
@@ -43,7 +52,14 @@ namespace AvUtil
     // This is limited to hover time so the application is not woken by every mouse move made in other applications.
     // Wheel messages that still have no raw event are reported as Unknown.
     //
-    // All methods are no-ops on non-Windows platforms. All state is only accessed on the UI thread.
+    // On macOS (the net10.0-macos build), no hook is needed: Avalonia.Native raises PointerWheelChanged synchronously
+    // from the native scrollWheel: handler, so NSApplication.CurrentEvent is the scroll event being handled, and Current
+    // examines it directly. Avalonia does not pass on which device produced the scroll (or the phases), so this is the
+    // only place to find out. A trackpad two-finger scroll is a gesture: it has precise (pixel) deltas and a phase or
+    // momentum phase on every event. A mouse wheel has neither phase, even with a driver that sends smooth deltas.
+    // A Magic Mouse cannot be told apart from a trackpad and is reported as Touchpad.
+    //
+    // All other methods are no-ops on non-Windows platforms. All state is only accessed on the UI thread.
     public static class WheelInputSource
     {
         private const uint WM_INPUT = 0x00FF;
@@ -74,8 +90,19 @@ namespace AvUtil
         private static IntPtr pendingRawWheelDevice = IntPtr.Zero;
         private static long pendingRawWheelTime = 0;
 
-        // Information about the source of the wheel message currently (or most recently) processed.
-        public static WheelSourceInfo Current { get; private set; }
+        // Information about the source of the wheel message currently (or, on Windows, most recently) processed.
+        public static WheelSourceInfo Current {
+            get {
+#if MACOS
+                return DetermineMacWheelSource();
+#else
+                return current;
+#endif
+            }
+        }
+
+        // The source of the wheel message most recently processed by the Windows hook.
+        private static WheelSourceInfo current;
 
         // Start tracking wheel message sources for the given top level. Calls are reference counted, so each
         // call must be balanced by a call to Uninstall.
@@ -173,7 +200,7 @@ namespace AvUtil
                 RecordRawInput(lParam);
             }
             else if (msg == WM_MOUSEWHEEL || msg == WM_MOUSEHWHEEL) {
-                Current = DetermineWheelSource();
+                current = DetermineWheelSource();
             }
 
             return IntPtr.Zero;
@@ -227,6 +254,25 @@ namespace AvUtil
 
             return new WheelSourceInfo(device, hasRawWheel, rawDevice);
         }
+
+#if MACOS
+        // Determine the source of the scroll event being processed on macOS, from the current AppKit event.
+        private static WheelSourceInfo DetermineMacWheelSource()
+        {
+            NSEvent? currentEvent = NSApplication.SharedApplication.CurrentEvent;
+            if (currentEvent == null || currentEvent.Type != NSEventType.ScrollWheel)
+                return new WheelSourceInfo(WheelSourceDevice.Unknown, false, IntPtr.Zero);
+
+            bool isGesture = currentEvent.HasPreciseScrollingDeltas &&
+                             (currentEvent.Phase != NSEventPhase.None || currentEvent.MomentumPhase != NSEventPhase.None);
+            if (!isGesture)
+                return new WheelSourceInfo(WheelSourceDevice.Mouse, false, IntPtr.Zero);
+
+            // Precise scrolling deltas are in points, which are the same as Avalonia logical pixels.
+            Vector preciseDelta = new Vector((double)currentEvent.ScrollingDeltaX, (double)currentEvent.ScrollingDeltaY);
+            return new WheelSourceInfo(WheelSourceDevice.Touchpad, false, IntPtr.Zero, preciseDelta);
+        }
+#endif
 
         [StructLayout(LayoutKind.Sequential)]
         private struct RAWINPUTDEVICE
