@@ -27,6 +27,11 @@ namespace AvUtil
         // The fraction of the viewport that a "large" scroll (page/track click) moves. 
         private const double LargeScrollFraction = 0.8;
 
+        // How far (in logical pixels) a touchpad two-finger pan moves the drawing per wheel notch of delta,
+        // horizontally and vertically. Touchpad pans report wheel deltas that are not tied to physical finger
+        // distance, so these are tuned by feel.
+        private const double TouchpadPanPixelsPerNotch = 40;
+
         // The scroll bars shown on the right (vertical) and bottom (horizontal) edges.
         // They are added to / removed from the visual tree as their effective visibility changes.
         private readonly ScrollBar verticalScrollBar;
@@ -473,6 +478,11 @@ namespace AvUtil
         {
             base.OnPointerEntered(e);
 
+            // While the pointer is over us, have wheel sources tracked even when our window is in the background
+            // (Windows scrolls the window under the cursor, even if it is inactive).
+            if (wheelSourceTopLevel != null)
+                WheelInputSource.SetBackgroundTarget(wheelSourceTopLevel);
+
             if (IsFromScrollBar(e))
                 return;
 
@@ -485,6 +495,10 @@ namespace AvUtil
         protected override void OnPointerExited(PointerEventArgs e)
         {
             base.OnPointerExited(e);
+
+            // Leaving this control itself (not just one of its scroll bars) ends background wheel source tracking.
+            if (e.Source == this && wheelSourceTopLevel != null)
+                WheelInputSource.ClearBackgroundTarget(wheelSourceTopLevel);
 
             if (IsFromScrollBar(e))
                 return;
@@ -564,11 +578,6 @@ namespace AvUtil
         {
             base.OnPointerWheelChanged(e);
 
-            //We may want to handle trackpad two-finger pan on Windows by checking the WheelInputSource. For now we have that 
-            //information but we aren't acting on it. We would need to calibrate the amount of scrolling, for one, and on Mac we
-            //need to do it in a different way. Also we need to double-check whether the system settings of scrolling direction 
-            //should be respected, or are already handled (for both X and Y).
-
             //Debug.WriteLine($"PointerWheel: X:{e.Delta.X} Y:{e.Delta.Y} Modifiers:{e.KeyModifiers} Source:{WheelInputSource.Current}");
 
             // If the mouse wheel is configured to do nothing, ignore it.
@@ -581,6 +590,24 @@ namespace AvUtil
             if (!rect.Contains(pt))
                 return;
 
+            // On Windows, touchpad gestures arrive as wheel events: a two-finger pan as plain wheel deltas, and a pinch
+            // as Ctrl+wheel. WheelInputSource tells them apart from a real mouse wheel, which keeps its usual behavior.
+            // (On other platforms the source is Unknown, so this is skipped.)
+            if (WheelInputSource.Current.Device == WheelSourceDevice.Touchpad) {
+                if ((e.KeyModifiers & KeyModifiers.Control) != 0) {
+                    // Pinch. Like the macOS pinch gesture, this only zooms when the wheel is configured to zoom.
+                    if (MouseWheelAction != WheelAction.Zoom)
+                        return;
+                    ZoomWithWheel(pt, e.Delta.Y);
+                }
+                else {
+                    PanWithTouchpad(e.Delta);
+                }
+
+                e.Handled = true;
+                return;
+            }
+
             // Retrieve the delta of the wheel. 1 is a single wheel notch (not 120 like WinForms)
             double delta = e.Delta.Y;
 
@@ -591,6 +618,24 @@ namespace AvUtil
 
             // Mark the event as handled
             e.Handled = true;
+        }
+
+        // Pan the view for a touchpad two-finger pan, reported as wheel deltas. A positive delta in either
+        // direction moves the drawing toward the right/bottom (i.e., brings the left/top part into view), the
+        // same direction as a mouse wheel rotated up. The system's touchpad scrolling direction setting is
+        // already applied to the deltas.
+        //   delta: the wheel delta, in wheel notches (1 is a single notch).
+        private void PanWithTouchpad(Vector delta)
+        {
+            if (drawing == null || (delta.X == 0 && delta.Y == 0))
+                return;
+
+            // Convert the deltas to logical pixels, then to world units. World Y increases upward, so moving the
+            // drawing down increases the center's world Y, while moving it right decreases the center's world X.
+            double scale = ScaleFactor;
+            double newCenterX = centerPoint.X - delta.X * TouchpadPanPixelsPerNotch / scale;
+            double newCenterY = centerPoint.Y + delta.Y * TouchpadPanPixelsPerNotch / scale;
+            CenterPoint = new Point(newCenterX, newCenterY);
         }
 
         // Handle a trackpad pinch (magnify) gesture, zooming around the location of the gesture. On macOS

@@ -36,8 +36,12 @@ namespace AvUtil
     // The source is determined from raw mouse input: every wheel message is preceded by a WM_INPUT raw wheel event.
     // For a physical mouse wheel, that event carries the mouse's device handle; precision touchpad gestures are
     // synthesized by Windows and carry a null device handle. (GetCurrentInputMessageSource is no help: it reports
-    // IMDT_MOUSE / IMO_HARDWARE for both.) Raw input goes to the window with keyboard focus, so wheel messages
-    // sent to an unfocused window have no raw event and are reported as Unknown.
+    // IMDT_MOUSE / IMO_HARDWARE for both.) Normally raw input goes to the window with keyboard focus, so wheel
+    // messages sent to an unfocused window (Windows scrolls the window under the cursor) would have no raw event.
+    // To handle that, while the pointer is over a control that cares, SetBackgroundTarget redirects raw input to
+    // that control's window with RIDEV_INPUTSINK, which delivers it even when the application is in the background.
+    // This is limited to hover time so the application is not woken by every mouse move made in other applications.
+    // Wheel messages that still have no raw event are reported as Unknown.
     //
     // All methods are no-ops on non-Windows platforms. All state is only accessed on the UI thread.
     public static class WheelInputSource
@@ -50,6 +54,7 @@ namespace AvUtil
         private const uint RIM_TYPEMOUSE = 0;
         private const ushort RI_MOUSE_WHEEL = 0x0400;
         private const ushort RI_MOUSE_HWHEEL = 0x0800;
+        private const uint RIDEV_INPUTSINK = 0x00000100;
 
         // How recently (in ms) a raw wheel event must have arrived to be matched with a wheel message.
         private const long RawWheelMatchWindowMs = 50;
@@ -57,7 +62,12 @@ namespace AvUtil
         // Number of controls on each top level that have requested the hook, so it is installed only once.
         private static readonly ConditionalWeakTable<TopLevel, StrongBox<int>> hookCounts = new ConditionalWeakTable<TopLevel, StrongBox<int>>();
 
+        // Whether raw mouse input is registered, and the window it is sent to (IntPtr.Zero to follow keyboard focus).
         private static bool rawInputRegistered = false;
+        private static IntPtr rawInputTarget = IntPtr.Zero;
+
+        // The top level that raw input is currently redirected to by SetBackgroundTarget, or null if none.
+        private static TopLevel? backgroundTarget;
 
         // The most recent raw-input wheel event that has not yet been matched with a wheel message.
         private static bool pendingRawWheel = false;
@@ -78,7 +88,8 @@ namespace AvUtil
             StrongBox<int> count = hookCounts.GetOrCreateValue(topLevel);
             if (count.Value++ == 0) {
                 Win32Properties.AddWndProcHookCallback(topLevel, WndProcHook);
-                RegisterRawMouseInput();
+                if (!rawInputRegistered)
+                    RegisterRawMouseInput(IntPtr.Zero);
             }
         }
 
@@ -91,22 +102,67 @@ namespace AvUtil
 
             if (hookCounts.TryGetValue(topLevel, out StrongBox<int>? count) && count.Value > 0) {
                 if (--count.Value == 0) {
+                    ClearBackgroundTarget(topLevel);
                     Win32Properties.RemoveWndProcHookCallback(topLevel, WndProcHook);
                 }
             }
         }
 
-        // Register for raw mouse input, delivered to whichever window has keyboard focus. Registration is
-        // process-wide, so it only needs to happen once. Legacy mouse messages are still delivered.
-        private static void RegisterRawMouseInput()
+        // Redirect raw input to the given top level's window, so wheel sources are known even when the
+        // application is in the background. Call when the pointer enters a control that uses Current, and
+        // balance with ClearBackgroundTarget when it leaves.
+        //   topLevel: a top level passed to Install.
+        public static void SetBackgroundTarget(TopLevel topLevel)
         {
-            if (rawInputRegistered)
+            if (!OperatingSystem.IsWindows())
                 return;
 
+            // Raw input must only go to a window that has the hook, or it would be lost.
+            if (!hookCounts.TryGetValue(topLevel, out StrongBox<int>? count) || count.Value == 0)
+                return;
+
+            IntPtr hwnd = topLevel.TryGetPlatformHandle()?.Handle ?? IntPtr.Zero;
+            if (hwnd == IntPtr.Zero)
+                return;
+
+            if (RegisterRawMouseInput(hwnd))
+                backgroundTarget = topLevel;
+        }
+
+        // Stop redirecting raw input to the given top level (balances SetBackgroundTarget), so it follows keyboard
+        // focus again. Does nothing if raw input is not currently redirected to this top level.
+        //   topLevel: the top level passed to SetBackgroundTarget.
+        public static void ClearBackgroundTarget(TopLevel topLevel)
+        {
+            if (!OperatingSystem.IsWindows())
+                return;
+
+            if (backgroundTarget == topLevel) {
+                backgroundTarget = null;
+                RegisterRawMouseInput(IntPtr.Zero);
+            }
+        }
+
+        // Register for raw mouse input. Registration is process-wide, and registering again replaces the previous
+        // registration. Legacy mouse messages are still delivered.
+        //   hwndTarget: the window to send raw input to, even when the application is in the background; or
+        //               IntPtr.Zero to send it to whichever window has keyboard focus.
+        // Returns true if the registration succeeded (or was already in place).
+        private static bool RegisterRawMouseInput(IntPtr hwndTarget)
+        {
+            if (rawInputRegistered && rawInputTarget == hwndTarget)
+                return true;
+
             RAWINPUTDEVICE[] devices = new RAWINPUTDEVICE[] {
-                new RAWINPUTDEVICE { usUsagePage = 0x01, usUsage = 0x02, dwFlags = 0, hwndTarget = IntPtr.Zero }
+                new RAWINPUTDEVICE { usUsagePage = 0x01, usUsage = 0x02,
+                                     dwFlags = (hwndTarget != IntPtr.Zero) ? RIDEV_INPUTSINK : 0, hwndTarget = hwndTarget }
             };
-            rawInputRegistered = RegisterRawInputDevices(devices, (uint)devices.Length, (uint)Marshal.SizeOf<RAWINPUTDEVICE>());
+            if (!RegisterRawInputDevices(devices, (uint)devices.Length, (uint)Marshal.SizeOf<RAWINPUTDEVICE>()))
+                return false;
+
+            rawInputRegistered = true;
+            rawInputTarget = hwndTarget;
+            return true;
         }
 
         // The WndProc hook. Captures the source of wheel messages before Avalonia processes them; never handles
