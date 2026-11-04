@@ -312,6 +312,7 @@ namespace PurplePen
             public string FullPath;
             public IGraphicsBitmap Bitmap;
             public GraphicsBitmapFormat Format;
+            public byte[] Data;                 // the encoded image, when it can be written unchanged.
         }
 
         // Get all the bitmaps to write, in the dictionary as fully-qualified-path, mapped to bitmap.
@@ -336,8 +337,20 @@ namespace PurplePen
                         path = Path.ChangeExtension(path, ".gif");
                     }
 
+                    // Compressing the image again would lose a little of it and gain nothing,
+                    // so the file it came from is written as it stands whenever the format asked
+                    // for is the one it is already in.
+                    byte[] data = (imageFormat == special.imageBitmap.GetOriginalFormat()) ? special.imageData : null;
+
+                    // A JPEG, though, can be put together in ways the program reading the map
+                    // need not handle: four colour channels rather than three, a progressive
+                    // arrangement, or an orientation that PurplePen does not itself apply when
+                    // it draws the image. Encoding such a one afresh is what settles it.
+                    if (data != null && imageFormat == GraphicsBitmapFormat.JPEG && !JpegDataProber.IsPlain(data))
+                        data = null;
+
                     if (!bitmapsToWrite.ContainsKey(name))
-                        bitmapsToWrite.Add(name, new BitmapToWrite() { Name = name, FullPath = path, Bitmap = special.imageBitmap, Format = imageFormat });
+                        bitmapsToWrite.Add(name, new BitmapToWrite() { Name = name, FullPath = path, Bitmap = special.imageBitmap, Format = imageFormat, Data = data });
                 }
             }
 
@@ -352,7 +365,10 @@ namespace PurplePen
 
                 foreach (BitmapToWrite bitmapToWrite in BitmapsToWrite()) {
                     using (Stream stream = new FileStream(bitmapToWrite.FullPath, FileMode.Create, FileAccess.Write)) {
-                        bitmapToWrite.Bitmap.WriteToStream(bitmapToWrite.Format, stream, 100);
+                        if (bitmapToWrite.Data != null)
+                            stream.Write(bitmapToWrite.Data, 0, bitmapToWrite.Data.Length);
+                        else
+                            bitmapToWrite.Bitmap.WriteToStream(bitmapToWrite.Format, stream, 100);
                     }
 
                     for (int i = 0; i < templates.Count; ++i) {

@@ -1855,6 +1855,32 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
             File.Delete(dumpNewFileName);
         }
 
+        // Compare a file the export wrote against the file it was expected to write.
+        // A baseline with the same extension is that file, and is compared as it stands;
+        // one stored as a PNG is a picture of it, and is compared pixel by pixel.
+        //
+        // Parameters:
+        //   written - the file the export produced.
+        //   baseline - the file it should match.
+        static void CompareExportedBitmap(string written, string baseline)
+        {
+            if (!string.Equals(Path.GetExtension(written), Path.GetExtension(baseline), StringComparison.OrdinalIgnoreCase)) {
+                BitmapTestUtil.CompareBitmapBaseline(written, baseline);
+                return;
+            }
+
+            byte[] expected = File.ReadAllBytes(baseline);
+            byte[] actual = File.ReadAllBytes(written);
+            string message = string.Format("'{0}' is not the file '{1}'", Path.GetFileName(written), Path.GetFileName(baseline));
+
+            Assert.AreEqual(expected.Length, actual.Length, message);
+
+            for (int i = 0; i < expected.Length; ++i) {
+                if (expected[i] != actual[i])
+                    Assert.Fail(string.Format("{0}: first difference at byte {1}", message, i));
+            }
+        }
+
         // Create some courses, write them, and check against a dump.
         async Task CreateOcadFiles(string file, OcadCreationSettings settings, CourseAppearance appearance, string[] expectedFiles, string[] expectedDumps, string[] bitmapFileNames = null, string[] bitmapFileBaselines = null)
         {
@@ -1870,7 +1896,7 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
             }
 
             success = controller.CreateOcadFiles(settings);
-            Assert.IsTrue(success);
+            Assert.IsTrue(success, ui.output.ToString());
 
             for (int i = 0; i < expectedFiles.Length; ++i) {
                 CheckDump(expectedFiles[i], expectedDumps[i]);
@@ -1878,7 +1904,7 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
 
             if (bitmapFileNames != null) {
                 for (int i = 0; i < bitmapFileNames.Length; ++i) {
-                    BitmapTestUtil.CompareBitmapBaseline(bitmapFileNames[i], bitmapFileBaselines[i]);
+                    CompareExportedBitmap(bitmapFileNames[i], bitmapFileBaselines[i]);
                 }
             }
 
@@ -2171,7 +2197,7 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create12\\Course 2.ocd") },
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create12\\Course 2_expected.txt") },
                 new string[] { TestUtil.GetTestFile("controller\\ocad_create12\\mrsneeze.jpg"), TestUtil.GetTestFile("controller\\ocad_create12\\flower.gif") },
-                new string[] { TestUtil.GetTestFile("controller\\ocad_create12\\mrsneeze_expected.png"), TestUtil.GetTestFile("controller\\ocad_create12\\flower_expected.png") });
+                new string[] { TestUtil.GetTestFile("controller\\ocad_create12\\mrsneeze_expected.jpg"), TestUtil.GetTestFile("controller\\ocad_create12\\flower_expected.png") });
         }
 
         [TestMethod]

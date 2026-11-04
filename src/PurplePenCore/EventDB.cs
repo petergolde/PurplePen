@@ -1941,6 +1941,7 @@ namespace PurplePen
         public float fontHeight = -1;       // for text objects, the font height (digit height, not em height), or -1 for auto (old style).
         public int numColumns = 1;          // for description objects, the number of columns.
         public IGraphicsBitmap imageBitmap; // for image objects, the bitmap.
+        public byte[] imageData;            // for image objects, the encoded file the bitmap was decoded from, or null.
 
         public Special()
         {
@@ -2172,6 +2173,7 @@ namespace PurplePen
             allCourses = true;
             courses = null;
             imageBitmap = null;
+            imageData = null;
             List<PointF> locationList = new List<PointF>();
 
             if (kind == SpecialKind.Text || kind == SpecialKind.Line || kind == SpecialKind.Rectangle || kind == SpecialKind.Ellipse)
@@ -2187,9 +2189,11 @@ namespace PurplePen
                 case "image-data":
                     // We ignore the format, since Image.FromStream auto-detects.
                     MemoryStream stm = xmlinput.GetContentBase64();
+                    byte[] encoded = stm.ToArray();
                     try {
                         stm.Seek(0, SeekOrigin.Begin);
                         imageBitmap = Services.BitmapLoader.ReadBitmapFromStream(stm);
+                        imageData = encoded;
                     }
                     catch (ArgumentException) {
                         xmlinput.BadXml("Image data could not be loaded");
@@ -2319,10 +2323,17 @@ namespace PurplePen
 
                 xmloutput.WriteStartElement("image-data");
                 xmloutput.WriteAttributeString("format", Util.ImageFormatText(imageFormat));
-                MemoryStream stm = new MemoryStream();
-                imageBitmap.WriteToStream(imageFormat, stm, 100);
-                stm.Flush();
-                byte[] bytes = stm.ToArray();
+
+                byte[] bytes;
+                if (imageData != null && imageFormat == imageBitmap.GetOriginalFormat()) {
+                    bytes = imageData;
+                }
+                else {
+                    MemoryStream stm = new MemoryStream();
+                    imageBitmap.WriteToStream(imageFormat, stm, 100);
+                    stm.Flush();
+                    bytes = stm.ToArray();
+                }
                 xmloutput.WriteBase64(bytes, 0, bytes.Length);
                 xmloutput.WriteEndElement();
             }
