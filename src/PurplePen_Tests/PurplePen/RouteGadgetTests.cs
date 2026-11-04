@@ -77,7 +77,6 @@ namespace PurplePen.Tests
         {
             MapDisplay mapDisplay = new MapDisplay();
             string filename = TestUtil.GetTestFile(@"routegadget\exportjpeg1.jpg");
-            string filenameBaseline = TestUtil.GetTestFile(@"routegadget\exportjpeg1_baseline.png");
 
             mapDisplay.SetMapFile(MapType.OCAD, TestUtil.GetTestFile(@"routegadget\SampleEvent.ocd"));
             mapDisplay.AntiAlias = false;
@@ -89,11 +88,12 @@ namespace PurplePen.Tests
             Assert.IsFalse(mapDisplay.AntiAlias);
             Assert.AreEqual(0.3F, mapDisplay.MapIntensity);
 
+            // TestExportGif renders the same area at the same resolution into a
+            // lossless file, so what is left for this one to say is about the JPEG.
             Bitmap bmLoaded = (Bitmap) Image.FromFile(filename);
+            Assert.AreEqual(ImageFormat.Jpeg, bmLoaded.RawFormat);
             Assert.AreEqual(200F, bmLoaded.VerticalResolution);
             Assert.AreEqual(200F, bmLoaded.HorizontalResolution);
-
-            BitmapTestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
             bmLoaded.Dispose();
             File.Delete(filename);
         }
@@ -103,7 +103,6 @@ namespace PurplePen.Tests
         {
             MapDisplay mapDisplay = new MapDisplay();
             string filename = TestUtil.GetTestFile(@"routegadget\exportjpeg2.jpg");
-            string filenameBaseline = TestUtil.GetTestFile(@"routegadget\exportjpeg2_baseline.png");
 
             mapDisplay.SetMapFile(MapType.OCAD, TestUtil.GetTestFile(@"routegadget\SampleEvent.ocd"));
             mapDisplay.AntiAlias = false;
@@ -116,12 +115,23 @@ namespace PurplePen.Tests
             Assert.AreEqual(0.3F, mapDisplay.MapIntensity);
 
             Bitmap bmLoaded = (Bitmap)Image.FromFile(filename);
+            Assert.AreEqual(ImageFormat.Jpeg, bmLoaded.RawFormat);
             Assert.AreEqual(140F, bmLoaded.VerticalResolution);
             Assert.AreEqual(140F, bmLoaded.HorizontalResolution);
-
-            BitmapTestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
             bmLoaded.Dispose();
             File.Delete(filename);
+
+            // The same rendering written losslessly, so that the pixels can be
+            // compared as they are rather than through a lossy encoding of them.
+            string pngFilename = TestUtil.GetTestFile(@"routegadget\exportautodpi1.png");
+            string pngBaseline = TestUtil.GetTestFile(@"routegadget\exportautodpi1_baseline.png");
+
+            new ExportBitmap(mapDisplay.Clone()).CreateBitmapAutoDpi(pngFilename, RectangleF.FromLTRB(0F, 70F, 300F, 200F), GraphicsBitmapFormat.PNG, 1700, 100, 200);
+
+            Bitmap bmPng = (Bitmap)Image.FromFile(pngFilename);
+            BitmapTestUtil.CompareBitmapBaseline(bmPng, pngBaseline);
+            bmPng.Dispose();
+            File.Delete(pngFilename);
         }
 
         [TestMethod]
@@ -129,7 +139,6 @@ namespace PurplePen.Tests
         {
             MapDisplay mapDisplay = new MapDisplay();
             string filename = TestUtil.GetTestFile(@"routegadget\exportjpeg3.jpg");
-            string filenameBaseline = TestUtil.GetTestFile(@"routegadget\exportjpeg3_baseline.png");
 
             mapDisplay.SetMapFile(MapType.OCAD, TestUtil.GetTestFile(@"routegadget\SampleEvent.ocd"));
             mapDisplay.AntiAlias = false;
@@ -142,12 +151,23 @@ namespace PurplePen.Tests
             Assert.AreEqual(0.3F, mapDisplay.MapIntensity);
 
             Bitmap bmLoaded = (Bitmap)Image.FromFile(filename);
+            Assert.AreEqual(ImageFormat.Jpeg, bmLoaded.RawFormat);
             Assert.AreEqual(200F, bmLoaded.VerticalResolution);
             Assert.AreEqual(200F, bmLoaded.HorizontalResolution);
-
-            BitmapTestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
             bmLoaded.Dispose();
             File.Delete(filename);
+
+            // The same rendering written losslessly, so that the pixels can be
+            // compared as they are rather than through a lossy encoding of them.
+            string pngFilename = TestUtil.GetTestFile(@"routegadget\exportautodpi2.png");
+            string pngBaseline = TestUtil.GetTestFile(@"routegadget\exportautodpi2_baseline.png");
+
+            new ExportBitmap(mapDisplay.Clone()).CreateBitmapAutoDpi(pngFilename, RectangleF.FromLTRB(0F, 70F, 100F, 100F), GraphicsBitmapFormat.PNG, 1700, 100, 200);
+
+            Bitmap bmPng = (Bitmap)Image.FromFile(pngFilename);
+            BitmapTestUtil.CompareBitmapBaseline(bmPng, pngBaseline);
+            bmPng.Dispose();
+            File.Delete(pngFilename);
         }
 
 
@@ -156,7 +176,6 @@ namespace PurplePen.Tests
         {
             MapDisplay mapDisplay = new MapDisplay();
             string filename = TestUtil.GetTestFile(@"routegadget\exportjpeg4.jpg");
-            string filenameBaseline = TestUtil.GetTestFile(@"routegadget\exportjpeg4_baseline.png");
 
             mapDisplay.SetMapFile(MapType.OCAD, TestUtil.GetTestFile(@"routegadget\SampleEvent.ocd"));
             mapDisplay.AntiAlias = false;
@@ -169,12 +188,23 @@ namespace PurplePen.Tests
             Assert.AreEqual(0.3F, mapDisplay.MapIntensity);
 
             Bitmap bmLoaded = (Bitmap)Image.FromFile(filename);
+            Assert.AreEqual(ImageFormat.Jpeg, bmLoaded.RawFormat);
             Assert.AreEqual(100F, bmLoaded.VerticalResolution, MAX_PIXEL_DIFF);
             Assert.AreEqual(100F, bmLoaded.HorizontalResolution);
-
-            BitmapTestUtil.CompareBitmapBaseline(bmLoaded, filenameBaseline);
             bmLoaded.Dispose();
             File.Delete(filename);
+
+            // The same rendering written losslessly, so that the pixels can be
+            // compared as they are rather than through a lossy encoding of them.
+            string pngFilename = TestUtil.GetTestFile(@"routegadget\exportautodpi3.png");
+            string pngBaseline = TestUtil.GetTestFile(@"routegadget\exportautodpi3_baseline.png");
+
+            new ExportBitmap(mapDisplay.Clone()).CreateBitmapAutoDpi(pngFilename, RectangleF.FromLTRB(0F, 70F, 600F, 600F), GraphicsBitmapFormat.PNG, 1700, 100, 200);
+
+            Bitmap bmPng = (Bitmap)Image.FromFile(pngFilename);
+            BitmapTestUtil.CompareBitmapBaseline(bmPng, pngBaseline);
+            bmPng.Dispose();
+            File.Delete(pngFilename);
         }
 
 
