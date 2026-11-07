@@ -140,6 +140,25 @@ public partial class MapViewer : UserControl
 
         hoverTimer = new DispatcherTimer { Interval = TimeSpan.FromMilliseconds(HoverDelayMs) };
         hoverTimer.Tick += HoverTimer_Tick;
+
+        // PanAndZoom handles wheel and trackpad gestures (two-finger pan, pinch zoom) itself and marks them
+        // handled, so listen for handled events too, after PanAndZoom has seen them.
+        panAndZoom.AddHandler(InputElement.PointerWheelChangedEvent, PanAndZoom_WheelOrGesture,
+                              RoutingStrategies.Bubble, handledEventsToo: true);
+        panAndZoom.AddHandler(InputElement.PointerTouchPadGestureMagnifyEvent, PanAndZoom_WheelOrGesture,
+                              RoutingStrategies.Bubble, handledEventsToo: true);
+    }
+
+    // Called after PanAndZoom processes a wheel event or trackpad gesture. If PanAndZoom used it to
+    // move the map (it marks those events handled), close any tooltip and stop the hover timer, just
+    // as when panning with a mouse button held down. The hover timer restarts on the next mouse move.
+    //   sender: the PanAndZoom control.
+    //   e: the wheel or gesture event.
+    private void PanAndZoom_WheelOrGesture(object? sender, PointerEventArgs e)
+    {
+        if (e.Handled) {
+            DisableHoverTimer();
+        }
     }
 
     public IMapDisplay? MapDisplay {
