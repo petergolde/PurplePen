@@ -38,6 +38,7 @@
 
 using System;
 using System.Collections.Generic;
+using System.Collections.Concurrent;
 using System.Diagnostics;
 using System.Threading;
 using System.Linq;
@@ -900,8 +901,9 @@ namespace PurplePen.MapModel
         ImageSymDef layoutSymDef, imageSymDef; // special symdefs for image/layout objects.
 
         // Cache objects for highlighting.
-        readonly Dictionary<Pair<float, Pair<LineJoinMode, LineCapMode>>, object> highlightPens = new Dictionary<Pair<float, Pair<LineJoinMode, LineCapMode>>, object>();
-        readonly Dictionary<float, object> holeHighlightPens = new Dictionary<float,object>();
+        // Keys for highlight pens. Concurrent because several threads can draw at once.
+        readonly ConcurrentDictionary<Pair<float, Pair<LineJoinMode, LineCapMode>>, object> highlightPens = new ConcurrentDictionary<Pair<float, Pair<LineJoinMode, LineCapMode>>, object>();
+        readonly ConcurrentDictionary<float, object> holeHighlightPens = new ConcurrentDictionary<float, object>();
         readonly object highlightBrush = new object();
         readonly object highlightDimBrush = new object();
         readonly object holeHighlightBrush = new object();
@@ -2118,12 +2120,8 @@ namespace PurplePen.MapModel
         {
             var key = new Pair<float, Pair<LineJoinMode, LineCapMode>>(width, new Pair<LineJoinMode, LineCapMode>(lineJoin, lineCap));
 
-            if (!highlightPens.ContainsKey(key)) {
-                lock (highlightPens) {
-                    highlightPens[key] = new object();
-                }
-            }
-            object pen = highlightPens[key];
+            // Thread-safe: if two threads race, GetOrAdd returns the same stored key to both.
+            object pen = highlightPens.GetOrAdd(key, _ => new object());
 
             if (!g.HasPen(pen)) {
                 g.CreatePen(pen, HighlightColor, width, lineCap, lineJoin, GraphicsUtil.MITER_LIMIT);
@@ -2135,12 +2133,8 @@ namespace PurplePen.MapModel
         // Get a cached reference to a pen for highlighting holes of the given width.
         internal object GetHoleHighlightPen(IGraphicsTarget g, float width)
         {
-            if (!holeHighlightPens.ContainsKey(width)) {
-                lock (holeHighlightPens) {
-                    holeHighlightPens[width] = new object();
-                }
-            }
-            object pen = holeHighlightPens[width];
+            // Thread-safe: if two threads race, GetOrAdd returns the same stored key to both.
+            object pen = holeHighlightPens.GetOrAdd(width, _ => new object());
 
             if (!g.HasPen(pen)) {
                 GraphicsUtil.CreateSolidPen(g, pen, HoleHighlightColor, width, LineStyle.Mitered);

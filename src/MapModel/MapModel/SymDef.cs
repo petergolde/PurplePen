@@ -38,6 +38,8 @@ using System.Diagnostics;
 using System.Globalization;
 using System.Text;
 using System.Drawing;
+using System.Threading;
+using System.Collections.Concurrent;
 
 namespace PurplePen.MapModel
 {
@@ -168,6 +170,28 @@ namespace PurplePen.MapModel
 
         // Remove any caches brushes/pens/fonts.
         public abstract void FreeGdiObjects();
+
+        // Get an array of "count" distinct key objects (for pens or brushes), stored in "field", creating it if
+        // the field is null or has the wrong length. Several threads can draw a symdef at once (on different
+        // graphics targets), so this is lock-free: the array is published whole with Interlocked.CompareExchange
+        // and never modified afterward. If two threads race, both get the array that won, so every thread
+        // creates pens for and draws with the same keys.
+        // field: the field that caches the array; must only be written through this method.
+        // count: the number of keys needed.
+        protected static object[] GetKeyArray(ref object[] field, int count)
+        {
+            object[] keys = Volatile.Read(ref field);
+            while (keys == null || keys.Length != count) {
+                object[] newKeys = new object[count];
+                for (int i = 0; i < count; ++i)
+                    newKeys[i] = new object();
+
+                object[] existing = Interlocked.CompareExchange(ref field, newKeys, keys);
+                keys = (existing == keys) ? newKeys : existing;
+            }
+
+            return keys;
+        }
 
         // Do the symbols need to be sorted before drawing them?
         public virtual bool SortSymbolsForDrawing
@@ -1945,13 +1969,16 @@ namespace PurplePen.MapModel
 
         // Hatching information.
         List<HatchInfo> hatchings = new List<HatchInfo>();
-        object[] hatchPens;        // pens for hatching.
+        // Keys for the pens used for hatching, one per hatching. Only written by GetKeyArray (see GetHatchPens),
+        // which keeps it safe for several threads drawing at once.
+        object[] hatchPens;
 
         // Pattern information
         List<PatternInfo> patterns = new List<PatternInfo>();
 
         // Cached brushes for faster pattern drawing.
-        Dictionary<Pair<int, SymColor>, object> patternBrushes = new Dictionary<Pair<int, SymColor>, object>(2); // pattern brushes, indexed by pattern index and color
+        // Keys for pattern brushes, indexed by pattern index and color. Concurrent because several threads can draw at once.
+        readonly ConcurrentDictionary<Pair<int, SymColor>, object> patternBrushes = new ConcurrentDictionary<Pair<int, SymColor>, object>();
 
         public override void SetMap(Map newMap)
         {
@@ -2056,17 +2083,20 @@ namespace PurplePen.MapModel
         void CreatePensAndBrushes(IGraphicsTarget g)
         {
             if (HasHatching) {
-                if (hatchPens == null || hatchPens.Length != hatchings.Count)
-                    hatchPens = new object[hatchings.Count];
+                object[] pens = GetHatchPens();
                 for (int i = 0; i < hatchings.Count; ++i) {
-                    if (hatchPens[i] == null) {
-                        hatchPens[i] = new object();
-                    }
-                    if (!g.HasPen(hatchPens[i])) {
-                        g.CreatePen(hatchPens[i], hatchings[i].hatchColor.GetBrushKey(g), hatchings[i].hatchWidth, LineCapMode.Flat, LineJoinMode.Miter, GraphicsUtil.MITER_LIMIT);
+                    if (!g.HasPen(pens[i])) {
+                        g.CreatePen(pens[i], hatchings[i].hatchColor.GetBrushKey(g), hatchings[i].hatchWidth, LineCapMode.Flat, LineJoinMode.Miter, GraphicsUtil.MITER_LIMIT);
                     }
                 }
             }
+        }
+
+        // Get the keys for the pens used for hatching, one per hatching, creating them if needed. Thread-safe:
+        // the returned array always has hatchings.Count entries and is never modified afterward.
+        private object[] GetHatchPens()
+        {
+            return GetKeyArray(ref hatchPens, hatchings.Count);
         }
 
         public override void FreeGdiObjects()
@@ -2181,9 +2211,11 @@ namespace PurplePen.MapModel
             g.PushClip(path.GetPathKey(g));
 
             try {
+                // CreatePensAndBrushes has already created these pens on this target.
+                object[] pens = GetHatchPens();
                 for (int i = 0; i < hatchings.Count; ++i) {
                     if (hatchings[i].hatchColor == color)
-                        DrawOneHatching(g, path, angle, rotationCenter, renderOpts, hatchings[i], hatchPens[i]);
+                        DrawOneHatching(g, path, angle, rotationCenter, renderOpts, hatchings[i], pens[i]);
                 }
             }
             finally {
@@ -2248,8 +2280,8 @@ namespace PurplePen.MapModel
         {
             Debug.Assert(color != null);
 
-            object brush = patternBrushes[new Pair<int, SymColor>(iPattern, color)];
-            Debug.Assert(brush != null);
+            // CreatePatternBrushes has already created this brush on this target.
+            object brush = GetPatternBrushKey(iPattern, color);
 
             if (angle != 0.0F) {
                 // Set the clipping region to draw only inside the area.
@@ -2379,17 +2411,10 @@ namespace PurplePen.MapModel
                 if (!patternInfo.patternGlyph.HasColor(color))
                     continue;
 
-                Pair<int, SymColor> brushKey = new Pair<int, SymColor>(iPattern, color);
-
                 // Create a new pattern brush.
-                if (!patternBrushes.ContainsKey(brushKey)) {
-                    lock (patternBrushes) {
-                        if (!patternBrushes.ContainsKey(brushKey))
-                            patternBrushes.Add(brushKey, new object());
-                    }
-                }
+                object brushKey = GetPatternBrushKey(iPattern, color);
 
-                if (gt.HasBrush(patternBrushes[brushKey]))
+                if (gt.HasBrush(brushKey))
                     continue;
 
                 // Calculate the brush box in rendering coordinates.
@@ -2442,8 +2467,17 @@ namespace PurplePen.MapModel
                 }
 
                 // Get the brush
-                brushTarget.FinishBrush(patternBrushes[brushKey]);
+                brushTarget.FinishBrush(brushKey);
             }
+        }
+
+        // Get the key for the pattern brush for the given pattern and color, creating the key if needed.
+        // Thread-safe: if two threads race, GetOrAdd returns the same stored key to both.
+        // iPattern: index of the pattern in patterns.
+        // color: the color the brush draws.
+        private object GetPatternBrushKey(int iPattern, SymColor color)
+        {
+            return patternBrushes.GetOrAdd(new Pair<int, SymColor>(iPattern, color), _ => new object());
         }
 
         // Draw the pattern (at the given angle) inside the path.
@@ -2758,14 +2792,17 @@ namespace PurplePen.MapModel
         PointSymDef centerPointSymdef;          // if non-null, the center point symdef to use.
 
         // GDI+ object correspoding to the above attributes.
-        List<object> framingPens = new List<object>();
+        // Keys for the pens used to draw line framing, one per stroke width. Only written by GetKeyArray
+        // (see GetFramingPens), which keeps it safe for several threads drawing at once.
+        object[] framingPens;
         object font = new object();
 
         // How to draw underlining font effect.
         const float fontEffectUnderlineWidth = 0.05F;
         const float fontEffectUnderlineDistance = 0.02F;
 
-        bool fontMetricsCreated;
+        // Font metrics, created on demand by EnsureFontMetrics. Several threads can draw or measure this symdef
+        // at once, so it is only written with Interlocked operations (see EnsureFontMetrics and FreeGdiObjects).
         ITextFaceMetrics textFaceMetrics;
 
 
@@ -2793,53 +2830,63 @@ namespace PurplePen.MapModel
             }
         }
 
-        private void CreateFontMetrics()
+        // Create the font metrics if they haven't been created yet. Thread-safe and lock-free: if two threads
+        // race, the one that loses disposes the metrics it created and uses the winner's. After this returns,
+        // textFaceMetrics is non-null.
+        private void EnsureFontMetrics()
         {
-            Debug.Assert(!fontMetricsCreated);
-            textFaceMetrics = map.TextMetricsProvider.GetTextFaceMetrics(fontName, fontSize, effects);
-            fontMetricsCreated = true;
+            if (Volatile.Read(ref textFaceMetrics) == null) {
+                ITextFaceMetrics newMetrics = map.TextMetricsProvider.GetTextFaceMetrics(fontName, fontSize, effects);
+                if (Interlocked.CompareExchange(ref textFaceMetrics, newMetrics, null) != null)
+                    newMetrics.Dispose();   // Another thread got there first.
+            }
         }
 
         private void CreateObjects(IGraphicsTarget g)
         {
-            if (!fontMetricsCreated)
-                CreateFontMetrics();
+            EnsureFontMetrics();
 
             if (!g.HasFont(font))
                 g.CreateFont(font, fontName, fontSize, (effects & ~TextEffects.Underline)); // Underlining done otherwise.
 
             if (framing.framingStyle == FramingStyle.Line /* && framing.framingColor != null */) {
                 // We use multiple pens to avoid weird artifacts with overlapping parts.
+                object[] pens = GetFramingPens();
                 int iPen = 0;
                 for (float width = fontSize * 0.33F; width < framing.lineWidth * 2; width += fontSize * 0.33F) {
-                    if (iPen >= framingPens.Count) {
-                        lock (framingPens)
-                            framingPens.Add(new object());
-                    }
-
-                    if (! g.HasPen(framingPens[iPen]))
-                        GraphicsUtil.CreateSolidPen(g, framingPens[iPen], framing.framingColor.ColorValue, width, LineStyle.Beveled);
+                    if (! g.HasPen(pens[iPen]))
+                        GraphicsUtil.CreateSolidPen(g, pens[iPen], framing.framingColor.ColorValue, width, LineStyle.Beveled);
                     ++iPen;
                 }
 
-                if (iPen >= framingPens.Count) {
-                    lock (framingPens)
-                        framingPens.Add(new object());
-                }
-
-                if (!g.HasPen(framingPens[iPen]))
-                    GraphicsUtil.CreateSolidPen(g, framingPens[iPen], framing.framingColor.ColorValue, framing.lineWidth * 2, framing.lineStyle);
+                if (!g.HasPen(pens[iPen]))
+                    GraphicsUtil.CreateSolidPen(g, pens[iPen], framing.framingColor.ColorValue, framing.lineWidth * 2, framing.lineStyle);
             }
+        }
+
+        // Get the number of pens used to draw line framing: one for each intermediate stroke width,
+        // plus one for the full framing width. Must use the same loop as CreateObjects so the counts match.
+        private int FramingPenCount()
+        {
+            int count = 1;
+            for (float width = fontSize * 0.33F; width < framing.lineWidth * 2; width += fontSize * 0.33F)
+                ++count;
+            return count;
+        }
+
+        // Get the keys for the pens used to draw line framing, creating them if needed. Thread-safe: the
+        // returned array always has FramingPenCount() entries and is never modified afterward.
+        private object[] GetFramingPens()
+        {
+            return GetKeyArray(ref framingPens, FramingPenCount());
         }
 
         public override void FreeGdiObjects()
         {
-            if (textFaceMetrics != null) {
-                textFaceMetrics.Dispose();
-                textFaceMetrics = null;
-            }
-
-            fontMetricsCreated = false;
+            // Called with the map write lock held, so no other thread is drawing with these metrics.
+            ITextFaceMetrics oldMetrics = Interlocked.Exchange(ref textFaceMetrics, null);
+            if (oldMetrics != null)
+                oldMetrics.Dispose();
         }
 
 
@@ -2942,8 +2989,7 @@ namespace PurplePen.MapModel
         {
             get
             {
-                if (!fontMetricsCreated)
-                    CreateFontMetrics();
+                EnsureFontMetrics();
 
                 return textFaceMetrics.Ascent;
             }
@@ -2954,8 +3000,7 @@ namespace PurplePen.MapModel
         {
             get
             {
-                if (!fontMetricsCreated)
-                    CreateFontMetrics();
+                EnsureFontMetrics();
 
                 return textFaceMetrics.CapHeight; 
             }
@@ -2965,8 +3010,7 @@ namespace PurplePen.MapModel
         {
             get
             {
-                if (!fontMetricsCreated)
-                    CreateFontMetrics();
+                EnsureFontMetrics();
 
                 return textFaceMetrics.Descent;
             }
@@ -3052,8 +3096,7 @@ namespace PurplePen.MapModel
         // Get properties needed to wrap text for this symdef.
         private WrapTextProperties GetWrapProperties(TextSymDefHorizAlignment objectHorizAlignment)
         {
-            if (!fontMetricsCreated)
-                CreateFontMetrics();
+            EnsureFontMetrics();
 
             return new WrapTextProperties() { 
                 TextFaceMetrics = textFaceMetrics,
@@ -3091,7 +3134,8 @@ namespace PurplePen.MapModel
             if (framing.framingStyle != FramingStyle.None && framing.framingColor != null && color == framing.framingColor) {
                 if (framing.framingStyle == FramingStyle.Line) {
                     DrawSingleLineString(g, text, framing.framingColor.GetBrushKey(g), pt);
-                    foreach (object p in framingPens)
+                    // CreateObjects has already created these pens on this target.
+                    foreach (object p in GetFramingPens())
                         g.DrawTextOutline(text, font, p, pt);
                 }
                 else if (framing.framingStyle == FramingStyle.Shadow) {
@@ -3484,8 +3528,7 @@ namespace PurplePen.MapModel
                               TextSymDefHorizAlignment objectHorizAlignment, TextSymDefVertAlignment objectVertAlignment, 
                               PointF pointTest, float distanceTest, out float actualDistance)
         {
-            if (!fontMetricsCreated)
-                CreateFontMetrics();
+            EnsureFontMetrics();
 
             TextSymDefHorizAlignment fontAlign = GetHorizAlignment(objectHorizAlignment);
             TextSymDefVertAlignment vertAlign = GetVertAlignment(objectVertAlignment);
@@ -3584,8 +3627,7 @@ namespace PurplePen.MapModel
                                      TextSymDefHorizAlignment objectHorizAlignment, TextSymDefVertAlignment objectVertAlignment,
                                      out SizeF size)
         {
-            if (!fontMetricsCreated)
-                CreateFontMetrics();
+            EnsureFontMetrics();
 
             TextSymDefHorizAlignment fontAlign = GetHorizAlignment(objectHorizAlignment);
             TextSymDefVertAlignment vertAlign = GetVertAlignment(objectVertAlignment);
@@ -3638,8 +3680,7 @@ namespace PurplePen.MapModel
                                           TextSymDefHorizAlignment objectHorizAlignment, TextSymDefVertAlignment objectVertAlignment,
                                           float rotation, float width)
         {
-            if (!fontMetricsCreated)
-                CreateFontMetrics();
+            EnsureFontMetrics();
 
             TextSymDefHorizAlignment fontAlign = GetHorizAlignment(objectHorizAlignment);
             TextSymDefVertAlignment vertAlign = GetVertAlignment(objectVertAlignment);
@@ -4103,8 +4144,7 @@ namespace PurplePen.MapModel
                                         TextSymDefHorizAlignment objectHorizAlignment, TextSymDefVertAlignment objectVertAlignment,
                                         out float actualDistance)
         {
-            if (!fontMetricsCreated)
-                CreateFontMetrics();
+            EnsureFontMetrics();
 
             TextSymDefHorizAlignment fontAlign = GetHorizAlignment(objectHorizAlignment);
             TextSymDefVertAlignment vertAlign = GetVertAlignment(objectVertAlignment);
