@@ -45,14 +45,17 @@
 
     <!-- These duplicate the main menu's shortcut keys. On macOS the native menu handles its own
          key equivalents, so these are redundant there, but they are kept in step with the menu
-         (Command instead of Ctrl) so the window still answers the right keys on its own. Escape
-         and Delete are carried only here: the menu deliberately declares no gesture for them on
-         macOS, since a menu key equivalent would intercept those keys program-wide. -->
+         (Command instead of Ctrl) so the window still answers the right keys on its own. Delete
+         is carried only here: the menu deliberately declares no gesture for it on macOS, since a
+         menu key equivalent would intercept that key program-wide.
+         Escape is deliberately NOT a KeyBinding. Avalonia runs KeyBindings before the focused
+         control sees the key, so an Escape binding would stop the in-window menu (entered with
+         Alt) from closing on Escape. It is handled instead in MainWindow_EscapeKeyDown in the
+         code-behind, after the focused control has had its chance. -->
     <Window.KeyBindings>
         <KeyBinding Gesture="{OnPlatform Default='Ctrl+O', macOS='Cmd+O'}" Command="{Binding FileOpenPurplePenFileCommand}"/>
         <KeyBinding Gesture="{OnPlatform Default='Ctrl+S', macOS='Cmd+S'}" Command="{Binding SaveCommand}"/>
         <KeyBinding Gesture="{OnPlatform Default='Ctrl+P', macOS='Cmd+P'}" Command="{Binding PrintDescriptionsCommand}"/>
-        <KeyBinding Gesture="Escape" Command="{Binding EscapeKeyCommand}"/>
         <KeyBinding Gesture="{OnPlatform Default='Ctrl+Z', macOS='Cmd+Z'}" Command="{Binding UndoCommand}"/>
         <KeyBinding Gesture="{OnPlatform Default='Ctrl+Y', macOS='Cmd+Y'}" Command="{Binding RedoCommand}"/>
         <KeyBinding Gesture="Delete" Command="{Binding DeleteSelectionCommand}"/>
@@ -1028,10 +1031,13 @@
                      MouseWheel=Zoom, MiddleButtonAutoDrag=true, HoverDelay=400ms.
                      Renders the orienteering map with course overlays using MapDisplay.
                      Handles mouse events for course editing (adding controls, moving items, etc.).
-                     Scroll bars are provided internally by the PanAndZoom control. -->
+                     Scroll bars are provided internally by the PanAndZoom control.
+                     Focusable so that clicking the map takes the focus away from other controls, and so
+                     the code-behind can move the focus here when a menu closes (see Menu_Closed). -->
                 <resx:MapViewer
                     x:Name="mapViewer"
                     Grid.Row="1"
+                    Focusable="True"
                     MapDisplay="{Binding MapDisplay}"
                     MapHighlights="{Binding MapHighlights}"
                     ToolTip="{Binding MapViewerToolTip}"

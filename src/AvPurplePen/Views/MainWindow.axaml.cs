@@ -9,6 +9,7 @@ using Avalonia.Controls;
 using Avalonia.Controls.ApplicationLifetimes;
 using Avalonia.Input;
 using Avalonia.Interactivity;
+using Avalonia.VisualTree;
 using AvUtil;
 using PurplePen;
 using PurplePen.ViewModels;
@@ -64,9 +65,19 @@ namespace AvPurplePen.Views
             AddHandler(KeyDownEvent, TrackModifiers, RoutingStrategies.Tunnel, handledEventsToo: true);
             AddHandler(KeyUpEvent, TrackModifiers, RoutingStrategies.Tunnel, handledEventsToo: true);
 
-            // Keys that no focused control used, such as the arrow keys that scroll the map. Bubbling, and not
-            // for handled events, so the focused control always gets first chance at the key.
-            AddHandler(KeyDownEvent, MainWindow_KeyDown, RoutingStrategies.Bubble);
+            // The arrow keys that scroll the map. Tunneling, so the window sees them before the focused
+            // control does; otherwise a control such as the course tab strip, once clicked, would take
+            // the arrow keys for its own navigation.
+            AddHandler(KeyDownEvent, MainWindow_KeyDown, RoutingStrategies.Tunnel);
+
+            // The Escape key (cancel mode or clear selection). Bubbling, and not for handled events, so the
+            // focused control gets the key first; in particular the in-window menu, entered with Alt, must
+            // be able to use Escape to close itself.
+            AddHandler(KeyDownEvent, MainWindow_EscapeKeyDown, RoutingStrategies.Bubble);
+
+            // Any menu in the window closing: the main menu bar or a toolbar drop-down. Avalonia leaves the
+            // keyboard focus on a menu after it closes, which would keep taking the arrow keys and Escape.
+            AddHandler(MenuBase.ClosedEvent, Menu_Closed, RoutingStrategies.Bubble, handledEventsToo: true);
 
             // The window's close button (the X) and the File/Exit menu both route through
             // the ViewModel's Exit command, which prompts to save before allowing the exit.
@@ -167,16 +178,17 @@ namespace AvPurplePen.Views
             }
         }
 
-        // Handles key presses that bubbled up to the window without being used by the focused control.
-        // Unmodified arrow keys scroll the main map by the same step as clicking a scroll bar arrow.
-        // Plain keys like these belong here rather than in Window.KeyBindings, because Avalonia runs
-        // KeyBindings before the focused control sees the key, so a binding would take the key away
-        // from any control that uses it.
+        // Handles key presses as they tunnel down from the window, before the focused control sees them.
+        // Unmodified arrow keys scroll the main map by the same step as clicking a scroll bar arrow, no
+        // matter which control has focus (for example the course tab strip), except for controls where
+        // the arrow keys are essential: text boxes (moving the caret) and menus (moving between items).
         //   sender: the window.
         //   e: the key event arguments.
         private void MainWindow_KeyDown(object? sender, KeyEventArgs e)
         {
             if (e.Handled || e.KeyModifiers != KeyModifiers.None)
+                return;
+            if (IsArrowKeyControl(e.Source))
                 return;
 
             switch (e.Key) {
@@ -197,6 +209,87 @@ namespace AvPurplePen.Views
             }
 
             e.Handled = true;
+        }
+
+        // Handles the Escape key once it has bubbled up to the window without the focused control using
+        // it, running the Escape command (which cancels the current mode or clears the selection). This
+        // is not a Window KeyBinding, because Avalonia runs KeyBindings before the focused control sees
+        // the key, which would stop the menu from closing on Escape.
+        //   sender: the window.
+        //   e: the key event arguments.
+        private void MainWindow_EscapeKeyDown(object? sender, KeyEventArgs e)
+        {
+            if (e.Handled || e.Key != Key.Escape || e.KeyModifiers != KeyModifiers.None)
+                return;
+            if (IsInMenu(e.Source))
+                return;   // Escape inside a menu belongs to the menu, even if it chose not to use it.
+
+            if (DataContext is MainWindowViewModel viewModel && viewModel.EscapeKeyCommand.CanExecute(null)) {
+                viewModel.EscapeKeyCommand.Execute(null);
+                e.Handled = true;
+            }
+        }
+
+        // Called when any menu in the window closes. Avalonia leaves the keyboard focus on the menu after
+        // it closes; in particular, Escape on a top-level menu item closes the menu and then explicitly
+        // focuses the Menu itself. While a menu has focus it takes the arrow keys (reopening itself) and
+        // Escape, so the arrow keys would stop scrolling the map. The focus change is posted, so it runs
+        // after the menu's own key handling (and its Focus call) has finished.
+        //   sender: the window.
+        //   e: the event arguments; the source is the menu that closed.
+        private void Menu_Closed(object? sender, RoutedEventArgs e)
+        {
+            Avalonia.Threading.Dispatcher.UIThread.Post(MoveFocusOutOfClosedMenu);
+        }
+
+        // If the keyboard focus is on a menu that is no longer open, moves it to the main map viewer, so
+        // that the arrow keys and Escape act on the map again. Does nothing while this window is not
+        // active (for example, a menu command has opened a dialog): the focus is checked again when this
+        // window is activated.
+        private void MoveFocusOutOfClosedMenu()
+        {
+            if (!IsActive)
+                return;
+            if (FocusManager?.GetFocusedElement() is not Visual focused)
+                return;
+
+            MenuBase? menu = focused as MenuBase ?? focused.FindAncestorOfType<MenuBase>();
+            if (menu != null && !menu.IsOpen) {
+                mapViewer.Focus();
+            }
+        }
+
+        // Returns whether the given key event source is, or is inside, a control that needs the arrow
+        // keys for itself and so should keep them rather than have them scroll the map.
+        //   source: the source of the key event (the focused element).
+        private static bool IsArrowKeyControl(object? source)
+        {
+            if (source is not Visual visual)
+                return false;
+
+            foreach (Visual v in visual.GetSelfAndVisualAncestors()) {
+                if (v is TextBox || IsMenuControl(v))
+                    return true;
+            }
+
+            return false;
+        }
+
+        // Returns whether the given visual is part of a menu. A MenuBase covers the menu bar itself.
+        // The items of an open drop-down live in a separate popup whose visual tree ends at the popup
+        // root and never reaches the Menu, so MenuItem must be tested too. (NativeMenuBar's items are
+        // the private NativeMenuItemPresenter class, which derives from MenuItem.)
+        //   v: the visual to test.
+        private static bool IsMenuControl(Visual v)
+        {
+            return v is MenuBase || v is MenuItem;
+        }
+
+        // Returns whether the given key event source is, or is inside, a menu.
+        //   source: the source of the key event (the focused element).
+        private static bool IsInMenu(object? source)
+        {
+            return source is Visual visual && visual.GetSelfAndVisualAncestors().Any(IsMenuControl);
         }
 
         public MousePointerShape MapMousePointerShape {
@@ -401,6 +494,11 @@ namespace AvPurplePen.Views
                 if (this.DataContext is MainWindowViewModel viewModel) {
                     viewModel.WindowActivated();
                 }
+
+                // A menu that closed while another window was active (a menu command that opened a dialog)
+                // may have left the focus on itself. Posted so it runs after Avalonia restores this window's
+                // focused element.
+                Avalonia.Threading.Dispatcher.UIThread.Post(MoveFocusOutOfClosedMenu);
             }
         }
 
