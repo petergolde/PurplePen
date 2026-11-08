@@ -536,6 +536,32 @@ namespace PurplePen
                 // Selected special is not in current course
                 ClearSelection();
             }
+
+            if (activeCourseDesignator.IsNotAllControls && activeCourseDesignator.AllParts && !activeCourseDesignator.IsVariation) {
+                // Viewing all variations. A split control appears only once in this view, and its course objects and
+                // description lines use the first course control of the split. A selection made while viewing a single
+                // variation may refer to a different course control of the split; switch it to the first one so
+                // that the selection matches the course objects. Legs leaving a split control do use the specific
+                // course control of each variation, so the first course control of a leg selection is left alone.
+                if (selectionKind != SelectionKind.Leg)
+                    selectedCourseControl = FirstCourseControlOfSplit(selectedCourseControl);
+                selectedCourseControl2 = FirstCourseControlOfSplit(selectedCourseControl2);
+            }
+        }
+
+        // If courseControlId is a split control, return the first course control of the split (the one used
+        // by the all variations course view). Otherwise, return courseControlId unchanged.
+        //   courseControlId: The course control to check. May be None.
+        Id<CourseControl> FirstCourseControlOfSplit(Id<CourseControl> courseControlId)
+        {
+            if (courseControlId.IsNone)
+                return courseControlId;
+
+            CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
+            if (courseControl.split && courseControl.splitCourseControls != null && courseControl.splitCourseControls.Length > 0)
+                return courseControl.splitCourseControls[0];
+            else
+                return courseControlId;
         }
 
         // Update the names of all course views, and get the active course view, based on the active course id.

@@ -35,6 +35,7 @@
 #if TEST
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 using System.IO;
 using System.Diagnostics;
@@ -373,6 +374,64 @@ namespace PurplePen.Tests
             selectionMgr.SelectCourseView(Designator(5));
             selectionMgr.SelectSecondaryTitle();
             CheckSelectedLines(1, 1);
+        }
+
+        // A split control selected while viewing a single variation uses that variation's course control of the split.
+        // Switching to the all variations view keeps the selection, but that view only uses the first course control
+        // of the split. The selection must still match the course objects, or BeginStretch/BeginRotate index an
+        // empty array.
+        [TestMethod]
+        public async Task SplitControlSelectionInAllVariations()
+        {
+            bool success = await controller.LoadInitialFile(TestUtil.GetTestFile("queryevent\\variations.ppen"), true);
+            Assert.IsTrue(success);
+
+            EventDB eventDB = controller.GetEventDB();
+            UndoMgr undoMgr = controller.GetUndoMgr();
+
+            // Course controls 2 and 24 are the two course controls of the split at control 2. Make that control a crossing point.
+            undoMgr.BeginCommand(199, "Make crossing point");
+            ControlPoint control = (ControlPoint)eventDB.GetControl(ControlId(2)).Clone();
+            control.kind = ControlPointKind.CrossingPoint;
+            control.code = null;
+            control.symbolIds = new string[] { "13.3" };   // mandatory crossing point.
+            eventDB.ReplaceControlPoint(ControlId(2), control);
+            undoMgr.EndCommand(199);
+
+            // Find the variation that goes through course control 24.
+            VariationInfo variationB = null;
+            foreach (VariationInfo variationInfo in QueryEvent.GetAllVariations(eventDB, CourseId(1))) {
+                if (QueryEvent.EnumCourseControlIds(eventDB, new CourseDesignator(CourseId(1), variationInfo)).Contains(CourseControlId(24))) {
+                    variationB = variationInfo;
+                    break;
+                }
+            }
+            Assert.IsNotNull(variationB);
+
+            // Select the split control while viewing that variation.
+            selectionMgr.SelectCourseView(new CourseDesignator(CourseId(1), variationB));
+            selectionMgr.SelectCourseControl(CourseControlId(24));
+            Assert.AreEqual(SelectionKind.Control, selectionMgr.Selection.SelectionKind);
+            Assert.AreEqual(CourseControlId(24), selectionMgr.Selection.SelectedCourseControl);
+            Assert.AreEqual(1, selectionMgr.SelectedCourseObjects.Count(o => o is CrossingCourseObj));
+
+            // Switch to all variations of the same course. Selection is kept, and switched to the first course control of the split.
+            selectionMgr.SelectCourseView(new CourseDesignator(CourseId(1)));
+            Assert.AreEqual(SelectionKind.Control, selectionMgr.Selection.SelectionKind);
+            Assert.AreEqual(CourseControlId(2), selectionMgr.Selection.SelectedCourseControl);
+            Assert.AreEqual(1, selectionMgr.SelectedCourseObjects.Count(o => o is CrossingCourseObj));
+            int firstLine, lastLine;
+            selectionMgr.GetSelectedLines(out firstLine, out lastLine);
+            Assert.AreNotEqual(-1, firstLine);
+
+            // Stretch and rotate must start their modes rather than throw.
+            Assert.IsFalse(controller.CanCancelMode());
+            controller.BeginStretch();
+            Assert.IsTrue(controller.CanCancelMode());
+            controller.CancelMode();
+            controller.BeginRotate();
+            Assert.IsTrue(controller.CanCancelMode());
+            controller.CancelMode();
         }
 
         [TestMethod]

@@ -2879,7 +2879,9 @@ namespace PurplePen
             //  Only crossing points (optional or mandatory) can be rotated.
             if ((selection.SelectionKind == SelectionKind.Special && eventDB.GetSpecial(selection.SelectedSpecial).kind == SpecialKind.OptCrossing) ||
                 (selection.SelectionKind == SelectionKind.Control && eventDB.GetControl(selection.SelectedControl).kind == ControlPointKind.CrossingPoint)) {
-                SetCommandMode(new RotateMode(this, (CrossingCourseObj)selectionMgr.SelectedCourseObjects[0]));
+                CrossingCourseObj crossingCourseObj = SelectedCrossingCourseObj();
+                if (crossingCourseObj != null)
+                    SetCommandMode(new RotateMode(this, crossingCourseObj));
             }
         }
 
@@ -2932,8 +2934,27 @@ namespace PurplePen
             //  Only crossing points (optional or mandatory) can be stretched.
             if ((selection.SelectionKind == SelectionKind.Special && eventDB.GetSpecial(selection.SelectedSpecial).kind == SpecialKind.OptCrossing) ||
                 (selection.SelectionKind == SelectionKind.Control && eventDB.GetControl(selection.SelectedControl).kind == ControlPointKind.CrossingPoint)) {
-                SetCommandMode(new StretchMode(this, (CrossingCourseObj)selectionMgr.SelectedCourseObjects[0]));
+                CrossingCourseObj crossingCourseObj = SelectedCrossingCourseObj();
+                if (crossingCourseObj != null)
+                    SetCommandMode(new StretchMode(this, crossingCourseObj));
             }
+        }
+
+        // Get the crossing point course object that is part of the current selection, or null if the
+        // selection has no crossing point course object (for example, the crossing point is not displayed
+        // on the map in the current course view).
+        private CrossingCourseObj SelectedCrossingCourseObj()
+        {
+            CourseObj[] selectedCourseObjects = selectionMgr.SelectedCourseObjects;
+            if (selectedCourseObjects == null)
+                return null;
+
+            foreach (CourseObj courseObj in selectedCourseObjects) {
+                if (courseObj is CrossingCourseObj crossingCourseObj)
+                    return crossingCourseObj;
+            }
+
+            return null;
         }
 
         // Stretch the selected object to the given new orientation.
