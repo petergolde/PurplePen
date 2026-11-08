@@ -149,6 +149,7 @@ namespace PurplePen.Tests
             try {
                 CultureInfo.CurrentCulture.ClearCachedData();
                 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("de-DE");
+                Util.MetricOverrideForTesting = true;
 
                 Assert.IsTrue(Util.IsCurrentCultureMetric());
 
@@ -186,6 +187,7 @@ namespace PurplePen.Tests
 
             }
             finally {
+                Util.MetricOverrideForTesting = null;
                 CultureInfo.CurrentCulture.ClearCachedData();
                 Thread.CurrentThread.CurrentCulture = currentCulture;
             }
@@ -202,6 +204,7 @@ namespace PurplePen.Tests
             try {
                 CultureInfo.CurrentCulture.ClearCachedData();
                 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("en-US");
+                Util.MetricOverrideForTesting = false;
                 Assert.IsFalse(Util.IsCurrentCultureMetric());
 
                 CoreMapUtil.GetDefaultPageSize(new RectangleF(30, 50, 350, 210), 1.0F, out pageWidth, out pageHeight, out pageMargins, out landscape);
@@ -238,6 +241,7 @@ namespace PurplePen.Tests
 
             }
             finally {
+                Util.MetricOverrideForTesting = null;
                 Thread.CurrentThread.CurrentCulture = currentCulture;
             }
         }

@@ -897,6 +897,7 @@ namespace PurplePen.Tests
             try {
                 CultureInfo.CurrentCulture.ClearCachedData();
                 Thread.CurrentThread.CurrentCulture = CultureInfo.GetCultureInfo("de-DE");
+                Util.MetricOverrideForTesting = true;
 
                 Assert.IsTrue(Util.IsCurrentCultureMetric());
 
@@ -967,6 +968,7 @@ namespace PurplePen.Tests
 
             }
             finally {
+                Util.MetricOverrideForTesting = null;
                 CultureInfo.CurrentCulture.ClearCachedData();
                 Thread.CurrentThread.CurrentCulture = currentCulture;
             }
