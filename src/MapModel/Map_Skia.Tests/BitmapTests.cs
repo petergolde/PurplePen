@@ -895,6 +895,106 @@ namespace Map_Skia.Tests
         }
 
         /// <summary>
+        /// Encodes a small solid-color bitmap in the given format.
+        /// </summary>
+        /// <param name="format">Format to encode in.</param>
+        /// <param name="width">Width in pixels.</param>
+        /// <param name="height">Height in pixels.</param>
+        /// <returns>The encoded image bytes.</returns>
+        private static byte[] EncodeTestBitmap(GraphicsBitmapFormat format, int width, int height)
+        {
+            SKBitmap skBitmap = new SKBitmap(width, height, SKImageInfo.PlatformColorType, SKAlphaType.Premul);
+            using (SKCanvas canvas = new SKCanvas(skBitmap)) {
+                canvas.Clear(SKColors.Red);
+            }
+
+            using (Skia_Bitmap bitmap = new Skia_Bitmap(skBitmap, format, 150, 150))
+            using (MemoryStream ms = new MemoryStream()) {
+                bitmap.WriteToStream(format, ms, 100);
+                return ms.ToArray();
+            }
+        }
+
+        [Test]
+        public void SkiaFileLoaderLoadsTiffData()
+        {
+            // Skia has no TIFF decoder; SKBitmap.Decode used to throw ArgumentNullException("codec") for TIFF data.
+            byte[] tiffData = EncodeTestBitmap(GraphicsBitmapFormat.TIFF, 50, 40);
+
+            IGraphicsBitmap loaded = new Skia_FileLoader(null).LoadBitmapFromData(tiffData);
+
+            Assert.IsNotNull(loaded);
+            Assert.AreEqual(50, loaded.PixelWidth);
+            Assert.AreEqual(40, loaded.PixelHeight);
+            Assert.AreEqual(GraphicsBitmapFormat.TIFF, loaded.GetOriginalFormat());
+            Assert.AreEqual(150, loaded.HorizontalResolution, 0.01);
+            loaded.Dispose();
+        }
+
+        [Test]
+        public void SkiaFileLoaderLoadsTiffFile()
+        {
+            byte[] tiffData = EncodeTestBitmap(GraphicsBitmapFormat.TIFF, 30, 20);
+            string tempFile = Path.Combine(Path.GetTempPath(), "SkiaFileLoaderTest_" + Guid.NewGuid().ToString("N") + ".tif");
+
+            try {
+                File.WriteAllBytes(tempFile, tiffData);
+
+                IGraphicsBitmap loaded = new Skia_FileLoader(null).LoadBitmap(tempFile, true);
+
+                Assert.IsNotNull(loaded);
+                Assert.AreEqual(30, loaded.PixelWidth);
+                Assert.AreEqual(20, loaded.PixelHeight);
+                loaded.Dispose();
+            }
+            finally {
+                File.Delete(tempFile);
+            }
+        }
+
+        [Test]
+        public void SkiaFileLoaderLoadsJpegFile()
+        {
+            string jpegPath = TestUtil.GetTestFile("bitmaps\\Waterfall.jpg");
+
+            IGraphicsBitmap loaded = new Skia_FileLoader(null).LoadBitmap(jpegPath, false);
+
+            Assert.IsNotNull(loaded);
+            Assert.AreEqual(GraphicsBitmapFormat.JPEG, loaded.GetOriginalFormat());
+            Assert.AreEqual(230, loaded.HorizontalResolution, 0.01);
+            loaded.Dispose();
+        }
+
+        [Test]
+        public void SkiaFileLoaderReturnsNullForUndecodableData()
+        {
+            Skia_FileLoader loader = new Skia_FileLoader(null);
+
+            // Garbage that no decoder recognizes.
+            byte[] garbage = new byte[256];
+            for (int i = 0; i < garbage.Length; ++i)
+                garbage[i] = (byte)(i * 37 + 11);
+            Assert.IsNull(loader.LoadBitmapFromData(garbage));
+
+            // A valid PNG header followed by truncated, corrupt data.
+            byte[] png = EncodeTestBitmap(GraphicsBitmapFormat.PNG, 50, 40);
+            byte[] truncatedPng = new byte[20];
+            Array.Copy(png, truncatedPng, truncatedPng.Length);
+            Assert.IsNull(loader.LoadBitmapFromData(truncatedPng));
+
+            // Empty and null data.
+            Assert.IsNull(loader.LoadBitmapFromData(new byte[0]));
+            Assert.IsNull(loader.LoadBitmapFromData(null));
+        }
+
+        [Test]
+        public void SkiaFileLoaderReturnsNullForMissingFile()
+        {
+            string missing = Path.Combine(Path.GetTempPath(), "SkiaFileLoaderTest_" + Guid.NewGuid().ToString("N") + ".png");
+            Assert.IsNull(new Skia_FileLoader(null).LoadBitmap(missing, false));
+        }
+
+        /// <summary>
         /// A stream wrapper that does not support seeking, for testing non-seekable stream handling.
         /// </summary>
         private class NonSeekableStream : Stream
