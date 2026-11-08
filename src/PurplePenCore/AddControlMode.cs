@@ -169,7 +169,9 @@ namespace PurplePen
                             LegInsertionLoc legInsertionLoc;
 
                             GetControlInsertionPoint(courseObj.location, out courseDesignator, out courseControl1, out courseControl2, out legInsertionLoc);
-                            if (eventDB.GetCourse(courseDesignator.CourseId).kind != CourseKind.Score && 
+                            // CourseId can be None if the active course changed to All Controls while this mode was active.
+                            if (courseDesignator.CourseId.IsNotNone &&
+                                eventDB.GetCourse(courseDesignator.CourseId).kind != CourseKind.Score &&
                                 (mapExchangeType != MapExchangeType.None || 
                                  (courseObj.courseControlId != courseControl1 && courseObj.courseControlId != courseControl2))) {
                                 highlightLocation = courseObj.location;

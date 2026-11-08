@@ -1859,6 +1859,9 @@ namespace PurplePen
         // Delete the current course
         public async Task<bool> DeleteCurrentCourse()
         {
+            // Changing the active course invalidates any current command mode (e.g., Add Control remembers whether it is in All Controls).
+            CancelMode();
+
             CourseDesignator courseDesignator = selectionMgr.Selection.ActiveCourseDesignator;
             if (courseDesignator.IsAllControls)
                 return false;
@@ -1917,6 +1920,9 @@ namespace PurplePen
         // The course kind cannot be changed.
         public void DuplicateCurrentCourse(string name, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, float? length, DescriptionKind descriptionKind, int firstControlOrdinal, bool hideFromReports)
         {
+            // Changing the active course invalidates any current command mode (e.g., Add Control remembers whether it is in All Controls).
+            CancelMode();
+
             Id<Course> currentCourseId = selectionMgr.Selection.ActiveCourseDesignator.CourseId;
             Course currentCourse = eventDB.GetCourse(currentCourseId);
 
@@ -1942,6 +1948,9 @@ namespace PurplePen
         // Add a new course. If a unique start or finish control is found, it is added.
         public void NewCourse(CourseKind courseKind, string name, ControlLabelKind labelKind, int scoreColumn, string secondaryTitle, float printScale, float climb, float? length, DescriptionKind descriptionKind, int firstControlOrdinal, bool hideFromReports)
         {
+            // Changing the active course invalidates any current command mode (e.g., Add Control remembers whether it is in All Controls).
+            CancelMode();
+
             undoMgr.BeginCommand(713, CommandNameText.NewCourse);
             Id<Course> newCourse = ChangeEvent.CreateCourse(eventDB, courseKind, name, labelKind, scoreColumn, secondaryTitle, printScale, climb, length, descriptionKind, firstControlOrdinal, addStartAndFinish: true, hideFromReports: hideFromReports);
             selectionMgr.SelectCourseView(new CourseDesignator(newCourse));
@@ -3337,10 +3346,13 @@ namespace PurplePen
 
             if (selection.SelectionKind == SelectionKind.Control || selection.SelectionKind == SelectionKind.MapExchangeOrFlipAtControl) {
                 // Case 1 -- selected control.
+                // A control can be selected without a course control (e.g., one just added to All Controls); there is no fork then.
                 Id<CourseControl> courseControlId = selection.SelectedCourseControl;
-                CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
-                if (!courseControl.split && QueryEvent.GetForkStart(eventDB, courseId, courseControlId).IsNotNone)
-                    return CommandStatus.Enabled;
+                if (courseControlId.IsNotNone) {
+                    CourseControl courseControl = eventDB.GetCourseControl(courseControlId);
+                    if (!courseControl.split && QueryEvent.GetForkStart(eventDB, courseId, courseControlId).IsNotNone)
+                        return CommandStatus.Enabled;
+                }
             }
             else if (selection.SelectionKind == SelectionKind.Leg) {
                 // Case 2 -- selected leg.
