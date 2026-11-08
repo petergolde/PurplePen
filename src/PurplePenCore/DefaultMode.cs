@@ -191,6 +191,11 @@ namespace PurplePen
         SymbolDB symbolDB;
         SelectionMgr selectionMgr;
 
+        // The topology object that the left button went down on and that may be dragged, or null if none.
+        // Remembered so that a subsequent drag uses the same object that LeftButtonDown approved,
+        // rather than hit-testing again.
+        CourseObj topologyDragObject;
+
         public DefaultMode(Controller controller, EventDB eventDB, SymbolDB symbolDB, SelectionMgr selectionMgr)
         {
             this.controller = controller;
@@ -352,12 +357,15 @@ namespace PurplePen
 
         public override void LeftButtonDrag(Pane pane, PointF location, PointF locationStart, float pixelSize, ref bool displayUpdateNeeded)
         {
-             if (pane == Pane.Topology) {
-                CourseObj clickedObject = HitTest(pane, locationStart, pixelSize,
-                co => !(co.layer == CourseLayer.AllVariations && !(co is TopologyDropTargetCourseObj)) &&
-                      !((co is MapIssueCourseObj) && co.controlId.IsNone));
-                TopologyDragControlMode commandMode = new TopologyDragControlMode(controller, eventDB, selectionMgr, clickedObject, locationStart, location);
-                controller.SetCommandMode(commandMode);
+            if (pane == Pane.Topology) {
+                // Drag the object that LeftButtonDown found. If there is none, there is nothing to drag.
+                CourseObj dragObject = topologyDragObject;
+                topologyDragObject = null;
+
+                if (dragObject != null) {
+                    TopologyDragControlMode commandMode = new TopologyDragControlMode(controller, eventDB, selectionMgr, dragObject, locationStart, location);
+                    controller.SetCommandMode(commandMode);
+                }
             }
         }
 
@@ -393,12 +401,17 @@ namespace PurplePen
                 return DragAction.DelayedMapPan;
             }
             else if (pane == Pane.Topology) {
-                CourseObj clickedObject = HitTest(pane, location, pixelSize, (co => !(co is TopologyDropTargetCourseObj)));
+                topologyDragObject = null;
+
+                // Objects in the AllVariations layer (other variations' controls) are not draggable, and neither are drop targets.
+                CourseObj clickedObject = HitTest(pane, location, pixelSize,
+                    (co => !(co is TopologyDropTargetCourseObj) && co.layer != CourseLayer.AllVariations));
                 if (clickedObject is ControlNumberCourseObj || clickedObject is CrossingCourseObj ||
-                    (clickedObject is StartCourseObj && (eventDB.GetControl(((StartCourseObj)clickedObject).controlId).kind == ControlPointKind.MapExchange))) 
+                    (clickedObject is StartCourseObj && (eventDB.GetControl(((StartCourseObj)clickedObject).controlId).kind == ControlPointKind.MapExchange)))
                 {
                     // Can drag control numbers, crossing points, or map exchanges.
                     selectionMgr.SelectCourseObject(clickedObject);
+                    topologyDragObject = clickedObject;
                     displayUpdateNeeded = true;
                     return DragAction.DelayedDrag;
                 }

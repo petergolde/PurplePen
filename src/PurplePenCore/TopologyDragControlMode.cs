@@ -111,7 +111,7 @@ namespace PurplePen
             Debug.Assert(pane == Pane.Topology);
 
             TopologyDropTargetCourseObj dropAt = FindNearbyDropTarget(location);
-            if (dropTargetHighlight != null) {
+            if (dropAt != null) {
                 Id<CourseControl> courseControlToMove = courseObjectStart.courseControlId;
                 Id<CourseControl> courseControlDest1 = dropAt.courseControlId;
                 Id<CourseControl> courseControlDest2 = dropAt.courseControlId2;

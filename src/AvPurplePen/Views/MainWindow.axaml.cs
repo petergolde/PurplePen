@@ -411,7 +411,7 @@ namespace AvPurplePen.Views
             bool isRightButton = (e.Button == MouseButton.Right);
             PointF location = Conv.ToPointF(e.WorldLocation);
             PointF locationStart = Conv.ToPointF(e.WorldDragStart);
-            float pixelSize = mapViewer.PixelSize;
+            float pixelSize = mapViewerTopology.PixelSize;
             DragAction dragAction = DragAction.None;
 
             switch (e.FancyAction) {
