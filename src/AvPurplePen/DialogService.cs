@@ -236,8 +236,8 @@ namespace AvPurplePen
 
             IReadOnlyList<IStorageFile> files = await storage.OpenFilePickerAsync(options);
 
-            if (files.Count > 0) {
-                viewModel.SelectedFile = files[0].Path.LocalPath;
+            if (files.Count > 0 && files[0].TryGetLocalPath() is string filePath) {
+                viewModel.SelectedFile = filePath;
                 return true;
             }
 
@@ -301,12 +301,13 @@ namespace AvPurplePen
 
             SaveFilePickerResult result = await storage.SaveFilePickerWithResultAsync(options);
 
-            if (result.File == null) {
+            string? savePath = result.File?.TryGetLocalPath();
+            if (savePath == null) {
                 viewModel.SelectedFile = null;
                 return false;
             }
 
-            viewModel.SelectedFile = result.File.Path.LocalPath;
+            viewModel.SelectedFile = savePath;
 
             // Write back which filter the user committed under. Match by
             // reference — the same FilePickerFileType instances we passed in

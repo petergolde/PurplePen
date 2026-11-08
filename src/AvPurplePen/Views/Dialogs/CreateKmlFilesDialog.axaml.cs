@@ -105,8 +105,8 @@ namespace AvPurplePen.Views
             }
 
             IReadOnlyList<IStorageFolder> folders = await storage.OpenFolderPickerAsync(options);
-            if (folders.Count > 0) {
-                vm.OutputDirectory = folders[0].Path.LocalPath;
+            if (folders.Count > 0 && folders[0].TryGetLocalPath() is string folderPath) {
+                vm.OutputDirectory = folderPath;
             }
         }
 
