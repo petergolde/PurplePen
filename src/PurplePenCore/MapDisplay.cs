@@ -249,7 +249,7 @@ namespace PurplePen
                         return new RectangleF();
                     }
                     else {
-                        return Geometry.TransformRectangle(BitmapTransform(), new RectangleF(0, 0, pixelWidth, pixelHeight));
+                        return Geometry.TransformRectangle(BitmapTransform(bitmap), new RectangleF(0, 0, pixelWidth, pixelHeight));
                     }
 
                     case MapType.OCAD:
@@ -484,7 +484,8 @@ namespace PurplePen
         }
 
         // Computer the transform from coordinates of the bitmap to world coordinates
-        Matrix BitmapTransform()
+        // bitmap: the bitmap map being drawn.
+        Matrix BitmapTransform(IGraphicsBitmap bitmap)
         {
             // (worldcoord in mm) / 25.4F * dpi = pixels
             float scaleFactor = bitmapDpi / 25.4F;
@@ -604,7 +605,9 @@ namespace PurplePen
 
 
         // Draw the ocad map part.
-        void DrawOcadMap(IGraphicsTarget grTarget, RectangleF visRect, RenderOptions renderOptions, Action throwOnCancel)
+        // map: the OCAD map to draw. Passed in (rather than read from the field) so that the map
+        //      we lock is guaranteed to be the map we draw, even if SetMapFile runs on another thread.
+        void DrawOcadMap(Map map, IGraphicsTarget grTarget, RectangleF visRect, RenderOptions renderOptions, Action throwOnCancel)
         {
             using (map.Write()) {
                 map.Draw(grTarget, visRect, renderOptions, throwOnCancel);
@@ -612,10 +615,11 @@ namespace PurplePen
         }
 
         // Draw the bitmap map part.
-        void DrawBitmapMap(IGraphicsTarget grTarget, RectangleF visRect, float minResolution)
+        // bitmap, dimmedBitmap: the bitmap map and its dimmed version (may be null), snapshotted by the caller.
+        void DrawBitmapMap(IGraphicsBitmap bitmap, IGraphicsBitmap dimmedBitmap, IGraphicsTarget grTarget, RectangleF visRect, float minResolution)
         {
             // Setup transform.
-            grTarget.PushTransform(BitmapTransform());
+            grTarget.PushTransform(BitmapTransform(bitmap));
 
             // Setup drawing map and intensity.
             BitmapScaling scalingMode = antialiased ? BitmapScaling.MediumQuality : BitmapScaling.NearestNeighbor;
@@ -721,13 +725,24 @@ namespace PurplePen
         {
             if (throwOnCancel != null) { throwOnCancel(); }
 
+            // Snapshot the fields that SetMapFile/SetCourse/LowerPurpleMapLayer can change on the UI thread while
+            // we are drawing on a background thread. Each Map must be locked and drawn through the same reference;
+            // re-reading the field after taking the lock can draw a different Map whose lock this thread does
+            // not hold (MapUsageException). Old maps/bitmaps are not disposed when replaced, so the snapshot stays usable.
+            MapType mapType = this.mapType;
+            Map map = this.map;
+            Map courseMap = this.courseMap;
+            IGraphicsBitmap bitmap = this.bitmap;
+            IGraphicsBitmap dimmedBitmap = this.dimmedBitmap;
+            int? lowerPurpleMapLayer = this.lowerPurpleMapLayer;
+
             RenderOptions renderOptions = new RenderOptions();
             renderOptions.minResolution = minResolution;
             short? colorIdBelowWhiteOut = null;
 
             // Get the color ID of the color just below the white-out color, which is where we divide between lower purple
             // and upper purple.
-            if (LowerPurpleMapLayer != null && courseMap != null) {
+            if (lowerPurpleMapLayer != null && courseMap != null) {
                 colorIdBelowWhiteOut = ColorIdBelow(courseMap, CourseLayout.WHITEOUT_COLOR_OCADID);
             }
 
@@ -747,26 +762,32 @@ namespace PurplePen
 
             switch (mapType) {
             case MapType.OCAD:
-                saveIntensity = grTarget.Intensity;
-                grTarget.Intensity = mapIntensity;
-                grTarget.PushAntiAliasing(Printing ? false : antialiased);       // don't anti-alias on printer
+                // map can be null briefly while SetMapFile is switching maps.
+                if (map != null) {
+                    saveIntensity = grTarget.Intensity;
+                    grTarget.Intensity = mapIntensity;
+                    grTarget.PushAntiAliasing(Printing ? false : antialiased);       // don't anti-alias on printer
 
-                if (LowerPurpleMapLayer != null) {
-                    // Only draw the part below lower purple.
-                    renderOptions.colorBeginDrawExclusive = null;
-                    renderOptions.colorEndDrawInclusive = LowerPurpleMapLayer;
+                    if (lowerPurpleMapLayer != null) {
+                        // Only draw the part below lower purple.
+                        renderOptions.colorBeginDrawExclusive = null;
+                        renderOptions.colorEndDrawInclusive = lowerPurpleMapLayer;
+                    }
+
+                    DrawOcadMap(map, grTarget, visRect, renderOptions, throwOnCancel);
+                    grTarget.PopAntiAliasing();
+                    grTarget.Intensity = saveIntensity;
                 }
-
-                DrawOcadMap(grTarget, visRect, renderOptions, throwOnCancel);
-                grTarget.PopAntiAliasing();
-                grTarget.Intensity = saveIntensity;
                 break;
 
             case MapType.Bitmap:
             case MapType.PDF:
-                grTarget.PushAntiAliasing(Printing ? false : antialiased);       // don't anti-alias on printer
-                DrawBitmapMap(grTarget, visRect, minResolution);
-                grTarget.PopAntiAliasing();
+                // bitmap can be null briefly while SetMapFile is switching maps.
+                if (bitmap != null) {
+                    grTarget.PushAntiAliasing(Printing ? false : antialiased);       // don't anti-alias on printer
+                    DrawBitmapMap(bitmap, dimmedBitmap, grTarget, visRect, minResolution);
+                    grTarget.PopAntiAliasing();
+                }
                 break;
 
             case MapType.None:
@@ -774,28 +795,26 @@ namespace PurplePen
             }
 
             // Now draw the courseMap on top.
-            if (LowerPurpleMapLayer != null) {
+            if (lowerPurpleMapLayer != null) {
                 // Only draw the part below the white-out layer, which is all of the lower purple.
                 renderOptions.colorBeginDrawExclusive = null;
                 renderOptions.colorEndDrawInclusive = colorIdBelowWhiteOut;
             }
 
-            DrawCourseMap(grTarget, visRect, renderOptions);
+            DrawCourseMap(courseMap, grTarget, visRect, renderOptions);
 
-            if (mapType == MapType.OCAD && LowerPurpleMapLayer != null) {
+            if (mapType == MapType.OCAD && map != null && lowerPurpleMapLayer != null) {
                 // Draw the part of the map above the lower purple.
                 saveIntensity = grTarget.Intensity;
                 grTarget.Intensity = mapIntensity;
 
                 grTarget.PushAntiAliasing(Printing ? false : antialiased);       // don't anti-alias on printer
 
-                if (LowerPurpleMapLayer != null) {
-                    // Only draw the part below lower purple.
-                    renderOptions.colorBeginDrawExclusive = LowerPurpleMapLayer;
-                    renderOptions.colorEndDrawInclusive = null;
-                }
+                // Only draw the part above lower purple.
+                renderOptions.colorBeginDrawExclusive = lowerPurpleMapLayer;
+                renderOptions.colorEndDrawInclusive = null;
 
-                DrawOcadMap(grTarget, visRect, renderOptions, throwOnCancel);
+                DrawOcadMap(map, grTarget, visRect, renderOptions, throwOnCancel);
                 grTarget.PopAntiAliasing();
                 grTarget.Intensity = saveIntensity;
 
@@ -803,14 +822,16 @@ namespace PurplePen
                 if (throwOnCancel != null) { throwOnCancel(); }
                 renderOptions.colorBeginDrawExclusive = colorIdBelowWhiteOut;
                 renderOptions.colorEndDrawInclusive = null;
-                DrawCourseMap(grTarget, visRect, renderOptions);
+                DrawCourseMap(courseMap, grTarget, visRect, renderOptions);
             }
 
             if (throwOnCancel != null) { throwOnCancel(); }
             DrawPrintAreaOutline(grTarget, visRect);
         }
 
-        private void DrawCourseMap(IGraphicsTarget grTargetCourses, RectangleF visRect, RenderOptions renderOptions)
+        // Draw the course map (or part of it, per renderOptions).
+        // courseMap: the course map to draw (may be null), snapshotted by the caller so the map we lock is the map we draw.
+        private void DrawCourseMap(Map courseMap, IGraphicsTarget grTargetCourses, RectangleF visRect, RenderOptions renderOptions)
         {
             if (Printing)
                 grTargetCourses.PushAntiAliasing(false);
@@ -835,6 +856,8 @@ namespace PurplePen
         // Draw a gray outline to show the print area.
         private void DrawPrintAreaOutline(IGraphicsTarget grTargetCourses, RectangleF visRect)
         {
+            RectangleF? printArea = this.printArea; // Snapshot in case it changes on another thread while we are drawing.
+
             grTargetCourses.PushAntiAliasing(false);
 
             if (printArea.HasValue && !printArea.Value.Contains(visRect)) {
