@@ -39,6 +39,10 @@ namespace AvPurplePen
             if (highlights.Length == 0)
                 return;
 
+            // A WriteableBitmap must be at least 1x1 pixels.
+            if (pixelSize.Width < 1 || pixelSize.Height < 1)
+                return;
+
             PurplePen.Graphics2D.Matrix xformWorldToPixel = MatrixFromAvMatrix(transformWorldToPixel);
 
             // Get the bounds of all the highlights, slightly expanded.

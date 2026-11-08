@@ -275,15 +275,18 @@ namespace AvUtil
             // The drawing area excludes any space taken by the scroll bars on the right/bottom edges.
             Rect drawingArea = new Rect(GetDrawingAreaSize());  // in my coordinates, starting at 0,0
 
-            if (drawing != null) {
+            // Nothing to draw if the drawing area is empty (e.g., control smaller than the scroll bars,
+            // minimized window, or rendering before the first arrange). Drawings can't create zero-size bitmaps.
+            int pixelWidth = (int)Math.Ceiling(drawingArea.Width * layoutScale);
+            int pixelHeight = (int)Math.Ceiling(drawingArea.Height * layoutScale);
+
+            if (drawing != null && pixelWidth >= 1 && pixelHeight >= 1) {
                 ++renderNumber;
                 //Debug.WriteLine($"Beginning Pan/Zoom Render {renderNumber}");
 
                 Stopwatch watch = new Stopwatch();
                 watch.Start();
 
-                int pixelWidth = (int)Math.Ceiling(drawingArea.Width * layoutScale);
-                int pixelHeight = (int)Math.Ceiling(drawingArea.Height * layoutScale);
                 PixelSize pixelSize = new PixelSize(pixelWidth, pixelHeight);
 
                 // Clip to the drawing area so the map doesn't draw underneath the scroll bars.
