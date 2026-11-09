@@ -109,7 +109,7 @@
                                VerticalAlignment="Center" Margin="0,0,0,6"/>
                     <NumericUpDown x:Name="upDownControlCircle"
                                    Grid.Row="1" Grid.Column="3"
-                                   Width="70"
+                                   Width="76"
                                    Value="{Binding ControlCircleDiameter, Mode=TwoWay}"
                                    IsEnabled="{Binding SizesEnabled}"
                                    Minimum="1" Maximum="50" Increment="0.1"
@@ -125,7 +125,7 @@
                                VerticalAlignment="Center" Margin="0,0,0,6"/>
                     <NumericUpDown x:Name="upDownLineWidth"
                                    Grid.Row="2" Grid.Column="3"
-                                   Width="70"
+                                   Width="76"
                                    Value="{Binding LineWidth, Mode=TwoWay}"
                                    IsEnabled="{Binding SizesEnabled}"
                                    Minimum="0.01" Maximum="10" Increment="0.01"
@@ -141,7 +141,7 @@
                                VerticalAlignment="Center" Margin="0,0,0,6"/>
                     <NumericUpDown x:Name="upDownCenterDot"
                                    Grid.Row="3" Grid.Column="3"
-                                   Width="70"
+                                   Width="76"
                                    Value="{Binding CenterDotDiameter, Mode=TwoWay}"
                                    IsEnabled="{Binding SizesEnabled}"
                                    Minimum="0" Maximum="3" Increment="0.01"
@@ -157,7 +157,7 @@
                                VerticalAlignment="Center" Margin="0,0,0,6"/>
                     <NumericUpDown x:Name="upDownNumberHeight"
                                    Grid.Row="4" Grid.Column="3"
-                                   Width="70"
+                                   Width="76"
                                    Value="{Binding NumberHeight, Mode=TwoWay}"
                                    IsEnabled="{Binding SizesEnabled}"
                                    Minimum="1" Maximum="50" Increment="0.1"
@@ -189,7 +189,7 @@
                                VerticalAlignment="Center" Margin="0,0,0,6"/>
                     <NumericUpDown x:Name="upDownOutlineWidth"
                                    Grid.Row="6" Grid.Column="3"
-                                   Width="70"
+                                   Width="76"
                                    Value="{Binding OutlineWidth, Mode=TwoWay}"
                                    Minimum="0" Maximum="50" Increment="0.01"
                                    FormatString="0.00" Margin="0,0,0,6"/>
@@ -205,7 +205,7 @@
                     <NumericUpDown x:Name="upDownLegGapSize"
                                    Grid.Row="7" Grid.Column="3"
                                    Value="{Binding LegGapSize, Mode=TwoWay}"
-                                   Width="70"
+                                   Width="76"
                                    Minimum="0" Maximum="50" Increment="0.1"
                                    FormatString="0.00" Margin="0,0,0,6"/>
                     <TextBlock Grid.Row="7" Grid.Column="5"
