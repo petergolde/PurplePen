@@ -136,6 +136,7 @@ namespace PurplePen
                     }
 
                     pdfMapFile = null;
+                    mapType = MapType.None;     // the map data is gone, so don't claim to have a map.
 
                     if (courseMap != null) {
                         courseMap.Dispose();
@@ -243,6 +244,8 @@ namespace PurplePen
                 switch (mapType) {
                 case MapType.Bitmap:
                 case MapType.PDF:
+                    if (bitmap == null)
+                        return new RectangleF();
                     int pixelWidth = bitmap.PixelWidth;
                     int pixelHeight = bitmap.PixelHeight;
                     if (pixelWidth == 0 || pixelHeight == 0) {
@@ -497,58 +500,86 @@ namespace PurplePen
             return matrix;
         }
 
-        // Set the map file used to draw. 
+        // True while SetMapFile is loading a map file. Loading a PDF map pumps the UI thread (to show the
+        // "Reading PDF" dialog), so idle-time UI code can run in the middle of a load; it should check this
+        // and wait for the load to finish rather than act on the map display.
+        public bool IsLoadingMap { get; private set; }
+
+        // Set the map file used to draw.
+        // The new map is loaded into locals and only stored into the fields once loading has fully succeeded,
+        // so the fields are always mutually consistent (a Bitmap/PDF map type always has a bitmap, an OCAD map
+        // type always has a map), both while the load is in progress and if it throws.
+        // newMapType: the kind of map file.
+        // newFilename: the map file to load, or null if newMapType is None.
         public void SetMapFile(MapType newMapType, string newFilename)
         {
-            this.mapType = newMapType;
+            // Show no map while loading. The file name is set immediately, because Controller.MapDisplay
+            // starts a reload whenever the file name doesn't match the event; setting it now prevents a
+            // nested reload if UI code runs while the load is pumping messages.
+            // Old maps/bitmaps are not disposed, because a background draw may still be using them.
+            this.mapType = MapType.None;
             this.filename = newFilename;
-            this.bitmap = null;
             this.map = null;
+            this.bitmap = null;
+            this.pdfMapFile = null;
+            this.mapVersion = new MapFileFormat(MapFileFormatKind.None, 0);
+            UpdateDimmedBitmap();
 
-            if (newMapType == MapType.None) {
-                map = null;
-                mapVersion = new MapFileFormat(MapFileFormatKind.None, 0);
-                bitmap = null;
-                pdfMapFile = null;
-            }
-            else if (newMapType == MapType.OCAD) {
-                map = new Map(MapUtil.TextMetricsProvider, Services.FileLoaderProvider.GetFileLoaderForDirectory(Path.GetDirectoryName(newFilename)));
-                mapVersion = InputOutput.ReadFile(newFilename, map);
-                bitmap = null;
-                pdfMapFile = null;
-            }
-            else if (newMapType == MapType.Bitmap) {
-                map = null;
-                mapVersion = new MapFileFormat(MapFileFormatKind.None, 0);
+            MapType loadedMapType = newMapType;
+            Map loadedMap = null;
+            MapFileFormat loadedMapVersion = new MapFileFormat(MapFileFormatKind.None, 0);
+            IGraphicsBitmap loadedBitmap = null;
+            float loadedBitmapDpi = bitmapDpi;
+            PdfMapFile loadedPdfMapFile = null;
 
-                using (Stream stream = new FileStream(newFilename, FileMode.Open, FileAccess.Read)) {
-                    bitmap = Services.BitmapLoader.ReadBitmapFromStream(stream);
+            IsLoadingMap = true;
+            try {
+                if (newMapType == MapType.None) {
+                    // Nothing to load.
                 }
-
-                bitmapDpi = (float) bitmap.HorizontalResolution;
-                pdfMapFile = null;
-            }
-            else if (newMapType == MapType.PDF) {
-                string errorText;
-                map = null;
-                mapVersion = new MapFileFormat(MapFileFormatKind.None, 0);
-                Size bitmapSize;
-
-                pdfMapFile = CoreMapUtil.ValidatePdf(newFilename, out bitmapDpi, out bitmapSize, out errorText);
-
-                if (pdfMapFile == null) {
-                    this.mapType = MapType.None;
-                    bitmap = null;
+                else if (newMapType == MapType.OCAD) {
+                    loadedMap = new Map(MapUtil.TextMetricsProvider, Services.FileLoaderProvider.GetFileLoaderForDirectory(Path.GetDirectoryName(newFilename)));
+                    loadedMapVersion = InputOutput.ReadFile(newFilename, loadedMap);
                 }
-                else {
-                    using (Stream stream = new FileStream(pdfMapFile.PngFileName, FileMode.Open, FileAccess.Read)) {
-                        bitmap = Services.BitmapLoader.ReadBitmapFromStream(stream);
+                else if (newMapType == MapType.Bitmap) {
+                    using (Stream stream = new FileStream(newFilename, FileMode.Open, FileAccess.Read)) {
+                        loadedBitmap = Services.BitmapLoader.ReadBitmapFromStream(stream);
+                    }
+
+                    loadedBitmapDpi = (float) loadedBitmap.HorizontalResolution;
+                }
+                else if (newMapType == MapType.PDF) {
+                    string errorText;
+                    Size bitmapSize;
+
+                    loadedPdfMapFile = CoreMapUtil.ValidatePdf(newFilename, out loadedBitmapDpi, out bitmapSize, out errorText);
+
+                    if (loadedPdfMapFile == null) {
+                        loadedMapType = MapType.None;
+                    }
+                    else {
+                        using (Stream stream = new FileStream(loadedPdfMapFile.PngFileName, FileMode.Open, FileAccess.Read)) {
+                            loadedBitmap = Services.BitmapLoader.ReadBitmapFromStream(stream);
+                        }
                     }
                 }
+                else {
+                    Debug.Fail("bad maptype");
+                    loadedMapType = MapType.None;
+                }
             }
-            else {
-                Debug.Fail("bad maptype");
+            finally {
+                IsLoadingMap = false;
             }
+
+            // Loading succeeded; publish the new map. Set the bitmap and map before the map type, so a
+            // background draw that snapshots the fields never sees a map type without its data.
+            this.bitmapDpi = loadedBitmapDpi;
+            this.bitmap = loadedBitmap;
+            this.map = loadedMap;
+            this.pdfMapFile = loadedPdfMapFile;
+            this.mapVersion = loadedMapVersion;
+            this.mapType = loadedMapType;
 
             UpdateDimmedBitmap();
             RaiseChanged();        // redraw everything.
@@ -590,7 +621,7 @@ namespace PurplePen
             dimmedBitmap = null;
 
             // Only dim bitmap if size isn't too large. Otherwise takes too much memory.
-            if ((mapType == MapType.Bitmap || mapType == MapType.PDF) && mapIntensity < 0.99F && (bitmap.PixelWidth * bitmap.PixelHeight) < 36000000) {
+            if ((mapType == MapType.Bitmap || mapType == MapType.PDF) && bitmap != null && mapIntensity < 0.99F && (bitmap.PixelWidth * bitmap.PixelHeight) < 36000000) {
                 // ColorConverter doesn't actually matter since we are just drawing a bitmap.
                 using (IBitmapGraphicsTarget grTarget = Services.BitmapGraphicsTargetProvider.CreateBitmapGraphicsTarget(bitmap.PixelWidth, bitmap.PixelHeight, CmykColor.FromCmyk(0, 0, 0, 0), DefaultColorConverter.Instance)) {
                     grTarget.Intensity = mapIntensity;

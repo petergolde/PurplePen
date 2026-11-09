@@ -323,6 +323,11 @@ namespace PurplePen.ViewModels
             if (controller == null)
                 return;   // happens in design mode, for example.
 
+            // Loading a PDF map pumps messages, so this can run in the middle of a load. Wait until the load
+            // finishes (the controller forces another idle update then) so the map is framed once it is there.
+            if (controller.MapDisplay.IsLoadingMap)
+                return;
+
             if (MapDisplay != controller.MapDisplay) {
                 // The mapDisplay object is new. This currently only happens on startup.
                 MapDisplay = controller.MapDisplay;

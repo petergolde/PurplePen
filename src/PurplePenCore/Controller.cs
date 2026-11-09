@@ -296,6 +296,11 @@ namespace PurplePen
             checkForUnrenderableObjects = true;   // warn about non-renderable objects.
 
             symbolDB.Standard = eventDB.GetEvent().descriptionStandard;
+
+            // Loading a PDF map pumps messages, so an idle update may already have run (and consumed the change
+            // at the top of this method) while the map was still loading. Make sure the UI updates again now.
+            ForceChangeUpdate(true);
+            QueueIdleEvent();
         }
 
         // Try to recover from a missing map file. If the map file can be found in the same directory as the event file, then
@@ -392,12 +397,9 @@ namespace PurplePen
                     try {
                         await ui.InfoMessage(string.Format(MiscText.MapFileChanged, changedReferencedFile));
 
-                        bool success = HandleExceptions(
-                            delegate {
-                                mapDisplay.SetMapFile(MapType, MapFileName);
-                            },
-                            MiscText.CannotLoadMapFile, MapFileName);
-
+                        // Clear the map display so that NewMapFileLoaded sees it doesn't match the event and
+                        // reloads the map, reporting any load error once.
+                        mapDisplay.SetMapFile(MapType.None, null);
                         NewMapFileLoaded(false);
                     }
                     finally {
