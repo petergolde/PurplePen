@@ -659,6 +659,7 @@ namespace PurplePen.Tests
             sp8 = new Special(SpecialKind.WhiteOut, new PointF[4] { new PointF(13, 17), new PointF(21, 12), new PointF(10, -1), new PointF(-2, 7) });
             sp9 = new Special(SpecialKind.Image, new PointF[2] { new PointF(18, 17), new PointF(28, 15) });
             sp9.imageBitmap = PurplePenTestUtils.LoadBitmap(TestUtil.GetTestFile("eventDB\\testimage.jpg"));
+            sp9.imageData = File.ReadAllBytes(TestUtil.GetTestFile("eventDB\\testimage.jpg"));
             sp9.text = "testimage.jpg";
             sp10 = new Special(SpecialKind.Line, new PointF[3] { new PointF(8, 7), new PointF(1, 2), new PointF(5, 12) });
             sp10.color = SpecialColor.Black;
@@ -716,7 +717,11 @@ namespace PurplePen.Tests
             Assert.AreEqual(loadedSp9.imageBitmap.PixelWidth, sp9.imageBitmap.PixelWidth);
             Assert.AreEqual(loadedSp9.imageBitmap.PixelHeight, sp9.imageBitmap.PixelHeight);
             Assert.AreEqual(loadedSp9.imageBitmap.GetOriginalFormat(), sp9.imageBitmap.GetOriginalFormat());
-            loadedSp9.imageBitmap = sp9.imageBitmap;  
+            // The original image bytes must round-trip exactly, not be re-encoded.
+            Assert.IsNotNull(loadedSp9.imageData);
+            CollectionAssert.AreEqual(sp9.imageData, loadedSp9.imageData);
+            loadedSp9.imageBitmap = sp9.imageBitmap;
+            loadedSp9.imageData = sp9.imageData;
 
             TestUtil.TestEnumerableAnyOrder(eventDB.AllSpecialPairs,
                 new KeyValuePair<Id<Special>, Special>[] {

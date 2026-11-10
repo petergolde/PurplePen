@@ -1941,6 +1941,7 @@ namespace PurplePen
         public float fontHeight = -1;       // for text objects, the font height (digit height, not em height), or -1 for auto (old style).
         public int numColumns = 1;          // for description objects, the number of columns.
         public IGraphicsBitmap imageBitmap; // for image objects, the bitmap.
+        public byte[] imageData;            // for image objects, the original encoded bytes the bitmap was created from (written back unchanged on save). May be null, in which case the bitmap is re-encoded on save.
 
         public Special()
         {
@@ -2019,6 +2020,8 @@ namespace PurplePen
             else {
                 if (imageBitmap != null)
                     throw new ApplicationException(string.Format("Non-Image object {0} should have a null image", id));
+                if (imageData != null)
+                    throw new ApplicationException(string.Format("Non-Image object {0} should have null image data", id));
             }
 
             if (allCourses) {
@@ -2116,6 +2119,8 @@ namespace PurplePen
                 return false;
             if (other.imageBitmap != imageBitmap)
                 return false;
+            if (other.imageData != imageData)
+                return false;
             if ((other.courses == null || courses == null)) {
                 if (other.courses != courses)
                     return false;
@@ -2172,6 +2177,7 @@ namespace PurplePen
             allCourses = true;
             courses = null;
             imageBitmap = null;
+            imageData = null;
             List<PointF> locationList = new List<PointF>();
 
             if (kind == SpecialKind.Text || kind == SpecialKind.Line || kind == SpecialKind.Rectangle || kind == SpecialKind.Ellipse)
@@ -2185,9 +2191,11 @@ namespace PurplePen
                     break;
 
                 case "image-data":
-                    // We ignore the format, since Image.FromStream auto-detects.
+                    // We ignore the format, since the bitmap loader auto-detects.
                     MemoryStream stm = xmlinput.GetContentBase64();
                     try {
+                        // Keep the original bytes, so they can be written back unchanged.
+                        imageData = stm.ToArray();
                         stm.Seek(0, SeekOrigin.Begin);
                         imageBitmap = Services.BitmapLoader.ReadBitmapFromStream(stm);
                     }
@@ -2312,7 +2320,18 @@ namespace PurplePen
                 xmloutput.WriteElementString("text", text);
             }
 
-            if (imageBitmap != null) {
+            if (imageData != null) {
+                // Write the original image bytes unchanged. The format attribute is informational only;
+                // the reader auto-detects the format from the data.
+                GraphicsBitmapFormat imageFormat = (imageBitmap != null) ? imageBitmap.GetOriginalFormat() : GraphicsBitmapFormat.Unknown;
+
+                xmloutput.WriteStartElement("image-data");
+                xmloutput.WriteAttributeString("format", Util.ImageFormatText(imageFormat));
+                xmloutput.WriteBase64(imageData, 0, imageData.Length);
+                xmloutput.WriteEndElement();
+            }
+            else if (imageBitmap != null) {
+                // No original bytes available; re-encode the bitmap.
                 GraphicsBitmapFormat imageFormat = imageBitmap.GetOriginalFormat();
                 if (imageFormat == GraphicsBitmapFormat.None || imageFormat == GraphicsBitmapFormat.Unknown || imageFormat == GraphicsBitmapFormat.Other)
                     imageFormat = GraphicsBitmapFormat.PNG;

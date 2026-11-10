@@ -1435,8 +1435,13 @@ namespace PurplePen
             return eventDB.AddSpecial(special);
         }
 
-        // Add a text special to the event
-        public static Id<Special> AddImageSpecial(EventDB eventDB, RectangleF boundingRectangle, IGraphicsBitmap imageBitmap, string imageName)
+        // Add an image special to the event.
+        //   boundingRectangle: the rectangle the image occupies, in map coordinates.
+        //   imageBitmap: the decoded bitmap.
+        //   imageData: the original encoded bytes imageBitmap was created from, saved unchanged in the event file.
+        //              May be null, in which case the bitmap is re-encoded when saving.
+        //   imageName: the name of the image.
+        public static Id<Special> AddImageSpecial(EventDB eventDB, RectangleF boundingRectangle, IGraphicsBitmap imageBitmap, byte[] imageData, string imageName)
         {
             Debug.Assert(imageBitmap != null);
             Debug.Assert(imageName != null);
@@ -1444,6 +1449,7 @@ namespace PurplePen
             Special special = new Special(SpecialKind.Image, new PointF[2] { new PointF(boundingRectangle.Left, boundingRectangle.Bottom), new PointF(boundingRectangle.Right, boundingRectangle.Top) });
             special.text = imageName;
             special.imageBitmap = imageBitmap;
+            special.imageData = imageData;
 
             return eventDB.AddSpecial(special);
         }

@@ -4006,10 +4006,13 @@ namespace PurplePen
         public void BeginAddImageSpecialMode(string fileName)
         {
             IGraphicsBitmap graphicsBitmap = null;
+            byte[] imageData = null;
 
             bool success = HandleExceptions(
                 delegate {
-                    using (Stream stream = new FileStream(fileName, FileMode.Open, FileAccess.Read)) {
+                    // Read the raw bytes once, so the exact original data is stored with the special.
+                    imageData = File.ReadAllBytes(fileName);
+                    using (Stream stream = new MemoryStream(imageData, false)) {
                         graphicsBitmap = Services.BitmapLoader.ReadBitmapFromStream(stream);
                     }
                 },
@@ -4021,7 +4024,7 @@ namespace PurplePen
                     rect => new ImageCourseObj(Id<Special>.None, 1.0F, GetCourseAppearance(),
                                              new PointF[] { rect.Location, new PointF(rect.Right, rect.Bottom) },
                                              imageName, graphicsBitmap),
-                    rect => ChangeEvent.AddImageSpecial(eventDB, rect, graphicsBitmap, imageName)
+                    rect => ChangeEvent.AddImageSpecial(eventDB, rect, graphicsBitmap, imageData, imageName)
                     ));
             }
         }

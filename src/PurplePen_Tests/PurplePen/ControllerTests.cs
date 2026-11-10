@@ -2171,7 +2171,7 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create12\\Course 2.ocd") },
                 new string[1] { TestUtil.GetTestFile("controller\\ocad_create12\\Course 2_expected.txt") },
                 new string[] { TestUtil.GetTestFile("controller\\ocad_create12\\mrsneeze.jpg"), TestUtil.GetTestFile("controller\\ocad_create12\\flower.gif") },
-                new string[] { TestUtil.GetTestFile("controller\\ocad_create12\\mrsneeze_expected.png"), TestUtil.GetTestFile("controller\\ocad_create12\\flower_expected.png") });
+                new string[] { TestUtil.GetTestFile("controller\\ocad_create12\\mrsneeze_expected.jpg"), TestUtil.GetTestFile("controller\\ocad_create12\\flower_expected.png") });
         }
 
         [TestMethod]
@@ -2200,8 +2200,19 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
                 new string[] { TestUtil.GetTestFile("controller\\ocad_create13\\mrsneeze_expected.jpg"), 
                                TestUtil.GetTestFile("controller\\ocad_create13\\Water lilies_expected.jpg"), 
                                TestUtil.GetTestFile("controller\\ocad_create13\\Winter_expected.jpg"), 
-                               TestUtil.GetTestFile("controller\\ocad_create13\\Winter(1)_expected.jpg") 
+                               TestUtil.GetTestFile("controller\\ocad_create13\\Winter(1)_expected.jpg")
                 });
+
+            // The image files should be the original image bytes, written unchanged (not re-encoded).
+            int imageCount = 0;
+            foreach (Special special in controller.GetEventDB().AllSpecials) {
+                if (special.kind == SpecialKind.Image) {
+                    ++imageCount;
+                    Assert.IsNotNull(special.imageData);
+                    CollectionAssert.AreEqual(special.imageData, File.ReadAllBytes(Path.Combine(settings.outputDirectory, special.text)));
+                }
+            }
+            Assert.AreEqual(4, imageCount);
         }
 
         [TestMethod]

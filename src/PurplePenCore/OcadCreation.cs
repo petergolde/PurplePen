@@ -312,6 +312,7 @@ namespace PurplePen
             public string FullPath;
             public IGraphicsBitmap Bitmap;
             public GraphicsBitmapFormat Format;
+            public byte[] OriginalData;     // If non-null, the original encoded bytes, already in Format, to write unchanged instead of re-encoding Bitmap.
         }
 
         // Get all the bitmaps to write, in the dictionary as fully-qualified-path, mapped to bitmap.
@@ -326,7 +327,8 @@ namespace PurplePen
                     string name = special.text;
                     string path = Path.GetFullPath(Path.Combine(creationSettings.outputDirectory, special.text));
 
-                    GraphicsBitmapFormat imageFormat = special.imageBitmap.GetOriginalFormat();
+                    GraphicsBitmapFormat originalFormat = special.imageBitmap.GetOriginalFormat();
+                    GraphicsBitmapFormat imageFormat = originalFormat;
                     if (imageFormat == GraphicsBitmapFormat.None || imageFormat == GraphicsBitmapFormat.Unknown || imageFormat == GraphicsBitmapFormat.Other)
                         imageFormat = GraphicsBitmapFormat.PNG;
 
@@ -336,8 +338,11 @@ namespace PurplePen
                         path = Path.ChangeExtension(path, ".gif");
                     }
 
+                    // The original bytes can be written unchanged only if no format conversion is needed.
+                    byte[] originalData = (special.imageData != null && imageFormat == originalFormat) ? special.imageData : null;
+
                     if (!bitmapsToWrite.ContainsKey(name))
-                        bitmapsToWrite.Add(name, new BitmapToWrite() { Name = name, FullPath = path, Bitmap = special.imageBitmap, Format = imageFormat });
+                        bitmapsToWrite.Add(name, new BitmapToWrite() { Name = name, FullPath = path, Bitmap = special.imageBitmap, Format = imageFormat, OriginalData = originalData });
                 }
             }
 
@@ -352,7 +357,10 @@ namespace PurplePen
 
                 foreach (BitmapToWrite bitmapToWrite in BitmapsToWrite()) {
                     using (Stream stream = new FileStream(bitmapToWrite.FullPath, FileMode.Create, FileAccess.Write)) {
-                        bitmapToWrite.Bitmap.WriteToStream(bitmapToWrite.Format, stream, 100);
+                        if (bitmapToWrite.OriginalData != null)
+                            stream.Write(bitmapToWrite.OriginalData, 0, bitmapToWrite.OriginalData.Length);
+                        else
+                            bitmapToWrite.Bitmap.WriteToStream(bitmapToWrite.Format, stream, 100);
                     }
 
                     for (int i = 0; i < templates.Count; ++i) {

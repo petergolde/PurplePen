@@ -1412,6 +1412,7 @@ namespace PurplePen.Tests
                     Assert.AreEqual(11F, special.locations[1].Y, 0.01F);
                     Assert.IsTrue(special.allCourses);
                     Assert.AreEqual("mrsneeze.jpg", special.text);
+                    CollectionAssert.AreEqual(System.IO.File.ReadAllBytes(TestUtil.GetTestFile("coursesymbols\\mrsneeze.jpg")), special.imageData);
                 }
             }
             Assert.AreEqual(1, countImageSpecials);

@@ -2009,7 +2009,7 @@ namespace PurplePen.Tests
             Assert.IsFalse(result);
 
             undomgr.BeginCommand(1038, "add image");
-            ChangeEvent.AddImageSpecial(eventDB, new RectangleF(0, 0, 1, 1), PurplePenTestUtils.LoadBitmap(TestUtil.GetTestFile("coursesymbols\\mrsneeze.jpg")), "test.jpg");
+            ChangeEvent.AddImageSpecial(eventDB, new RectangleF(0, 0, 1, 1), PurplePenTestUtils.LoadBitmap(TestUtil.GetTestFile("coursesymbols\\mrsneeze.jpg")), null, "test.jpg");
             undomgr.EndCommand(1038);
 
             result = QueryEvent.IsImageNameUsed(eventDB, "test.jpg");
@@ -2028,14 +2028,14 @@ namespace PurplePen.Tests
             Assert.AreEqual("mrsneeze(1).jpg", result);
 
             undomgr.BeginCommand(1038, "add image");
-            ChangeEvent.AddImageSpecial(eventDB, new RectangleF(0, 0, 1, 1), PurplePenTestUtils.LoadBitmap(TestUtil.GetTestFile("coursesymbols\\mrsneeze.jpg")), result);
+            ChangeEvent.AddImageSpecial(eventDB, new RectangleF(0, 0, 1, 1), PurplePenTestUtils.LoadBitmap(TestUtil.GetTestFile("coursesymbols\\mrsneeze.jpg")), null, result);
             undomgr.EndCommand(1038);
 
             result = QueryEvent.UniqueImageName(eventDB, "mrsneeze.jpg");
             Assert.AreEqual("mrsneeze(2).jpg", result);
 
             undomgr.BeginCommand(1038, "add image");
-            ChangeEvent.AddImageSpecial(eventDB, new RectangleF(0, 0, 1, 1), PurplePenTestUtils.LoadBitmap(TestUtil.GetTestFile("coursesymbols\\mrsneeze.jpg")), "foo");
+            ChangeEvent.AddImageSpecial(eventDB, new RectangleF(0, 0, 1, 1), PurplePenTestUtils.LoadBitmap(TestUtil.GetTestFile("coursesymbols\\mrsneeze.jpg")), null, "foo");
             undomgr.EndCommand(1038);
 
             result = QueryEvent.UniqueImageName(eventDB, "foo");
