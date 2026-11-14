@@ -12,6 +12,7 @@ namespace PurplePen
     {
         private string pdfFileName;
         private string pngFileName;
+        private string cachePublishDestination;   // cache name a conversion in progress is published under, or null
         private volatile ConversionStatus status;    // Set last by the background conversion, so the other fields are valid once it changes.
         private string conversionOutput;
 
@@ -80,7 +81,13 @@ namespace PurplePen
                 return status;
             }
 
-            return BeginUncachedConversion(cacheFileName, Resolution);
+            // Convert into a file of this conversion's own and publish it under the
+            // cache name once it is complete. The cache is shared by every map with
+            // the same contents, so writing the image in place would let one
+            // conversion read or delete what another is still writing.
+            cachePublishDestination = cacheFileName;
+            string partialFileName = cacheFileName + "." + Guid.NewGuid().ToString("N") + ".tmp";
+            return BeginUncachedConversion(partialFileName, Resolution);
         }
 
         // Begin converting the PDF into a bitmap on a background thread. Returns Working; the
@@ -106,6 +113,8 @@ namespace PurplePen
 
             try {
                 Services.PdfConverter.Convert(resolution, pdfFileName, fileName);
+                if (cachePublishDestination != null)
+                    PublishToCache();
                 newStatus = ConversionStatus.Success;
             }
             catch (Exception e) {
@@ -125,6 +134,35 @@ namespace PurplePen
 
             if (ConversionCompleted != null)
                 ConversionCompleted(this, EventArgs.Empty);
+        }
+
+        // Gives a finished conversion its cache name.
+        //
+        // The move is atomic, so the cache never names a partly written image. A
+        // conversion of the same map that finished first has already produced an
+        // equivalent image, so its result is kept and this one discarded.
+        private void PublishToCache()
+        {
+            string destination = cachePublishDestination;
+            cachePublishDestination = null;
+
+            try {
+                File.Move(pngFileName, destination);
+                pngFileName = destination;
+            }
+            catch (IOException) {
+                if (File.Exists(destination)) {
+                    try {
+                        File.Delete(pngFileName);
+                    }
+                    catch (IOException) {
+                    }
+                    catch (UnauthorizedAccessException) {
+                    }
+
+                    pngFileName = destination;
+                }
+            }
         }
 
         internal string GetCacheFileName(string path)
