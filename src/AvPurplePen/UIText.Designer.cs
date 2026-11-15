@@ -4484,6 +4484,15 @@ namespace AvPurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Copy Symbols.xml....
+        /// </summary>
+        public static string MainFrame_copySymbolsXmlMenu_Text {
+            get {
+                return ResourceManager.GetString("MainFrame_copySymbolsXmlMenu_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to Competitor _Load....
         /// </summary>
         public static string MainFrame_courseLoadMenu_Text {
@@ -5272,6 +5281,15 @@ namespace AvPurplePen {
         public static string MainFrame_openMenu_Text {
             get {
                 return ResourceManager.GetString("MainFrame_openMenu_Text", resourceCulture);
+            }
+        }
+
+        /// <summary>
+        ///   Looks up a localized string similar to Open Other Symbols.xml....
+        /// </summary>
+        public static string MainFrame_openOtherSymbolsXmlMenu_Text {
+            get {
+                return ResourceManager.GetString("MainFrame_openOtherSymbolsXmlMenu_Text", resourceCulture);
             }
         }
         

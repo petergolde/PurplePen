@@ -4223,6 +4223,25 @@ namespace PurplePen
             localizer.MergeSymbolsFile(filename, langId);
         }
 
+        // Switch the symbols.xml file used by the symbol DB to a different file. This is a debug-level
+        // command used for translation. If copyExisting is true, the current symbols.xml is copied to newFileName;
+        // otherwise newFileName must exist and the symbols are reread from it. Either way, later changes made by the
+        // translation commands go to newFileName. Returns false (after telling the user) if it failed.
+        public async Task<bool> SwitchSymbolsXml(string newFileName, bool copyExisting)
+        {
+            try {
+                symbolDB.SwitchFilename(newFileName, copyExisting);
+            }
+            catch (Exception e) when (e is IOException || e is UnauthorizedAccessException || e is XmlFileFormatException || e is System.Xml.XmlException) {
+                await ui.ErrorMessage(e.Message);
+                return false;
+            }
+
+            // Descriptions may have changed if the symbols were reread.
+            ForceChangeUpdate(true);
+            return true;
+        }
+
         public string GetDescriptionStandard()
         {
             return symbolDB.Standard;

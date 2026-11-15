@@ -1449,7 +1449,16 @@ namespace PurplePen {
                 return ResourceManager.GetString("SaveXmlFileDialog_Filter", resourceCulture);
             }
         }
-        
+
+        /// <summary>
+        ///   Looks up a localized string similar to XML files|*.xml|All files|*.*.
+        /// </summary>
+        public static string SymbolsXmlFileFilter {
+            get {
+                return ResourceManager.GetString("SymbolsXmlFileFilter", resourceCulture);
+            }
+        }
+
         /// <summary>
         ///   Looks up a localized string similar to Create XML Interchange File.
         /// </summary>

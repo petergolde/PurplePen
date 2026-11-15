@@ -532,12 +532,17 @@
                     <!-- Translate submenu (shown only while Ctrl+Shift or Ctrl+Alt is held; see MainWindow.TrackModifiers) -->
                     <NativeMenuItem Header="{resx:Localize MainFrame_translateMenu_Text}" IsVisible="{Binding ShowHiddenHelpMenus}">
                         <NativeMenu>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_copySymbolsXmlMenu_Text}"
+                                            Command="{Binding CopySymbolsXmlCommand}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_openOtherSymbolsXmlMenu_Text}"
+                                            Command="{Binding OpenOtherSymbolsXmlCommand}"/>
+                            <NativeMenuItem Header="{resx:Localize MainFrame_mergeSymbolsMenu_Text}"
+                                            Command="{Binding MergeSymbolsCommand}"/>
+                            <NativeMenuItemSeparator/>
                             <NativeMenuItem Header="{resx:Localize MainFrame_addDescriptionLanguageMenu_Text}"
                                             Command="{Binding AddDescriptionLanguageCommand}"/>
                             <NativeMenuItem Header="{resx:Localize MainFrame_addTranslatedTextsMenu_Text}"
                                             Command="{Binding AddTranslatedTextsCommand}"/>
-                            <NativeMenuItem Header="{resx:Localize MainFrame_mergeSymbolsMenu_Text}"
-                                            Command="{Binding MergeSymbolsCommand}"/>
                         </NativeMenu>
                     </NativeMenuItem>
                 </NativeMenu>

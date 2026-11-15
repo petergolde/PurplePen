@@ -3044,6 +3044,49 @@ namespace PurplePen.ViewModels
 #endif
         }
 
+        /// <summary>
+        /// Executes the Translate/Copy Symbols.xml command. Asks for a file name, copies the current
+        /// symbols.xml there, and uses the copy for subsequent translation commands.
+        /// </summary>
+        [RelayCommand]
+        private async Task CopySymbolsXml()
+        {
+            if (controller == null) { return; }
+
+            FileSaveViewModel saveVm = new FileSaveViewModel {
+                FileFilters = MiscText.SymbolsXmlFileFilter,
+                FileFilterIndex = 1,
+                DefaultExtension = "xml",
+                ShowOverwritePrompt = true,
+                InitialDirectory = System.IO.Path.GetDirectoryName(symbolDB.FileName),
+                SuggestedFileName = System.IO.Path.GetFileName(symbolDB.FileName),
+            };
+
+            if (await Services.DialogService.ShowDialogAsync(saveVm) && saveVm.SelectedFile != null) {
+                await controller.SwitchSymbolsXml(saveVm.SelectedFile, true);
+            }
+        }
+
+        /// <summary>
+        /// Executes the Translate/Open Other Symbols.xml command. Asks for an existing symbols.xml file,
+        /// rereads the symbols from it, and uses it for subsequent translation commands.
+        /// </summary>
+        [RelayCommand]
+        private async Task OpenOtherSymbolsXml()
+        {
+            if (controller == null) { return; }
+
+            FileOpenSingleViewModel openVm = new FileOpenSingleViewModel {
+                FileFilters = MiscText.SymbolsXmlFileFilter,
+                InitialFileFilterIndex = 1,
+                InitialDirectory = System.IO.Path.GetDirectoryName(symbolDB.FileName),
+            };
+
+            if (await Services.DialogService.ShowDialogAsync(openVm) && openVm.SelectedFile != null) {
+                await controller.SwitchSymbolsXml(openVm.SelectedFile, false);
+            }
+        }
+
         #endregion // Localization commands
 
         #region Debug commands

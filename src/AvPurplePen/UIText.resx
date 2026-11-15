@@ -2193,6 +2193,12 @@
   <data name="MainFrame_mergeSymbolsMenu_Text" xml:space="preserve">
     <value>Merge Symbols.xml...</value>
   </data>
+  <data name="MainFrame_copySymbolsXmlMenu_Text" xml:space="preserve">
+    <value>Copy Symbols.xml...</value>
+  </data>
+  <data name="MainFrame_openOtherSymbolsXmlMenu_Text" xml:space="preserve">
+    <value>Open Other Symbols.xml...</value>
+  </data>
   <data name="MainFrame_translateMenu_Text" xml:space="preserve">
     <value>_Translate Description Text</value>
   </data>
