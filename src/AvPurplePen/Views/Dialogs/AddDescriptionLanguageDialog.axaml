@@ -1,0 +1,152 @@
+<!--
+    AddDescriptionLanguageDialog.axaml
+
+    Add Description Language dialog (translation tool). Chooses the culture and
+    native name of a new description language, the grammatical features the
+    description text generator needs, and an existing language whose texts are
+    copied into the new one as a starting point.
+
+    Migrated from WinForms PurplePen/DebugUI/NewLanguage.cs.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        x:Class="AvPurplePen.Views.AddDescriptionLanguageDialog"
+        Classes="dialog"
+        x:DataType="vm:AddDescriptionLanguageDialogViewModel"
+        Title="{resx:Localize NewLanguage_Text}"
+        Icon="/Assets/transparent.ico"
+        d:DesignWidth="460" d:DesignHeight="380"
+        Width="460"
+        SizeToContent="Height"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:AddDescriptionLanguageDialogViewModel/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- OK / Cancel buttons (lower right) -->
+        <UniformGrid DockPanel.Dock="Bottom"
+                     HorizontalAlignment="Right"
+                     Rows="1"
+                     ColumnSpacing="8"
+                     Margin="0,16,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    MinWidth="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    IsEnabled="{Binding IsOkEnabled}"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    MinWidth="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </UniformGrid>
+
+        <Grid ColumnDefinitions="Auto,*"
+              RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto">
+
+            <!-- Row 0: new language (culture) -->
+            <TextBlock x:Name="label1"
+                       Grid.Row="0" Grid.Column="0"
+                       Text="{resx:Localize NewLanguage_label1_Text}"
+                       VerticalAlignment="Center"
+                       Margin="0,0,12,6"/>
+            <ComboBox x:Name="languageComboBox"
+                      Grid.Row="0" Grid.Column="1"
+                      avutil:InitialFocus.IsEnabled="True"
+                      HorizontalAlignment="Stretch"
+                      MaxDropDownHeight="400"
+                      ItemsSource="{Binding AllCultures}"
+                      SelectedItem="{Binding SelectedCulture, Mode=TwoWay}"
+                      Margin="0,0,0,6"/>
+
+            <!-- Row 1: native language name -->
+            <TextBlock x:Name="label2"
+                       Grid.Row="1" Grid.Column="0"
+                       Text="{resx:Localize NewLanguage_label2_Text}"
+                       VerticalAlignment="Center"
+                       Margin="0,0,12,12"/>
+            <TextBox x:Name="textBoxLanguageName"
+                     Grid.Row="1" Grid.Column="1"
+                     Text="{Binding LanguageName, Mode=TwoWay}"
+                     Margin="0,0,0,12"/>
+
+            <!-- Rows 2-3: plural nouns, and (indented) plural adjectives -->
+            <CheckBox x:Name="pluralNounCheckBox"
+                      Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                      Content="{resx:Localize NewLanguage_pluralNounCheckBox_Text}"
+                      IsChecked="{Binding PluralNouns, Mode=TwoWay}"
+                      Margin="0,0,0,4"/>
+            <CheckBox x:Name="pluralAdjectiveCheckBox"
+                      Grid.Row="3" Grid.Column="0" Grid.ColumnSpan="2"
+                      Content="{resx:Localize NewLanguage_pluralAdjectiveCheckBox_Text}"
+                      IsChecked="{Binding PluralModifiers, Mode=TwoWay}"
+                      IsEnabled="{Binding PluralNouns}"
+                      Margin="20,0,0,8"/>
+
+            <!-- Rows 4-5: gender modifiers, and (indented) list of genders -->
+            <CheckBox x:Name="genderAdjectiveCheckBox"
+                      Grid.Row="4" Grid.Column="0" Grid.ColumnSpan="2"
+                      Content="{resx:Localize NewLanguage_genderAdjectiveCheckBox_Text}"
+                      IsChecked="{Binding GenderModifiers, Mode=TwoWay}"
+                      Margin="0,0,0,4"/>
+            <DockPanel Grid.Row="5" Grid.Column="0" Grid.ColumnSpan="2"
+                       IsEnabled="{Binding GenderModifiers}"
+                       Margin="20,0,0,8">
+                <TextBlock x:Name="gendersLabel"
+                           DockPanel.Dock="Left"
+                           Width="60"
+                           Text="{resx:Localize NewLanguage_gendersLabel_Text}"
+                           VerticalAlignment="Center"/>
+                <TextBox x:Name="gendersTextBox"
+                         Text="{Binding Genders, Mode=TwoWay}"/>
+            </DockPanel>
+
+            <!-- Rows 6-7: case modifiers, and (indented) list of cases -->
+            <CheckBox x:Name="caseModifiersCheckBox"
+                      Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="2"
+                      Content="{resx:Localize NewLanguage_caseModifiersCheckBox_Text}"
+                      IsChecked="{Binding CaseModifiers, Mode=TwoWay}"
+                      Margin="0,0,0,4"/>
+            <DockPanel Grid.Row="7" Grid.Column="0" Grid.ColumnSpan="2"
+                       IsEnabled="{Binding CaseModifiers}"
+                       Margin="20,0,0,16">
+                <TextBlock x:Name="casesLabel"
+                           DockPanel.Dock="Left"
+                           Width="60"
+                           Text="{resx:Localize NewLanguage_casesLabel_Text}"
+                           VerticalAlignment="Center"/>
+                <TextBox x:Name="casesTextBox"
+                         Text="{Binding Cases, Mode=TwoWay}"/>
+            </DockPanel>
+
+            <!-- Row 8: language to copy the initial texts from -->
+            <TextBlock x:Name="label3"
+                       Grid.Row="8" Grid.Column="0"
+                       Text="{resx:Localize NewLanguage_label3_Text}"
+                       VerticalAlignment="Center"
+                       Margin="0,0,12,0"/>
+            <ComboBox x:Name="copyFromComboBox"
+                      Grid.Row="8" Grid.Column="1"
+                      HorizontalAlignment="Stretch"
+                      ItemsSource="{Binding CopyFromLanguages}"
+                      SelectedItem="{Binding CopyFromLangId, Mode=TwoWay}"/>
+        </Grid>
+
+    </DockPanel>
+</Window>

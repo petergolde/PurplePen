@@ -1181,6 +1181,15 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to You must first use an external Symbols.xml file by using the "Copy Symbols.xml" or "Open Other Symbols.xml" command..
+        /// </summary>
+        public static string MustUseExternalSymbolsXml {
+            get {
+                return ResourceManager.GetString("MustUseExternalSymbolsXml", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to &amp;Next &gt;.
         /// </summary>
         public static string NextButtonText {

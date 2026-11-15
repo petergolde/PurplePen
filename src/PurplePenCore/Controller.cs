@@ -4198,6 +4198,24 @@ namespace PurplePen
             DefaultCommandMode();
         }
 
+        // Returns true if the symbol DB is using a symbols.xml file outside the application directory (as it does after
+        // the Copy Symbols.xml or Open Other Symbols.xml commands), false if it is still using a file inside the application
+        // directory or a subdirectory of it (such as the installed symbols.xml it starts with). Translation commands
+        // should only change an external file, never the installed one.
+        public bool SymbolDBIsExternal()
+        {
+            string appDirectory = Path.GetFullPath(Path.GetDirectoryName(Util.GetFileInAppDirectory("symbols.xml")));
+            string symbolFile = Path.GetFullPath(symbolDB.FileName);
+
+            if (!Path.EndsInDirectorySeparator(appDirectory)) {
+                appDirectory += Path.DirectorySeparatorChar;
+            }
+
+            // Linux file systems are case-sensitive; Windows and macOS ones normally are not.
+            StringComparison comparison = OperatingSystem.IsLinux() ? StringComparison.Ordinal : StringComparison.OrdinalIgnoreCase;
+            return !symbolFile.StartsWith(appDirectory, comparison);
+        }
+
         // Add a new localization language for descriptions. This is a debug-level command.
         public void AddDescriptionLanguage(SymbolLanguage symbolLanguage, string langIdCopyFrom)
         {

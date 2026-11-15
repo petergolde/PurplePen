@@ -8121,6 +8121,96 @@ namespace AvPurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Nouns change case based on modifiers.
+        /// </summary>
+        public static string NewLanguage_caseModifiersCheckBox_Text {
+            get {
+                return ResourceManager.GetString("NewLanguage_caseModifiersCheckBox_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Cases:.
+        /// </summary>
+        public static string NewLanguage_casesLabel_Text {
+            get {
+                return ResourceManager.GetString("NewLanguage_casesLabel_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Adjectives change based on gender of noun being modified.
+        /// </summary>
+        public static string NewLanguage_genderAdjectiveCheckBox_Text {
+            get {
+                return ResourceManager.GetString("NewLanguage_genderAdjectiveCheckBox_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Genders:.
+        /// </summary>
+        public static string NewLanguage_gendersLabel_Text {
+            get {
+                return ResourceManager.GetString("NewLanguage_gendersLabel_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New language:.
+        /// </summary>
+        public static string NewLanguage_label1_Text {
+            get {
+                return ResourceManager.GetString("NewLanguage_label1_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Native language name:.
+        /// </summary>
+        public static string NewLanguage_label2_Text {
+            get {
+                return ResourceManager.GetString("NewLanguage_label2_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Copy initial text from:.
+        /// </summary>
+        public static string NewLanguage_label3_Text {
+            get {
+                return ResourceManager.GetString("NewLanguage_label3_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use plural adjectives for plural nouns.
+        /// </summary>
+        public static string NewLanguage_pluralAdjectiveCheckBox_Text {
+            get {
+                return ResourceManager.GetString("NewLanguage_pluralAdjectiveCheckBox_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Use plural nouns for between/junction/crossing.
+        /// </summary>
+        public static string NewLanguage_pluralNounCheckBox_Text {
+            get {
+                return ResourceManager.GetString("NewLanguage_pluralNounCheckBox_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to New Description Language.
+        /// </summary>
+        public static string NewLanguage_Text {
+            get {
+                return ResourceManager.GetString("NewLanguage_Text", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to No.
         /// </summary>
         public static string NoButton {

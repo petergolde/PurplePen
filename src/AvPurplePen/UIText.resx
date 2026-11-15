@@ -2199,6 +2199,36 @@
   <data name="MainFrame_openOtherSymbolsXmlMenu_Text" xml:space="preserve">
     <value>Open Other Symbols.xml...</value>
   </data>
+  <data name="NewLanguage_Text" xml:space="preserve">
+    <value>New Description Language</value>
+  </data>
+  <data name="NewLanguage_caseModifiersCheckBox_Text" xml:space="preserve">
+    <value>Nouns change case based on modifiers</value>
+  </data>
+  <data name="NewLanguage_casesLabel_Text" xml:space="preserve">
+    <value>Cases:</value>
+  </data>
+  <data name="NewLanguage_genderAdjectiveCheckBox_Text" xml:space="preserve">
+    <value>Adjectives change based on gender of noun being modified</value>
+  </data>
+  <data name="NewLanguage_gendersLabel_Text" xml:space="preserve">
+    <value>Genders:</value>
+  </data>
+  <data name="NewLanguage_label1_Text" xml:space="preserve">
+    <value>New language:</value>
+  </data>
+  <data name="NewLanguage_label2_Text" xml:space="preserve">
+    <value>Native language name:</value>
+  </data>
+  <data name="NewLanguage_label3_Text" xml:space="preserve">
+    <value>Copy initial text from:</value>
+  </data>
+  <data name="NewLanguage_pluralAdjectiveCheckBox_Text" xml:space="preserve">
+    <value>Use plural adjectives for plural nouns</value>
+  </data>
+  <data name="NewLanguage_pluralNounCheckBox_Text" xml:space="preserve">
+    <value>Use plural nouns for between/junction/crossing</value>
+  </data>
   <data name="MainFrame_translateMenu_Text" xml:space="preserve">
     <value>_Translate Description Text</value>
   </data>

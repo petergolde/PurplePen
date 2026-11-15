@@ -2971,7 +2971,7 @@ namespace PurplePen.ViewModels
         /// Executes the Translate/Add Description Language command.
         /// </summary>
         [RelayCommand]
-        private void AddDescriptionLanguage()
+        private async Task AddDescriptionLanguage()
         {
 #if !PORTING
             DebugUI.NewLanguage newLanguageDialog = new NewLanguage(symbolDB);
@@ -2983,6 +2983,24 @@ namespace PurplePen.ViewModels
                     newLanguageDialog.CaseModifiers,
                     newLanguageDialog.CaseModifiers ? newLanguageDialog.Cases.Split(new string[] { ",", " " }, StringSplitOptions.RemoveEmptyEntries) : new string[0]);
                 controller.AddDescriptionLanguage(symLanguage, newLanguageDialog.CopyFromLangId);
+                controller.SetDescriptionLanguage(symLanguage.LangId);
+            }
+#else
+            if (controller == null) { return; }
+
+            // Adding a language changes the symbols.xml file, so it must not be the installed one.
+            if (!controller.SymbolDBIsExternal()) {
+                await InfoMessage(MiscText.MustUseExternalSymbolsXml);
+                return;
+            }
+
+            AddDescriptionLanguageDialogViewModel vm = new AddDescriptionLanguageDialogViewModel {
+                SymbolDB = symbolDB,
+            };
+
+            if (await Services.DialogService.ShowDialogAsync(vm) && vm.CopyFromLangId != null) {
+                SymbolLanguage symLanguage = vm.SymbolLanguage;
+                controller.AddDescriptionLanguage(symLanguage, vm.CopyFromLangId);
                 controller.SetDescriptionLanguage(symLanguage.LangId);
             }
 #endif
@@ -3012,6 +3030,12 @@ namespace PurplePen.ViewModels
 #else
             if (controller == null) { return; }
 
+            // Adding translated texts changes the symbols.xml file, so it must not be the installed one.
+            if (!controller.SymbolDBIsExternal()) {
+                await InfoMessage(MiscText.MustUseExternalSymbolsXml);
+                return;
+            }
+
             CustomSymbolTextDialogViewModel vm = new CustomSymbolTextDialogViewModel {
                 UseAsLocalizeTool = true,
                 SymbolDB = symbolDB,
@@ -3029,7 +3053,7 @@ namespace PurplePen.ViewModels
         /// Executes the Translate/Merge Symbols command.
         /// </summary>
         [RelayCommand]
-        private void MergeSymbols()
+        private async Task MergeSymbols()
         {
 #if !PORTING
             OpenFileDialog openFile = new OpenFileDialog();
@@ -3041,6 +3065,19 @@ namespace PurplePen.ViewModels
             }
 
             openFile.Dispose();
+#else
+            if (controller == null) { return; }
+
+            // Merging changes the symbols.xml file, so it must not be the installed one.
+            if (!controller.SymbolDBIsExternal()) {
+                await InfoMessage(MiscText.MustUseExternalSymbolsXml);
+                return;
+            }
+
+#if PORTING
+            // TODO: ask for the symbols.xml file to merge and the language code to import, then
+            // call controller.MergeSymbolsXml(filename, langId).
+#endif
 #endif
         }
 

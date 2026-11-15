@@ -1,4 +1,4 @@
-/* Copyright (c) 2006-2008, Peter Golde
+﻿/* Copyright (c) 2006-2008, Peter Golde
  * All rights reserved.
  * 
  * Redistribution and use in source and binary forms, with or without 
@@ -2728,6 +2728,31 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
 
             controller.SelectTab(1);
             Assert.IsTrue(controller.HasVariations);
+        }
+
+        // SymbolDBIsExternal is false for the installed symbols.xml (or any file under the app directory),
+        // and true after switching to a copy outside it.
+        [TestMethod]
+        public async Task SymbolDBIsExternal()
+        {
+            Assert.IsFalse(controller.SymbolDBIsExternal());
+
+            string appSubdirFile = Util.GetFileInAppDirectory(Path.Combine("SymbolDBIsExternalTest", "symbols.xml"));
+            string tempFile = Path.Combine(Path.GetTempPath(), $"SymbolDBIsExternal_{Guid.NewGuid():N}.xml");
+            try {
+                Assert.IsTrue(await controller.SwitchSymbolsXml(tempFile, true));
+                Assert.IsTrue(controller.SymbolDBIsExternal());
+
+                Directory.CreateDirectory(Path.GetDirectoryName(appSubdirFile));
+                Assert.IsTrue(await controller.SwitchSymbolsXml(appSubdirFile, true));
+                Assert.IsFalse(controller.SymbolDBIsExternal());
+            }
+            finally {
+                File.Delete(tempFile);
+                if (Directory.Exists(Path.GetDirectoryName(appSubdirFile))) {
+                    Directory.Delete(Path.GetDirectoryName(appSubdirFile), true);
+                }
+            }
         }
 
 
