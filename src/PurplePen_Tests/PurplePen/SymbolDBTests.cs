@@ -38,6 +38,7 @@ using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.Diagnostics;
+using System.IO;
 using Microsoft.VisualStudio.TestTools.UnitTesting;
 using TestingUtils;
 
@@ -486,6 +487,125 @@ namespace PurplePen.Tests
             Debug.Assert(!bend.InStandard("2004"));
             Debug.Assert(bend.InStandard("2018"));
             Debug.Assert(bend.Kind == 'F');
+        }
+
+        // Create a unique temporary file name for a symbol file.
+        static string TempSymbolFileName()
+        {
+            return Path.Combine(Path.GetTempPath(), $"SymbolDBTests_{Guid.NewGuid():N}.xml");
+        }
+
+        [TestMethod]
+        public void SwitchFilenameCopyExisting()
+        {
+            string sourceFile = TestUtil.GetTestFile("symbols\\testread.xml");
+            string newFile = TempSymbolFileName();
+
+            try {
+                SymbolDB symbolDB = new SymbolDB(sourceFile);
+                Symbol knoll = symbolDB["1.10"];
+
+                symbolDB.SwitchFilename(newFile, true);
+
+                Assert.AreEqual(newFile, symbolDB.FileName);
+                Assert.IsTrue(File.Exists(newFile));
+                CollectionAssert.AreEqual(File.ReadAllBytes(sourceFile), File.ReadAllBytes(newFile));
+
+                // In-memory symbols are kept.
+                Assert.AreSame(knoll, symbolDB["1.10"]);
+                Assert.AreEqual(8, symbolDB.AllSymbols.Count);
+
+                // Reload now reads from the new file.
+                File.Copy(TestUtil.GetTestFile("symbols\\intl_symbols.xml"), newFile, true);
+                symbolDB.Reload();
+                Assert.AreEqual(5, symbolDB.AllLanguages.Count);
+                Assert.AreEqual("pito", symbolDB["1.14"].GetText("bg"));
+            }
+            finally {
+                File.Delete(newFile);
+            }
+        }
+
+        [TestMethod]
+        public void SwitchFilenameCopyExistingSameFile()
+        {
+            string newFile = TempSymbolFileName();
+
+            try {
+                File.Copy(TestUtil.GetTestFile("symbols\\testread.xml"), newFile);
+                SymbolDB symbolDB = new SymbolDB(newFile);
+
+                // Switching to the same file should not throw.
+                symbolDB.SwitchFilename(newFile, true);
+
+                Assert.AreEqual(newFile, symbolDB.FileName);
+                Assert.AreEqual(8, symbolDB.AllSymbols.Count);
+            }
+            finally {
+                File.Delete(newFile);
+            }
+        }
+
+        [TestMethod]
+        public void SwitchFilenameReread()
+        {
+            string newFile = TempSymbolFileName();
+
+            try {
+                File.Copy(TestUtil.GetTestFile("symbols\\intl_symbols.xml"), newFile);
+
+                SymbolDB symbolDB = new SymbolDB(TestUtil.GetTestFile("symbols\\testread.xml"));
+                Assert.IsFalse(symbolDB.HasLanguage("bg"));
+
+                symbolDB.SwitchFilename(newFile, false);
+
+                Assert.AreEqual(newFile, symbolDB.FileName);
+                Assert.AreEqual(5, symbolDB.AllLanguages.Count);
+                Assert.IsTrue(symbolDB.HasLanguage("bg"));
+                Assert.AreEqual("pito", symbolDB["1.14"].GetText("bg"));
+                Assert.AreEqual("deepa", symbolDB["8.3"].GetText("bg", "feminine"));
+            }
+            finally {
+                File.Delete(newFile);
+            }
+        }
+
+        [TestMethod]
+        public void SwitchFilenameRereadMissingFile()
+        {
+            string sourceFile = TestUtil.GetTestFile("symbols\\testread.xml");
+            string missingFile = TempSymbolFileName();
+
+            SymbolDB symbolDB = new SymbolDB(sourceFile);
+
+            Assert.ThrowsExactly<FileNotFoundException>(() => symbolDB.SwitchFilename(missingFile, false));
+
+            // SymbolDB is unchanged.
+            Assert.AreEqual(sourceFile, symbolDB.FileName);
+            Assert.AreEqual(8, symbolDB.AllSymbols.Count);
+        }
+
+        [TestMethod]
+        public void SwitchFilenameRereadBadFile()
+        {
+            string sourceFile = TestUtil.GetTestFile("symbols\\testread.xml");
+            string badFile = TempSymbolFileName();
+
+            try {
+                File.WriteAllText(badFile, "<notsymbols/>");
+                SymbolDB symbolDB = new SymbolDB(sourceFile);
+                Symbol knoll = symbolDB["1.10"];
+
+                Assert.ThrowsExactly<XmlFileFormatException>(() => symbolDB.SwitchFilename(badFile, false));
+
+                // SymbolDB is unchanged.
+                Assert.AreEqual(sourceFile, symbolDB.FileName);
+                Assert.AreEqual(8, symbolDB.AllSymbols.Count);
+                Assert.AreSame(knoll, symbolDB["1.10"]);
+            }
+            finally {
+                File.Delete(badFile);
+            }
         }
     }
 

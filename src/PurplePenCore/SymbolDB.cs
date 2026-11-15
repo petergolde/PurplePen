@@ -1024,6 +1024,44 @@ public void Draw(IGraphicsTarget g, CmykColor color, RectangleF rect)
             ReadSymbolFile(filename);
         }
 
+        /// <summary>
+        /// Change the file that this SymbolDB is associated with. Afterwards, FileName returns newFileName,
+        /// and Reload() reads from newFileName.
+        /// </summary>
+        /// <param name="newFileName">The new file name for the symbol DB.</param>
+        /// <param name="copyExisting">If true, the current symbol file is copied to newFileName (overwriting
+        /// any existing file there), and the in-memory symbols are kept. If false, newFileName must already exist,
+        /// and the symbols are reread from it. If reading fails, the SymbolDB is left unchanged.</param>
+        public void SwitchFilename(string newFileName, bool copyExisting)
+        {
+            if (copyExisting) {
+                // Copying a file onto itself throws, and isn't needed anyway.
+                if (!string.Equals(Path.GetFullPath(filename), Path.GetFullPath(newFileName), StringComparison.OrdinalIgnoreCase)) {
+                    File.Copy(filename, newFileName, true);
+                }
+            }
+            else {
+                if (!File.Exists(newFileName))
+                    throw new FileNotFoundException("Symbol file not found", newFileName);
+
+                // Read into new dictionaries, and only replace the current contents if the read succeeds.
+                Dictionary<string, List<Symbol>> oldSymbols = symbols;
+                Dictionary<string, SymbolLanguage> oldLanguages = languages;
+                symbols = new Dictionary<string, List<Symbol>>();
+                languages = new Dictionary<string, SymbolLanguage>();
+                try {
+                    ReadSymbolFile(newFileName);
+                }
+                catch {
+                    symbols = oldSymbols;
+                    languages = oldLanguages;
+                    throw;
+                }
+            }
+
+            filename = newFileName;
+        }
+
         private void ReadSymbolFile(string filename)
         {
             int sortOrder = 1;
