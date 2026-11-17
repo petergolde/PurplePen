@@ -2755,6 +2755,39 @@ Code:           layer:12  control:4  scale:1  text:GO  top-left:(38.29,-16.89)
             }
         }
 
+        // MergeSymbolsXml reports an error and returns false for a missing or invalid file, leaving the
+        // symbols file alone, and returns true after merging a valid one.
+        [TestMethod]
+        public async Task MergeSymbolsXmlErrors()
+        {
+            string tempFile = Path.Combine(Path.GetTempPath(), $"MergeSymbolsXml_{Guid.NewGuid():N}.xml");
+            string badFile = Path.Combine(Path.GetTempPath(), $"MergeSymbolsXmlBad_{Guid.NewGuid():N}.xml");
+            try {
+                Assert.IsTrue(await controller.SwitchSymbolsXml(tempFile, true));
+                byte[] original = File.ReadAllBytes(tempFile);
+
+                // Missing file.
+                Assert.IsFalse(await controller.MergeSymbolsXml(badFile, "fr"));
+                StringAssert.StartsWith(ui.output.ToString(), "ERROR: ");
+
+                // Not XML.
+                File.WriteAllText(badFile, "this is not XML");
+                ui.output = new StringWriter();
+                Assert.IsFalse(await controller.MergeSymbolsXml(badFile, "fr"));
+                StringAssert.StartsWith(ui.output.ToString(), "ERROR: ");
+                CollectionAssert.AreEqual(original, File.ReadAllBytes(tempFile));
+
+                // Valid file: no error.
+                ui.output = new StringWriter();
+                Assert.IsTrue(await controller.MergeSymbolsXml(TestUtil.GetTestFile("desclocalize\\symbols-to-merge.xml"), "fr"));
+                Assert.AreEqual("", ui.output.ToString());
+            }
+            finally {
+                File.Delete(tempFile);
+                File.Delete(badFile);
+            }
+        }
+
 
     }
 }

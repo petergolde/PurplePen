@@ -1181,6 +1181,24 @@ namespace PurplePen {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to Language code to import:.
+        /// </summary>
+        public static string MergeSymbolsLanguagePrompt {
+            get {
+                return ResourceManager.GetString("MergeSymbolsLanguagePrompt", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized string similar to Merge Symbols.xml.
+        /// </summary>
+        public static string MergeSymbolsTitle {
+            get {
+                return ResourceManager.GetString("MergeSymbolsTitle", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized string similar to You must first use an external Symbols.xml file by using the "Copy Symbols.xml" or "Open Other Symbols.xml" command..
         /// </summary>
         public static string MustUseExternalSymbolsXml {

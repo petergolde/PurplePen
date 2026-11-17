@@ -3277,14 +3277,14 @@ namespace PurplePen
 
         }
 
-        private void mergeSymbolsMenu_Click(object sender, EventArgs e)
+        private async void mergeSymbolsMenu_Click(object sender, EventArgs e)
         {
             OpenFileDialog openFile = new OpenFileDialog();
             openFile.DefaultExt = ".xml";
             if (openFile.ShowDialog() == DialogResult.OK) {
                 string filename = openFile.FileName;
                 string langId = Microsoft.VisualBasic.Interaction.InputBox("Language code to import", "Merge Symbols.xml", null, 0, 0);
-                controller.MergeSymbolsXml(filename, langId);
+                await controller.MergeSymbolsXml(filename, langId);
             }
 
             openFile.Dispose();

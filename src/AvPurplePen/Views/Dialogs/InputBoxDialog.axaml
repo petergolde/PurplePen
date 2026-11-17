@@ -1,0 +1,66 @@
+<!--
+    InputBoxDialog.axaml
+    General-purpose input box: a prompt and a single line of text to enter,
+    with OK and Cancel buttons (the equivalent of Visual Basic's InputBox).
+    The prompt and title come from InputBoxDialogViewModel.
+-->
+<Window xmlns="https://github.com/avaloniaui"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:vm="using:PurplePen.ViewModels"
+        xmlns:resx="using:AvPurplePen"
+        xmlns:avutil="using:AvUtil"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        mc:Ignorable="d"
+        d:DesignWidth="400" d:DesignHeight="150"
+        x:Class="AvPurplePen.Views.InputBoxDialog"
+        Classes="dialog"
+        x:DataType="vm:InputBoxDialogViewModel"
+        Title="Purple Pen"
+        Icon="/Assets/transparent.ico"
+        Width="400"
+        SizeToContent="Height"
+        CanResize="False"
+        CanMinimize="False"
+        CanMaximize="False"
+        WindowStartupLocation="CenterOwner"
+        ShowInTaskbar="False">
+
+    <Design.DataContext>
+        <vm:InputBoxDialogViewModel Prompt="Enter some text:"/>
+    </Design.DataContext>
+
+    <DockPanel Margin="12">
+
+        <!-- OK / Cancel buttons (lower right) -->
+        <UniformGrid DockPanel.Dock="Bottom"
+                     HorizontalAlignment="Right"
+                     Rows="1"
+                     ColumnSpacing="8"
+                     Margin="0,16,0,0">
+            <Button x:Name="okButton"
+                    Content="{resx:Localize OKButton}"
+                    MinWidth="85"
+                    HorizontalContentAlignment="Center"
+                    IsDefault="True"
+                    IsEnabled="{Binding IsOkEnabled}"
+                    Click="OkButton_Click"/>
+            <Button x:Name="cancelButton"
+                    Content="{resx:Localize CancelButton}"
+                    MinWidth="85"
+                    HorizontalContentAlignment="Center"
+                    IsCancel="True"
+                    Click="CancelButton_Click"/>
+        </UniformGrid>
+
+        <StackPanel Spacing="6">
+            <TextBlock x:Name="promptLabel"
+                       Text="{Binding Prompt}"
+                       TextWrapping="Wrap"/>
+            <TextBox x:Name="inputTextBox"
+                     avutil:InitialFocus.IsEnabled="True"
+                     Text="{Binding Text, Mode=TwoWay}"/>
+        </StackPanel>
+
+    </DockPanel>
+</Window>

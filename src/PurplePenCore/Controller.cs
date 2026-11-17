@@ -4233,12 +4233,24 @@ namespace PurplePen
             localizer.CustomizeDescriptionTexts(symbolTexts);
         }
 
-        // Merge another symbols.xml
-        public void MergeSymbolsXml(string filename, string langId)
+        // Merge the texts for one language from another symbols.xml into the current one, replacing the texts the
+        // current file has for that language. This is a debug-level command used for translation. Returns false
+        // (after telling the user) if a file could not be read or written, or was not a valid symbols file.
+        public async Task<bool> MergeSymbolsXml(string filename, string langId)
         {
             DescriptionLocalize localizer = new DescriptionLocalize(symbolDB);
 
-            localizer.MergeSymbolsFile(filename, langId);
+            try {
+                localizer.MergeSymbolsFile(filename, langId);
+            }
+            catch (Exception e) {
+                await ui.ErrorMessage(e.Message);
+                return false;
+            }
+
+            // Descriptions may have changed if the merged language is the one shown.
+            ForceChangeUpdate(true);
+            return true;
         }
 
         // Switch the symbols.xml file used by the symbol DB to a different file. This is a debug-level

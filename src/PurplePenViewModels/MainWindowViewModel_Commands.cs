@@ -3074,10 +3074,28 @@ namespace PurplePen.ViewModels
                 return;
             }
 
-#if PORTING
-            // TODO: ask for the symbols.xml file to merge and the language code to import, then
-            // call controller.MergeSymbolsXml(filename, langId).
-#endif
+            // Ask for the symbols.xml file to merge from.
+            FileOpenSingleViewModel openVm = new FileOpenSingleViewModel {
+                FileFilters = MiscText.SymbolsXmlFileFilter,
+                InitialFileFilterIndex = 1,
+                InitialDirectory = System.IO.Path.GetDirectoryName(symbolDB.FileName),
+            };
+            if (!await Services.DialogService.ShowDialogAsync(openVm) || openVm.SelectedFile == null) {
+                return;
+            }
+
+            // Ask for the language to import, starting with the current description language.
+            InputBoxDialogViewModel inputVm = new InputBoxDialogViewModel {
+                Title = MiscText.MergeSymbolsTitle,
+                Prompt = MiscText.MergeSymbolsLanguagePrompt,
+                Text = controller.GetDescriptionLanguage(),
+                AllowEmpty = false,
+            };
+            if (!await Services.DialogService.ShowDialogAsync(inputVm)) {
+                return;
+            }
+
+            await controller.MergeSymbolsXml(openVm.SelectedFile, inputVm.Text.Trim());
 #endif
         }
 
