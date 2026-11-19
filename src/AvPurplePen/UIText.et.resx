@@ -2523,9 +2523,6 @@ Peale OK vajutamist, otsi kaardi fail arvutist..</value>
   <data name="MiscText_EnterLength" xml:space="preserve">
     <value>Sisesta pikkus km, või jäta tühjaks - siis arvutatakse automaatselt.</value>
   </data>
-  <data name="MiscText_PausePrinting" xml:space="preserve">
-    <value>"{0}" trükkimine on lõpetatud. Vajuta OK trükkimaks "{1}".</value>
-  </data>
   <data name="MiscText_OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>
@@ -2823,9 +2820,6 @@ Võisluste jaoks on soovitav eksportida radade failid OCADi formaati (menüüst 
   </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Koopiate arv iga raja kohta:</value>
-  </data>
-  <data name="PrintCourses_checkBoxPausePrinting_Text" xml:space="preserve">
-    <value>Peata trükkimine peale igat rada või raja osa</value>
   </data>
   <data name="PrintCourses_copiesGroupBox_Text" xml:space="preserve">
     <value>Koopiad</value>

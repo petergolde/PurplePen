@@ -469,9 +469,6 @@
   <data name="EnterLength" xml:space="preserve">
     <value>Введіть довжину у км, або лишіть поле порожнім для автоматичного підрахунку</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>Завершено друк "{0}". Натисніть OK щоб почати друк "{1}".</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

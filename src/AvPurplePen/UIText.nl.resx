@@ -1443,9 +1443,6 @@
   <data name="MiscText_PrintingPage" xml:space="preserve">
     <value>Afdrukken van pagina {0} (van {1})</value>
   </data>
-  <data name="MiscText_PausePrinting" xml:space="preserve">
-    <value>Afdrukkken van "{0}" gereed. Druk op OK om door te gaan met afdrukken van "{1}".</value>
-  </data>
   <data name="MiscText_OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>
@@ -1538,9 +1535,6 @@ Om wedstrijdkaarten af te drukken, wordt voorgesteld de routes als OCAD bestande
   </data>
   <data name="PrintPunches_printerLabel_Text" xml:space="preserve">
     <value>Printer:</value>
-  </data>
-  <data name="PrintCourses_checkBoxPausePrinting_Text" xml:space="preserve">
-    <value>Onderbreek afdrukken na elke route of deel daar van</value>
   </data>
   <data name="PrintCourses_Text" xml:space="preserve">
     <value>Routes afdrukkken</value>

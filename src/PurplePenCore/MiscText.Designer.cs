@@ -1316,15 +1316,6 @@ namespace PurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Finished printing &quot;{0}&quot;. Press OK to begin printing &quot;{1}&quot;..
-        /// </summary>
-        public static string PausePrinting {
-            get {
-                return ResourceManager.GetString("PausePrinting", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Pdfium PDF converter failed to read PDF file successfully.
         /// </summary>
         public static string PdfConversionFailed {

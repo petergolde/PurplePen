@@ -2701,9 +2701,6 @@ After pressing OK, try to find a copy of the map file on your computer.</value>
   <data name="MiscText_EnterLength" xml:space="preserve">
     <value>Enter length in km, or leave blank to calculate automatically</value>
   </data>
-  <data name="MiscText_PausePrinting" xml:space="preserve">
-    <value>Finished printing "{0}". Press OK to begin printing "{1}".</value>
-  </data>
   <data name="MiscText_OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>
@@ -3033,9 +3030,6 @@ For printing competition maps, it is suggested that courses be exported to OCAD 
   </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Copies of each course:</value>
-  </data>
-  <data name="PrintCourses_checkBoxPausePrinting_Text" xml:space="preserve">
-    <value>Pause printing after each course or part</value>
   </data>
   <data name="PrintCourses_copiesGroupBox_Text" xml:space="preserve">
     <value>Copies</value>

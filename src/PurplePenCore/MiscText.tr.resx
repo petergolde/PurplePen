@@ -472,9 +472,6 @@ Tamam düğmesine bastıktan sonra, bilgisayarınızda harita dosyasının bir k
   <data name="EnterLength" xml:space="preserve">
     <value>Uzunluğu km cinsinden girin veya otomatik olarak hesaplanması için boş bırakın</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>"{0}" yazdırma işlemi tamamlandı. "{1}" yazdırmaya başlamak için OK düğmesine basın.</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

@@ -525,9 +525,6 @@ Dopo aver premuto OK, prova a cercare una copia del file della mappa sul tuo com
   <data name="EnterLength" xml:space="preserve">
     <value>Inserisci la lunghezza in km o lascia vuoto per calcolare automaticamente</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>Stampa "{0}" terminata. Premere OK per iniziare a stampare "{1}".</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

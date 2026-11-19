@@ -105,28 +105,6 @@ namespace PurplePen
             return new PrintingPaperSize(landscape, paperSize);
         }
 
-#if !PORTING
-        // Need to implement the pausing functionality still, maybe. Not sure how this 
-        // integrates into IPrintable.
-
-        protected override bool PausePrintingAfterPage(int pageNumber, out string pauseMessage)
-        {
-            if (coursePrintSettings.PauseAfterCourseOrPart && pages[pageNumber].lastPageOfCourseOrPart && pageNumber + 1 < pages.Count) {
-                pauseMessage = PausePrintingMessage(pageNumber);
-                return true;
-            }
-            else {
-                pauseMessage = null;
-                return false;
-            }
-        }
-
-        private string PausePrintingMessage(int pageNumber)
-        {
-            return string.Format(MiscText.PausePrinting, pages[pageNumber].description, pages[pageNumber + 1].description);
-        }
-#endif
-
         // The core printing routine. The origin of the graphics is the upper-left of the margins,
         // in hundreths of an inch. The page is drawn directly onto grTarget; purple blending is
         // correct only if grTarget supports blending, so printing targets that don't (e.g., GDI+

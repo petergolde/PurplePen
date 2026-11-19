@@ -472,9 +472,6 @@ A Rendben lenyomása után próbálja megkeresni a térkép fájlt a számítóg
   <data name="EnterLength" xml:space="preserve">
     <value>Írja be a hosszt km-ben, vagy hagyja üresen az automatikus számoláshoz</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>A {0} nyomtatása befejeződött. Nyomjon OK-t a(z) {1} nyomtatásához!</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

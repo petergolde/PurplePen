@@ -108,7 +108,6 @@ namespace PurplePen
             printerName.Text = printerSettings.PrinterName;
 
             copiesUpDown.Value = settings.Count;
-            checkBoxPausePrinting.Checked = settings.PauseAfterCourseOrPart;
 
             comboBoxMultiPage.SelectedIndex = settings.CropLargePrintArea ? 0 : 1;
             comboBoxColorModel.SelectedIndex = (int)settings.PrintingColorModel;
@@ -128,7 +127,6 @@ namespace PurplePen
 
             // Copies section.
             settings.Count = (int) copiesUpDown.Value;
-            settings.PauseAfterCourseOrPart = checkBoxPausePrinting.Checked;
 
             // Appearance 
             settings.CropLargePrintArea = (comboBoxMultiPage.SelectedIndex == 0);

@@ -472,9 +472,6 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="EnterLength" xml:space="preserve">
     <value>Syötä pituus kilometreissä tai jätä tyhjäksi, jolloin pituus lasketaan automaattisesti</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>Radan "{0}" tulostus on valmis. Aloita radan "{1}" tulostus painamalla OK.</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

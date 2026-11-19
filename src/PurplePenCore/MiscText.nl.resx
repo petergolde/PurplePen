@@ -189,9 +189,6 @@
   <data name="DuplicateCourseTitle" xml:space="preserve">
     <value>Dupliceer route</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>Afdrukkken van "{0}" gereed. Druk op OK om door te gaan met afdrukken van "{1}".</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

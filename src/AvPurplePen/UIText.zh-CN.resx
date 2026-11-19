@@ -2545,9 +2545,6 @@
   <data name="MiscText_EnterLength" xml:space="preserve">
     <value>在进入或离开的空白公里长度，自动计算</value>
   </data>
-  <data name="MiscText_PausePrinting" xml:space="preserve">
-    <value>打印完“{0}”。按OK开始印刷“{1}”。</value>
-  </data>
   <data name="MiscText_OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>
@@ -2858,9 +2855,6 @@
   </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>每个线路的副本：</value>
-  </data>
-  <data name="PrintCourses_checkBoxPausePrinting_Text" xml:space="preserve">
-    <value>每条线路或部分后暂停打印</value>
   </data>
   <data name="PrintCourses_copiesGroupBox_Text" xml:space="preserve">
     <value>副本</value>

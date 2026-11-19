@@ -2555,9 +2555,6 @@ Paina OK ja yritä etsiä karttatiedoston kopio tietokoneeltasi.</value>
   <data name="MiscText_EnterLength" xml:space="preserve">
     <value>Syötä pituus kilometreissä tai jätä tyhjäksi, jolloin pituus lasketaan automaattisesti</value>
   </data>
-  <data name="MiscText_PausePrinting" xml:space="preserve">
-    <value>Radan "{0}" tulostus on valmis. Aloita radan "{1}" tulostus painamalla OK.</value>
-  </data>
   <data name="MiscText_OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>
@@ -2878,9 +2875,6 @@ Kilpailukarttojen tulostamiseksi on suositeltavaa viedä radat OCAD-tiedostoihin
   </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Kopioita jokaisesta radasta:</value>
-  </data>
-  <data name="PrintCourses_checkBoxPausePrinting_Text" xml:space="preserve">
-    <value>Keskeytä tulostus jokaisen radan tai osan jälkeen</value>
   </data>
   <data name="PrintCourses_copiesGroupBox_Text" xml:space="preserve">
     <value>Kopiot</value>

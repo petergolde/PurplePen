@@ -123,7 +123,7 @@
             <!-- === Right: Copies + Appearance === -->
             <StackPanel Grid.Column="2" Spacing="8">
 
-                <!-- Copies group: copies of each course, and pause after each course. -->
+                <!-- Copies group: copies of each course. -->
                 <HeaderedContentControl Header="{resx:Localize PrintCourses_copiesGroupBox_Text}"
                                         Padding="8,10,8,8">
                     <StackPanel Spacing="6">
@@ -140,9 +140,6 @@
                                            avutil:InitialFocus.IsEnabled="True"
                                            Value="{Binding Copies, Mode=TwoWay}"/>
                         </StackPanel>
-                        <CheckBox x:Name="checkBoxPausePrinting"
-                                  Content="{resx:Localize PrintCourses_checkBoxPausePrinting_Text}"
-                                  IsChecked="{Binding PausePrinting, Mode=TwoWay}"/>
                     </StackPanel>
                 </HeaderedContentControl>
 

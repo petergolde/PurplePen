@@ -2558,9 +2558,6 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   <data name="MiscText_EnterLength" xml:space="preserve">
     <value>Die Länge in km eintragen, oder leer lassen, um die Bahnlänge automatisch zu berechnen.</value>
   </data>
-  <data name="MiscText_PausePrinting" xml:space="preserve">
-    <value>Drucken von "{0}" fertig. OK klicken, um Drucken von "{1}" zu starten.</value>
-  </data>
   <data name="MiscText_OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>
@@ -2887,9 +2884,6 @@ Zum Drucken der Wettkampfdateien wird empfohlen, sie nach OCAD zu exportieren (�
   </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Kopien jeder Bahn:</value>
-  </data>
-  <data name="PrintCourses_checkBoxPausePrinting_Text" xml:space="preserve">
-    <value>Drucken nach jeder Bahn bzw. Teilbahn unterbrechen</value>
   </data>
   <data name="PrintCourses_copiesGroupBox_Text" xml:space="preserve">
     <value>Kopien</value>

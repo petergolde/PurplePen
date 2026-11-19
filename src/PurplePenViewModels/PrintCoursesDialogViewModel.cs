@@ -84,10 +84,6 @@ namespace PurplePen.ViewModels
         [ObservableProperty]
         private int copies = 1;
 
-        /// <summary>"Pause printing after each course or part" checkbox.</summary>
-        [ObservableProperty]
-        private bool pausePrinting;
-
         /// <summary>
         /// 0 = Crop to a single page, 1 = Print on multiple pages.
         /// Bound to the multi-page combo's SelectedIndex.
@@ -142,7 +138,6 @@ namespace PurplePen.ViewModels
                     AllCourses = allCourses,
                     VariationChoicesPerCourse = VariationChoicesPerCourse,
                     Count = Math.Max(1, Copies),
-                    PauseAfterCourseOrPart = PausePrinting,
                     // Index 0 = "Crop to a single page" -> CropLargePrintArea = true.
                     CropLargePrintArea = MultiPageIndex == 0,
                     PrintMapExchangesOnOneMap = MergeParts,
@@ -169,7 +164,6 @@ namespace PurplePen.ViewModels
                                             ?? new Dictionary<Id<Course>, VariationChoices>();
 
                 Copies = Math.Max(1, value.Count);
-                PausePrinting = value.PauseAfterCourseOrPart;
                 MultiPageIndex = value.CropLargePrintArea ? 0 : 1;
                 MergeParts = value.PrintMapExchangesOnOneMap;
                 ColorModelIndex = (int)value.PrintingColorModel;

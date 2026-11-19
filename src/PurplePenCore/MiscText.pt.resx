@@ -480,10 +480,6 @@ Visite http://microsoft.com/net e instale a versão mais recente do framework .N
   <data name="EnterLength" xml:space="preserve">
     <value>Insira o comprimento em km ou deixe em branco para calcular automaticamente</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>Impressão de "{0}" concluída.
-Pressione OK para começar a imprimir "{1}".</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

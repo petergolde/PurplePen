@@ -7116,15 +7116,6 @@ namespace AvPurplePen {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to Finished printing &quot;{0}&quot;. Press OK to begin printing &quot;{1}&quot;..
-        /// </summary>
-        public static string MiscText_PausePrinting {
-            get {
-                return ResourceManager.GetString("MiscText_PausePrinting", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized string similar to Pdfium PDF converter failed to read PDF file successfully.
         /// </summary>
         public static string MiscText_PdfConversionFailed {
@@ -8453,15 +8444,6 @@ namespace AvPurplePen {
         public static string PrintCourses_checkBoxMergeParts_Text {
             get {
                 return ResourceManager.GetString("PrintCourses_checkBoxMergeParts_Text", resourceCulture);
-            }
-        }
-        
-        /// <summary>
-        ///   Looks up a localized string similar to Pause printing after each course or part.
-        /// </summary>
-        public static string PrintCourses_checkBoxPausePrinting_Text {
-            get {
-                return ResourceManager.GetString("PrintCourses_checkBoxPausePrinting_Text", resourceCulture);
             }
         }
         

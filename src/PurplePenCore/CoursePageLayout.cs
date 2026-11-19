@@ -53,7 +53,6 @@ namespace PurplePen
         public RectangleF printRectangle;     // rectangle to print to on page, in hundredth of inch.
         public bool landscape;                       // true if page should be printed in landscape orientation
         public PrintingPaperSize paperSize;            // the paper size for that page.
-        public bool lastPageOfCourseOrPart;    // true if last page of a course or part of course (used for pausing printing)
     }
 
     // Class to layout the printing onto pages. Used for both printing and PDF creation.
@@ -104,7 +103,6 @@ namespace PurplePen
             // Go through each course and lay it out, then add to the page list.
             foreach (CourseDesignator courseDesignator in courseDesignators) {
                 pages.AddRange(LayoutOptimizedCourse(courseDesignator));
-                pages[pages.Count - 1].lastPageOfCourseOrPart = true;
             }
 
             return pages;

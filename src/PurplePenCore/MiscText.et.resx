@@ -470,9 +470,6 @@ Peale OK vajutamist, otsi kaardi fail arvutist..</value>
   <data name="EnterLength" xml:space="preserve">
     <value>Sisesta pikkus km, või jäta tühjaks - siis arvutatakse automaatselt.</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>"{0}" trükkimine on lõpetatud. Vajuta OK trükkimaks "{1}".</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

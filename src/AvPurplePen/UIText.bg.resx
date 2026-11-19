@@ -2576,9 +2576,6 @@
   <data name="MiscText_EnterLength" xml:space="preserve">
     <value>Въведете дължината в km или оставете празно за автоматично изчисляване.</value>
   </data>
-  <data name="MiscText_PausePrinting" xml:space="preserve">
-    <value>Печатът на „{0}“ е завършен. Натиснете OK, за да започне печатът на „{1}“.</value>
-  </data>
   <data name="MiscText_OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>
@@ -2908,9 +2905,6 @@
   </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Разпечатки за всеки маршрут:</value>
-  </data>
-  <data name="PrintCourses_checkBoxPausePrinting_Text" xml:space="preserve">
-    <value>Пауза след отпечатване на всеки маршрут или част</value>
   </data>
   <data name="PrintCourses_copiesGroupBox_Text" xml:space="preserve">
     <value>Разпечатки</value>

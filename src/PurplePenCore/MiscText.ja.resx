@@ -472,9 +472,6 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   <data name="EnterLength" xml:space="preserve">
     <value>長さをキロメートル単位で入力してください。または空白のままにすると自動で長さが計算されます。</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>「{0}」の印刷が終わりました。OKをクリックで「{1}」の印刷を開始します。</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

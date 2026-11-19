@@ -472,9 +472,6 @@
   <data name="EnterLength" xml:space="preserve">
     <value>Въведете дължината в km или оставете празно за автоматично изчисляване.</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>Печатът на „{0}“ е завършен. Натиснете OK, за да започне печатът на „{1}“.</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

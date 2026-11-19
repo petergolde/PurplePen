@@ -256,16 +256,6 @@ namespace PurplePen
             return dpi;
         }
 
-        private bool PausePrintingAfterPage(int pageNumber, out string pauseMessage)
-        {
-#if PORTING
-            // Need to implement the pausing functionality. Maybe this goes into
-            // IPrintable in some way?
-#endif
-            pauseMessage = null;
-            return false;
-        }
-
         // Get the WinForms PaperSize object corresponding to the given PrintingPaperSize.
         // Note that we can't just create a new PaperSize object, but instead need to find the
         // one in the printer's PaperSizes collection that matches the given size, because

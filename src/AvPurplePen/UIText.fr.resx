@@ -2563,9 +2563,6 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   <data name="MiscText_EnterLength" xml:space="preserve">
     <value>Saisissez la longueur en km ou laissez la zone à blanc afin qu'elle soit calculée automatiquement.</value>
   </data>
-  <data name="MiscText_PausePrinting" xml:space="preserve">
-    <value>Impression de "{0}" terminée. Cliquez sur OK pour démarrer l'impression de "{1}".</value>
-  </data>
   <data name="MiscText_OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>
@@ -2863,9 +2860,6 @@ Afin d'imprimer des cartes de compétition, nous vous suggérons d'exporter les 
   </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Nombre de copies de chaque circuit :</value>
-  </data>
-  <data name="PrintCourses_checkBoxPausePrinting_Text" xml:space="preserve">
-    <value>Mettre l'impression en pause après chaque circuit ou chaque partie</value>
   </data>
   <data name="PrintCourses_copiesGroupBox_Text" xml:space="preserve">
     <value>Copies</value>

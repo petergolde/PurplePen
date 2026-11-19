@@ -469,9 +469,6 @@ Presione Aceptar, e intente encontrar una copia del mapa en su ordenador.</value
   <data name="EnterLength" xml:space="preserve">
     <value>Indique la longitud en km, o déjela en banco para calcularla automáticamente.</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>Se ha impreso «{0}». Pulse Aceptar para comenzó a imprimir «{1}».</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

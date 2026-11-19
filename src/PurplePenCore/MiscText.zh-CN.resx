@@ -471,9 +471,6 @@
   <data name="EnterLength" xml:space="preserve">
     <value>在进入或离开的空白公里长度，自动计算</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>打印完“{0}”。按OK开始印刷“{1}”。</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

@@ -2471,9 +2471,6 @@ Presione Aceptar, e intente encontrar una copia del mapa en su ordenador.</value
   <data name="MiscText_EnterLength" xml:space="preserve">
     <value>Indique la longitud en km, o déjela en banco para calcularla automáticamente.</value>
   </data>
-  <data name="MiscText_PausePrinting" xml:space="preserve">
-    <value>Se ha impreso «{0}». Pulse Aceptar para comenzó a imprimir «{1}».</value>
-  </data>
   <data name="MiscText_OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>
@@ -2767,9 +2764,6 @@ Para imprimir mapas para una competición, se sugiere que los recorridos sean ex
   </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Copias por recorrido:</value>
-  </data>
-  <data name="PrintCourses_checkBoxPausePrinting_Text" xml:space="preserve">
-    <value>Pausar la impresión tras cada recorrido o sección</value>
   </data>
   <data name="PrintCourses_copiesGroupBox_Text" xml:space="preserve">
     <value>Copias</value>

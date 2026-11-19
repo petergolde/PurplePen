@@ -472,9 +472,6 @@ Tryck OK och försök hitta kartfilen på din dator.</value>
   <data name="EnterLength" xml:space="preserve">
     <value>Ange en längd i km, eller lämna tomt för att beräkna automatiskt</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>Klar med att skriva ut "{0}". Tryck OK för att börja skriva ut "{1}".</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

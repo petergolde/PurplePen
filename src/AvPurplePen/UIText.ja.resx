@@ -2351,9 +2351,6 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   <data name="MiscText_EnterLength" xml:space="preserve">
     <value>長さをキロメートル単位で入力してください。または空白のままにすると自動で長さが計算されます。</value>
   </data>
-  <data name="MiscText_PausePrinting" xml:space="preserve">
-    <value>「{0}」の印刷が終わりました。OKをクリックで「{1}」の印刷を開始します。</value>
-  </data>
   <data name="MiscText_OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>
@@ -2584,9 +2581,6 @@ OKを押し、コンピュータ上で地図ファイルのコピーを探して
   </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>コースごとの部数:</value>
-  </data>
-  <data name="PrintCourses_checkBoxPausePrinting_Text" xml:space="preserve">
-    <value>コースパートごとに印刷を休止する</value>
   </data>
   <data name="PrintCourses_copiesGroupBox_Text" xml:space="preserve">
     <value>部数</value>

@@ -472,9 +472,6 @@ Après avoir cliqué sur OK, essayez de trouver une copie du fichier de la carte
   <data name="EnterLength" xml:space="preserve">
     <value>Saisissez la longueur en km ou laissez la zone à blanc afin qu'elle soit calculée automatiquement.</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>Impression de "{0}" terminée. Cliquez sur OK pour démarrer l'impression de "{1}".</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

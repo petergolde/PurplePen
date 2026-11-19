@@ -2578,9 +2578,6 @@ Tamam düğmesine bastıktan sonra, bilgisayarınızda harita dosyasının bir k
   <data name="MiscText_EnterLength" xml:space="preserve">
     <value>Uzunluğu km cinsinden girin veya otomatik olarak hesaplanması için boş bırakın</value>
   </data>
-  <data name="MiscText_PausePrinting" xml:space="preserve">
-    <value>"{0}" yazdırma işlemi tamamlandı. "{1}" yazdırmaya başlamak için OK düğmesine basın.</value>
-  </data>
   <data name="MiscText_OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>
@@ -2910,9 +2907,6 @@ Yarışma haritalarını yazdırmak için kursların OCAD dosyalarına aktarılm
   </data>
   <data name="PrintCourses_copiesLabel_Text" xml:space="preserve">
     <value>Her parkurun kopyaları:</value>
-  </data>
-  <data name="PrintCourses_checkBoxPausePrinting_Text" xml:space="preserve">
-    <value>Her parkur veya bölümden sonra yazdırmayı duraklat</value>
   </data>
   <data name="PrintCourses_copiesGroupBox_Text" xml:space="preserve">
     <value>Kopya Sayısı</value>

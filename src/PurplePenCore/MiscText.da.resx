@@ -469,9 +469,6 @@ Efter at klikke OK, prøv at finde en kopi af kortfilen på din computer.</value
   <data name="EnterLength" xml:space="preserve">
     <value>Indtast længde i km, eller efterlad blank for at udregne automatisk</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>Afsluttede udskrivning "{0}", Tryk OK for at begynde udskrivning "{1}".</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

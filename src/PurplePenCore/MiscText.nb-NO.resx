@@ -471,9 +471,6 @@ Trykk OK og forsøk å finne kartfilen på din datamaskin.</value>
   <data name="EnterLength" xml:space="preserve">
     <value>Angi lengde i km, eller la feltet være blankt for automatisk beregning.</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>Avslutt utskrift "{0}". Velg OK for å starte utskrift "{1}".</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

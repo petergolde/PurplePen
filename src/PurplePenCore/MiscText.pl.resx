@@ -463,9 +463,6 @@ Użyj | aby rozdzielić linie
   <data name="EnterLength" xml:space="preserve">
     <value>Wprowadź długośc w kilometrach lub pozostaw pole puste aby program przeliczył automatycznie</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>Zakończono drukowanie "{0}". Naciśnij OK aby rozpocząć drukowanie "{1}".</value>
-  </data>
   <data name="GpxMustBeOcadMap" xml:space="preserve">
     <value>Plik mapy musi być plikiem OCAD aby można było używać plików GPX.</value>
   </data>

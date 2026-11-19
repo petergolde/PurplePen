@@ -472,9 +472,6 @@ Suchen Sie, nach Klicken auf "OK", nach der Kartendatei auf Ihrem Computer.</val
   <data name="EnterLength" xml:space="preserve">
     <value>Die Länge in km eintragen, oder leer lassen, um die Bahnlänge automatisch zu berechnen.</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>Drucken von "{0}" fertig. OK klicken, um Drucken von "{1}" zu starten.</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

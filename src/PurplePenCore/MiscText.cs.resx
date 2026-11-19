@@ -472,9 +472,6 @@ OK - zkus soubor s mapou najít.</value>
   <data name="EnterLength" xml:space="preserve">
     <value>Zadejte délku v KM, nebo nechte prázdné pro automatický výpočet</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>Dokončený tisk "{0}". Stikněte OK pro zahájení tisku "{1}".</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>

@@ -34,7 +34,6 @@ namespace PurplePen
         public int Count = 1;                         // count of copies to print
         public bool CropLargePrintArea = true;       // If true, crop a large print area instead of printing multiple pages 
         public bool PrintMapExchangesOnOneMap = false;
-        public bool PauseAfterCourseOrPart = false;  // If true, printing pauses after each course or part of course printed.
         public ColorModel PrintingColorModel = ColorModel.CMYK;
     }
 

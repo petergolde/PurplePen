@@ -472,9 +472,6 @@
   <data name="EnterLength" xml:space="preserve">
     <value>以公里為單位輸入長度，或留空白將自動計算</value>
   </data>
-  <data name="PausePrinting" xml:space="preserve">
-    <value>已完成列印“{0}”。按下確定開始列印“{1}”。</value>
-  </data>
   <data name="OCAD" xml:space="preserve">
     <value>OCAD</value>
   </data>
